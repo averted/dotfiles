@@ -20,5 +20,5 @@ map k <Right>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 
-colorscheme zenburn
+colorscheme averted
 syntax on
