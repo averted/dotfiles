@@ -1,4 +1,23 @@
 " Vim color file
+" Maintainer: Henry So, Jr. <henryso@panix.com>
+
+" These are the colors of the "desert" theme by Hans Fugal with a few small
+" modifications (namely that I lowered the intensity of the normal white and
+" made the normal and nontext backgrounds black), modified to work with 88-
+" and 256-color xterms.
+"
+" The original "desert" theme is available as part of the vim distribution or
+" at http://hans.fugal.net/vim/colors/.
+"
+" The real feature of this color scheme, with a wink to the "inkpot" theme, is
+" the programmatic approximation of the gui colors to the palettes of 88- and
+" 256- color xterms.  The functions that do this (folded away, for
+" readability) are calibrated to the colors used for Thomas E. Dickey's xterm
+" (version 200), which is available at http://dickey.his.com/xterm/xterm.html.
+"
+" I struggled with trying to parse the rgb.txt file to avoid the necessity of
+" converting color names to #rrggbb form, but decided it was just not worth
+" the effort.  Maybe someone seeing this may decide otherwise...
 
 if version > 580
     " no guarantees for version 5.8 and below, but this makes it stop
@@ -8,7 +27,6 @@ if version > 580
         syntax reset
     endif
 endif
-
 let g:colors_name="averted"
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
@@ -221,7 +239,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     endfun
     " }}}
 
-    "call <SID>X("Normal", "ce5c00", "ff0000", "") <-- DEFAULT
+    "call <SID>X("Normal", "ff7302", "ff0000", "") <-- DEFAULT
     hi Normal ctermbg=234
 
     " highlight groups
@@ -237,20 +255,20 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "Scrollbar
     "Tooltip
     call <SID>X("VertSplit", "c2bfa5", "7f7f7f", "reverse")
-    call <SID>X("Folded", "000000", "ce5c00", "")
+    call <SID>X("Folded", "ff7302", "000000", "")
     call <SID>X("FoldColumn", "d2b48c", "4d4d4d", "")
     call <SID>X("IncSearch", "708090", "f0e68c", "")
-    call <SID>X("LineNr", "ce5c00", "", "")
-    call <SID>X("ModeMsg", "ce5c00", "", "")
-    call <SID>X("NonText", "ce5c00", "262626", "bold")
+    call <SID>X("LineNr", "ff7302", "", "")
+    call <SID>X("ModeMsg", "ff7302", "", "")
+    call <SID>X("NonText", "ff7302", "262626", "")
     call <SID>X("Title", "888a85", "000000", "")
     "call <SID>X("Visual", "6b8e23", "f0e68c", "reverse") <-- DEFAULT
-    call <SID>X("Visual", "000000", "ce5c00", "reverse")
+    call <SID>X("Visual", "ff7302", "000000", "reverse")
     "VisualNOS
-    call <SID>X("WarningMsg", "ce5c00", "", "")
-    call <SID>X("ErrorMsg", "000000", "ce5c00", "")
+    call <SID>X("WarningMsg", "ff7302", "", "")
+    call <SID>X("ErrorMsg", "000000", "ff7302", "")
     " ???
-    call <SID>X("MoreMsg", "ce5c00", "", "")
+    call <SID>X("MoreMsg", "ff7302", "", "")
     call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
     call <SID>X("SpecialKey", "ff0000", "", "")
@@ -258,21 +276,24 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
 
     " syntax highlighting groups
-    call <SID>X("Comment", "555753", "", "")
-    call <SID>X("Constant", "babdb6", "", "")
-    call <SID>X("Identifier", "ce5c00", "", "none")
-    call <SID>X("Identifiero", "ce5c00", "", "none")
-    call <SID>X("Statement", "888a85", "", "bold")
-    call <SID>X("Statementto", "ff0000", "", "bold")
-    call <SID>X("PreProc", "ce5c00", "", "")
+    call <SID>X("Comment", "62645f", "", "")
+    call <SID>X("Constant", "4bbf23", "", "")
+    call <SID>X("Identifier", "ff7302", "", "none")
+    call <SID>X("Identifiero", "ff0000", "", "none")
+    "call <SID>X("Statement", "888a85", "", "") <-- DEFAULT
+    "$$$ defauld orange color: ff7302
+    call <SID>X("Statement", "ff7302", "", "")
+    call <SID>X("Statementto", "ff0000", "", "")
+    "css pseudo
+    call <SID>X("PreProc", "ff7302", "", "")
     call <SID>X("PreProcto", "ff0000", "", "")
-    call <SID>X("Type", "ce5c00", "", "bold")
-    call <SID>X("Special", "eeeeec", "", "")
+    call <SID>X("Type", "7b7378", "", "")
+    call <SID>X("Special", "b9bab7", "", "")
     call <SID>X("Underlined", "666666", "", "")
     call <SID>X("Ignore", "666666", "", "")
-    call <SID>X("Error", "666666", "", "")
+    call <SID>X("Error", "ff7302", "262626", "")
     call <SID>X("Todo", "ff4500", "eeee00", "")
-    call <SID>X("MatchParen", "000000", "ce5c00", "")
+    call <SID>X("MatchParen", "000000", "ff7302", "")
 
     " delete functions {{{
     delf <SID>X
