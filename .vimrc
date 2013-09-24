@@ -20,5 +20,8 @@ map k <Right>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 
+au BufNewFile,BufRead *.twig set syntax=html
+au BufNewFile,BufRead *.less set filetype=less
+
 colorscheme averted
 syntax on
