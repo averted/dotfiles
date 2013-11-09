@@ -264,26 +264,23 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Title", "888a85", "000000", "")
     "call <SID>X("Visual", "6b8e23", "f0e68c", "reverse") <-- DEFAULT
     call <SID>X("Visual", "ff7302", "000000", "reverse")
-    "VisualNOS
     call <SID>X("WarningMsg", "ff7302", "", "")
     call <SID>X("ErrorMsg", "000000", "ff7302", "")
-    " ???
     call <SID>X("MoreMsg", "ff7302", "", "")
     call <SID>X("Question", "00ff7f", "", "")
     call <SID>X("Search", "f5deb3", "cd853f", "")
     call <SID>X("SpecialKey", "ff0000", "", "")
-    call <SID>X("StatusLine", "c2bfa5", "000000", "reverse")
-    call <SID>X("StatusLineNC", "c2bfa5", "7f7f7f", "reverse")
+    call <SID>X("StatusLine", "000000", "ff7302", "reverse")
+    call <SID>X("StatusLineNC", "ff7302", "000000", "reverse")
 
     " syntax highlighting groups
-    call <SID>X("Comment", "62645f", "", "")
-    call <SID>X("Constant", "4bbf23", "", "")
-    call <SID>X("Identifier", "ff7302", "", "none")
+    call <SID>X("Comment", "62645f", "", "") " GREY
+    call <SID>X("Constant", "4bbf23", "", "") " LIGHT GREEN
+    call <SID>X("Identifier", "ff7302", "", "none") " ORANGE
     call <SID>X("Identifiero", "ff0000", "", "none")
     "call <SID>X("Statement", "888a85", "", "") <-- DEFAULT
     "$$$ defauld orange color: ff7302
     call <SID>X("Statement", "ff7302", "", "")
-    call <SID>X("Statementto", "ff0000", "", "")
     "css pseudo
     call <SID>X("PreProc", "ff7302", "", "")
     call <SID>X("PreProcto", "ff0000", "", "")
@@ -292,8 +289,44 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Underlined", "666666", "", "")
     call <SID>X("Ignore", "666666", "", "")
     call <SID>X("Error", "ff7302", "262626", "")
-    call <SID>X("Todo", "ff4500", "eeee00", "")
+    call <SID>X("Todo", "000000", "ff7302", "")
     call <SID>X("MatchParen", "000000", "ff7302", "")
+
+
+    
+    "Javascript Syntax Highlight
+    "call <SID>X("Statements", "ff0000", "", "") 	"Statements to Conditionalto javaScriptConditional
+    "call <SID>X("Statementto", "ff0000", "", "")
+    "PreProcto	PreProcto ???
+    "call <SID>X("javaScriptCommentSkip", "ff0000", "", "")	"javaScriptCommentSkip
+    "call <SID>X("javaScriptParens", "888a85", "", "")
+    "call <SID>X("javaScriptValueer", "ff0000", "", "")
+"
+    "HTMLSyntax Highlight
+"    call <SID>X("Underlinedto", "ff0000", "", "") "htmlLink
+"    call <SID>X("Errorto", "ff0000", "", "") "htmlErroro htmlTagError
+"    call <SID>X("htmlTagN", "ff0000", "", "")
+"    call <SID>X("htmlBoldUnderline", "ff0000", "", "")
+"    call <SID>X("htmlBoldItalico", "ff0000", "", "")
+"    call <SID>X("htmlBold", "ff0000", "", "")
+"    call <SID>X("htmlBoldUnderlineItalic", "ff0000", "", "") "links	htmlBoldUnderlineItalic	links to htmlBoldItalicUnderlineko htmlItalicBoldUnderline
+"    call <SID>X("htmlUnderlineItalic", "ff0000", "", "")
+"    call <SID>X("htmlUnderline", "ff0000", "", "")
+"    call <SID>X("htmlItalic", "ff0000", "", "")
+"
+"    "CSSSyntax Highlight
+"    call <SID>X("Specialo", "ff0000", "", "") "Specialo htmlCssDefinition
+"    call <SID>X("cssStyle", "ff0000", "", "")
+"    call <SID>X("cssDefinition", "ff0000", "", "")
+"    call <SID>X("cssAttributeSelector", "ff0000", "", "")
+"    call <SID>X("cssMediaBlock", "ff0000", "", "")
+"    call <SID>X("cssFontDescriptorBlock", "ff0000", "", "")
+"    call <SID>X("cssPseudoClass", "ff0000", "", "")
+"    call <SID>X("cssSpecialCharQQ", "ff0000", "", "")
+"    call <SID>X("cssSpecialCharQ", "ff0000", "", "")
+"    call <SID>X("cssLength", "ff0000", "", "")
+"    call <SID>X("cssString", "ff0000", "", "")
+
 
     " delete functions {{{
     delf <SID>X
