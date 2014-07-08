@@ -350,7 +350,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     end
 
     " Standard Language Highlighting
-    call <SID>X( "Constant", [s:dark_green, s:light_green], [], "" )  " any constant
+    call <SID>X( "Constant", [s:dark_fg, s:light_fg], [], "" )  " any constant
     call <SID>X( "String", [s:dark_green, s:light_green], [], "" )   " a string constant: 'this is a string'
     "call <SID>X( "Character", [s:dark_plum, s:light_green], [], "" )  " a character constant: 'c', '\n'
     "call <SID>X( "Number", [s:dark_grey, s:light_grey1], [], "" )  " a number constant: 234, 0xff
@@ -418,7 +418,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "javaScriptGlobal", [s:dark_darkerfg, s:light_orange], [], "" )
     "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
     "call <SID>X( "javaScriptNull", [s:dark_grey, s:light_cyan], [], "" )
-    "call <SID>X( "javaScriptType", [s:dark_fg, s:light_cyan], [], "" )
+    call <SID>X( "javaScriptType", [s:dark_orange, s:light_fg], [], "" )
     "call <SID>X( "javaScriptNumber", [s:dark_grey, s:light_cyan], [], "" )
 
     "" CSS Highlighting
@@ -487,6 +487,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "phpArrayPair", [s:dark_orange, s:light_fg], [], "" )
 
     call <SID>X( "phpType", [s:dark_orange, s:light_fg], [], "" )
+    "call <SID>X( "phpMagicConstant", [s:dark_orange, s:light_fg], [], "" )
+    "call <SID>X( "phpCoreConstant", [s:dark_orange, s:light_fg], [], "" )
     
     call <SID>X( "phpStorageClass2", [s:dark_orange, s:light_fg], [], "" )  " public, static
     call <SID>X( "phpDefineMethod", [s:dark_orange, s:light_fg], [], "" )  " function
