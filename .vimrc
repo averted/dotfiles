@@ -21,6 +21,12 @@ set shiftwidth=4
 set incsearch           " auto-move to first found search member
 set hlsearch            " highlight all search matches
 
+" return to last edit position when opening files
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
 " movement key remaps
 map h <Up>
 map l <Down>
