@@ -43,7 +43,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
-filetype plugin indent on
 
 " Status Line
 set statusline=%F\ %h%m%r%w\ %P%=
@@ -54,8 +53,3 @@ set statusline+=%{&fileformat}]              " file format
 
 syntax enable
 colorscheme averted
-"colorscheme plum
-
-"set background=light
-"let g:solarized_termcolors=256
-"colorscheme solarized
