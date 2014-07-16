@@ -468,6 +468,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "phpBraceClass", [s:dark_blue, s:light_fg], [], "" )
     call <SID>X( "phpMemberSelector", [s:dark_grey1, s:light_fg], [], "" )
     call <SID>X( "phpOperator", [s:dark_orange, s:light_fg], [], "" )
+    call <SID>X( "phpBoolean", [s:dark_orange, s:light_fg], [], "" )
     call <SID>X( "phpRelation", [s:dark_orange, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpAssign", [s:dark_grey1, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpSemicolon", [s:dark_grey1, s:light_fg], [], "" )
