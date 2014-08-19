@@ -419,6 +419,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
     "call <SID>X( "javaScriptNull", [s:dark_grey, s:light_cyan], [], "" )
     call <SID>X( "javaScriptType", [s:dark_orange, s:light_fg], [], "" )
+    call <SID>X( "javaScriptBoolean", [s:dark_orange, s:light_fg], [], "" )
     "call <SID>X( "javaScriptNumber", [s:dark_grey, s:light_cyan], [], "" )
 
     "" CSS Highlighting
