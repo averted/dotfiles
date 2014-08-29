@@ -11,7 +11,7 @@
 " Init colors
 
 " dark-bg colors
-let s:dark_fg              = "bfbfbf"
+let s:dark_fg              = "d7d7d7"
 let s:dark_bg              = "292929"
 let s:dark_red             = "df4320"  " f22c40
 let s:dark_blue            = "3f7ac4"  " 407ee7 a bit lighter blue / 4271ae default
