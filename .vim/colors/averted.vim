@@ -21,6 +21,7 @@ let s:dark_green           = "4bbf23"
 let s:dark_yellow          = "c3b622"
 let s:dark_gold            = "c3a922"
 let s:dark_violet          = "6666ea"
+let s:dark_magenta         = "bc27f2"
 let s:dark_grey            = "545454"  " 68615e
 let s:dark_grey1           = "848484"
 let s:dark_grey2           = "9c9491"
@@ -29,17 +30,23 @@ let s:dark_black           = "000000"
 let s:dark_unknown         = "bc27f2"  " magenta
 
 " light-bg colors
-let s:light_fg              = "65658b"
-let s:light_bg              = "000116"
-let s:light_red             = "ff0000"
-let s:light_blue            = "4271ae"
-let s:light_cyan            = "3e999f"
+let s:light_fg              = "333333"
+let s:light_bg              = "f2f2f2"
+let s:light_red             = "d70000"
+let s:light_blue            = "268bd2" " 1e6ea7 268bd2
+let s:light_cyan            = "2aa198"
 let s:light_orange          = "ff7302"
-let s:light_green           = "4bbf23"
-let s:light_grey            = "62645f"
-let s:light_grey1           = "262626"
-let s:light_grey2           = "7f7f7f"
+let s:light_white           = "ffffff"
+let s:light_yellow          = "af8700"
+let s:light_violet          = "6c71c4"
+let s:light_magenta         = "d33682"
+let s:light_gold            = "c3a922"
+let s:light_green           = "327e17"
+let s:light_grey            = "444444"
+let s:light_grey1           = "7f7f7f"
+let s:light_grey2           = "262626"
 let s:light_grey3           = "888a85"
+let s:light_grey4           = "999999"
 let s:light_black           = "000000"
 let s:light_unknown         = "f856f9"
 
@@ -277,42 +284,38 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     " Vim Highlighting
     call <SID>X( "Normal", [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
+    call <SID>X( "Cursor", [], [s:dark_cyan, s:light_blue], "")  " the character under the cursor
+    call <SID>X( "NonText", [s:dark_orange, s:light_blue], [], "none")  " '~' and '@' at the end of the window 
+    call <SID>X( "SpecialKey", [s:dark_grey3, s:light_red], [s:dark_black, s:light_black], "none")  " Meta and special keys listed with ':map' 
 
-    call <SID>X( "Cursor", [], [s:dark_cyan, s:light_red], "")  " the character under the cursor
+    call <SID>X( "Search", [s:dark_bg, s:light_bg],  [s:dark_orange, s:light_grey], "")  " Last search pattern highlighting (see 'hlsearch').
+    call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
-    call <SID>X( "NonText", [s:dark_orange, s:light_orange], [], "none")  " '~' and '@' at the end of the window 
-    call <SID>X( "SpecialKey", [s:dark_grey3, s:light_grey3], [s:dark_black, s:light_black], "none")  " Meta and special keys listed with ':map', also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
-
-    call <SID>X( "Search", [s:dark_bg, s:light_bg],  [s:dark_orange, s:light_orange], "")  " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
-    call <SID>X( "IncSearch", [s:dark_orange, s:light_orange], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
-
-    call <SID>X( "StatusLine", [s:dark_orange, s:light_orange], [s:dark_black, s:light_black], "none" )  " status line of current window
-    call <SID>X( "StatusLineNC", [s:dark_orange, s:light_orange], [s:dark_black, s:light_black], "reverse" )  " status lines of not-current windows
+    call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey], "none" )  " status line of current window
+    call <SID>X( "StatusLineNC", [s:dark_orange, s:light_blue], [s:dark_black, s:light_black], "reverse" )  " status lines of not-current windows
     "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
     "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
 
     call <SID>X( "VertSplit", [s:dark_unknown, s:light_unknown],  [s:dark_cyan, s:light_cyan], "inverse" )  " the column separating vertically split windows
 
-    call <SID>X( "Visual", [s:dark_black, s:light_black], [s:dark_orange, s:light_orange], "")  " visual mode selection
-    call <SID>X( "MatchParen", [s:dark_black, s:light_black], [s:dark_orange, s:light_orange], "")  " The character under the cursor or just before it, if it is a paired bracket, and its match.
+    call <SID>X( "Visual", [s:dark_black, s:light_bg], [s:dark_orange, s:light_fg], "")  " visual mode selection
+    call <SID>X( "MatchParen", [s:dark_black, s:light_bg], [s:dark_orange, s:light_blue], "")  " The character under the cursor or just before it, if it is a paired bracket, and its match.
 
     call <SID>X( "Directory", [s:dark_blue, s:light_blue], [], "" )  " directory names (and other special names in listings
 
-    call <SID>X( "Folded", [s:dark_orange, s:light_orange], [s:dark_black, s:light_black], "")  " line used for closed folds
+    call <SID>X( "Folded", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey], "")  " line used for closed folds
     call <SID>X( "FoldColumn", [s:dark_unknown, s:light_unknown], [], "")  " see 'foldcolumn'
 
-    call <SID>X( "WarningMsg", [s:dark_orange, s:light_orange], [], "" ) " warning messages
-    call <SID>X( "ErrorMsg", [s:dark_black, s:light_black], [s:dark_orange, s:light_orange], "")  " error messages on the command line
+    call <SID>X( "WarningMsg", [s:dark_orange, s:light_black], [], "" ) " warning messages
+    call <SID>X( "ErrorMsg", [s:dark_black, s:light_bg], [s:dark_orange, s:light_grey], "")  " error messages on the command line
+    call <SID>X( "ModeMsg", [s:dark_orange, s:light_black], [], "none")  " 'showmode' message (e.g., '-- INSERT --')
+    call <SID>X( "MoreMsg", [s:dark_orange, s:light_black], [], "")  " more-prompt
 
-    call <SID>X( "ModeMsg", [s:dark_orange, s:light_orange], [], "none")  " 'showmode' message (e.g., '-- INSERT --')
-    call <SID>X( "MoreMsg", [s:dark_orange, s:light_orange], [], "")  " more-prompt
     call <SID>X( "Question", [s:dark_unknown, s:light_unknown],  [], "")  " hit-enter prompt and yes/no questions
-
     call <SID>X( "WildMenu", [s:dark_red, s:light_red], [s:dark_bg, s:light_bg], "" )  " current match in 'wildmenu' completion
-
     call <SID>X( "SignColumn", [], [s:dark_red, s:light_red], "" )  " column where signs are displayed
 
-    call <SID>X( "Linenr", [s:dark_orange, s:light_orange], [], "" )  " line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
+    call <SID>X( "Linenr", [s:dark_orange, s:light_grey4], [], "" )  " line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
 
     "call <SID>X( "DiffAdd", [s:dark_bg, s:light_bg], [s:dark_cyan, s:light_green], "")  " diff mode: Added line
     "call <SID>X( "DiffDelete", [s:dark_bg, s:light_bg], [s:dark_red, s:light_lightred], "" )  " diff mode: Deleted line
@@ -350,24 +353,24 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     end
 
     " Standard Language Highlighting
-    call <SID>X( "Constant", [s:dark_fg, s:light_fg], [], "" )  " any constant
+    call <SID>X( "Constant", [s:dark_fg, s:light_red], [], "" )  " any constant
     call <SID>X( "String", [s:dark_green, s:light_green], [], "" )   " a string constant: 'this is a string'
     "call <SID>X( "Character", [s:dark_plum, s:light_green], [], "" )  " a character constant: 'c', '\n'
     "call <SID>X( "Number", [s:dark_grey, s:light_grey1], [], "" )  " a number constant: 234, 0xff
     "call <SID>X( "Boolean", [s:dark_grey, s:light_green], [], "" )  " a boolean constant: TRUE, false
     "call <SID>X( "Float", [s:dark_grey, s:light_grey1], [], "" )  " a floating point constant: 2.3e10
-    call <SID>X( "Identifier", [s:dark_orange, s:light_orange], [], "none" )  " any variable name
+    call <SID>X( "Identifier", [s:dark_orange, s:light_blue], [], "none" )  " any variable name
     call <SID>X( "Identifiero", [s:dark_unknown, s:light_unknown], [], "none")
     "call <SID>X( "Function", [s:dark_blue, s:light_blue], [], "" )  " function name (also: methods for classes)
-    call <SID>X( "Statement",  [s:dark_orange, s:light_orange], [], "none" )  " any statement
-    "call <SID>X( "Conditional",[s:dark_pink, s:light_blue], [], "" )  " if, then, else, endif, switch, etc
+    call <SID>X( "Statement",  [s:dark_orange, s:light_black], [], "none" )  " any statement
+    call <SID>X( "Conditional",[s:dark_orange, s:light_red], [], "" )  " if, then, else, endif, switch, etc
     "call <SID>X( "Label", [s:dark_pink, s:light_purple], [], "" )  "  case, default, etc.
     "call <SID>X( "Repeat", [s:dark_orange, s:light_orange], [], "" )  " for, do, while, etc.
-    call <SID>X( "Comment", [s:dark_grey, s:light_grey], [], "")  " any comment
+    call <SID>X( "Comment", [s:dark_grey, s:light_grey3], [], "")  " any comment
     "call <SID>X( "Operator", [s:dark_cyan, s:light_cyan], [], "none" )  " 'sizeof', '+', '*', etc.
     "call <SID>X( "Keyword", [s:dark_fg, s:light_fg], [], "" )  " any other keyword
     "call <SID>X( "Exception", [s:dark_red, s:light_lightred], [], "" )  " try, catch, throw
-    call <SID>X( "PreProc", [s:dark_orange, s:light_orange], [], "" )  " generic Preprocessor
+    call <SID>X( "PreProc", [s:dark_orange, s:light_black], [], "" )  " generic Preprocessor
     "call <SID>X( "Include", [s:dark_darkerfg, s:light_grey1], [], "" )  " preprocessor #include
     "call <SID>X( "Define", [s:dark_pink, s:light_purple], [], "none" )  " preprocessor #define
     "call <SID>X( "Macro", [s:dark_pink, s:light_purple], [], "none" )  " preprocessor #define
@@ -380,7 +383,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "Underlined", [s:dark_unknown, s:light_unknown], [], "underline" )  " text that stands out, HTML links
     call <SID>X( "Title", [s:dark_orange, s:light_orange], [s:dark_black, s:light_black], "bold" )
     call <SID>X( "Error", [], [s:dark_red, s:light_red], "none" )  " any erroneous construct
-    call <SID>X( "Todo", [s:dark_black, s:light_black], [s:dark_grey, s:light_grey], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    call <SID>X( "Todo", [s:dark_black, s:light_black], [s:dark_grey, s:light_white], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     "" Vimrc Highlighting
     call <SID>X( "vimCommand", [s:dark_blue, s:light_blue], [], "none" )
@@ -422,69 +425,78 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "javaScriptBoolean", [s:dark_orange, s:light_fg], [], "" )
     "call <SID>X( "javaScriptNumber", [s:dark_grey, s:light_cyan], [], "" )
 
+    "" CoffeeScript Highlighting
+    call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
+    call <SID>X( "coffeeParen", [s:dark_magenta, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeSpecialOp", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeGlobal", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+
     "" CSS Highlighting
-    call <SID>X( "cssIdentifier", [s:dark_blue, s:light_grey1], [], "" )
-    call <SID>X( "cssImportant", [s:dark_cyan, s:light_grey1], [], "" )
-    call <SID>X( "cssClassName", [s:dark_blue, s:light_grey1], [], "" )
-    call <SID>X( "cssPseudoClass", [s:dark_green, s:light_grey1], [], "" )
-    call <SID>X( "cssPseudoClassId", [s:dark_green, s:light_grey1], [], "" )
-    call <SID>X( "cssBraces", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssTagName", [s:dark_yellow, s:light_grey1], [], "" )
+    call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
+    call <SID>X( "stylusVariable", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "stylusClass", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "stylusClassChar", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "stylusProperty", [s:dark_orange, s:light_blue], [], "" )
 
-    call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_grey1], [], "" )
-    call <SID>X( "stylusVariable", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "stylusClass", [s:dark_blue, s:light_grey1], [], "" )
-    call <SID>X( "stylusClassChar", [s:dark_blue, s:light_grey1], [], "" )
-    call <SID>X( "stylusProperty", [s:dark_orange, s:light_grey1], [], "" )
+    call <SID>X( "cssIdentifier", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "cssImportant", [s:dark_cyan, s:light_red], [], "" )
+    call <SID>X( "cssClassName", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "cssPseudoClass", [s:dark_green, s:light_green], [], "" )
+    call <SID>X( "cssPseudoClassId", [s:dark_green, s:light_green], [], "" )
+    call <SID>X( "cssBraces", [s:dark_orange, s:light_blue], [], "" )
+    call <SID>X( "cssTagName", [s:dark_yellow, s:light_blue], [], "" )
 
-    call <SID>X( "cssBoxProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssFontProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssTextProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssColorProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssVisualProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssBorderProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssAdvancedProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssBackgroundProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssListProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssCommonProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssRenderProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssUIProp", [s:dark_orange, s:light_grey1], [], "" )
-    call <SID>X( "cssGeneratedContentProp", [s:dark_orange, s:light_grey1], [], "" )
+    call <SID>X( "cssBoxProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssFontProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssTextProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssColorProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssVisualProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssBorderProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssAdvancedProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssBackgroundProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssListProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssCommonProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssRenderProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssUIProp", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "cssGeneratedContentProp", [s:dark_orange, s:light_black], [], "" )
 
-    call <SID>X( "cssBoxVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssFontVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssTextVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssColorVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssVisualVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssBorderVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssAdvancedVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssBackgroundVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssListVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssCommonVal", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssRenderVal", [s:dark_grey1, s:light_red], [], "" )
+    call <SID>X( "cssBoxVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssFontVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssTextVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssColorVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssVisualVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssBorderVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssAdvancedVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssBackgroundVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssListVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssCommonVal", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssRenderVal", [s:dark_grey1, s:light_grey1], [], "" )
 
-    call <SID>X( "cssBoxAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssFontAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssTextAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssColorAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssVisualAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssBorderAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssAdvancedAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssBackgroundAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssCommonAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssRenderAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssFontDescriptorAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssTableAttr", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssUIAttr", [s:dark_grey1, s:light_red], [], "" )
+    call <SID>X( "cssBoxAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssFontAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssTextAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssColorAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssVisualAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssBorderAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssAdvancedAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssBackgroundAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssCommonAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssRenderAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssFontDescriptorAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssTableAttr", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssUIAttr", [s:dark_grey1, s:light_grey1], [], "" )
     
-    call <SID>X( "cssColor", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssValueNumber", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssValueTime", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssValueLength", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssStringQ", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssStringQQ", [s:dark_grey1, s:light_red], [], "" )
-    call <SID>X( "cssURL", [s:dark_grey1, s:light_red], [], "" )
+    call <SID>X( "cssColor", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssValueNumber", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssValueTime", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssValueLength", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssStringQ", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssStringQQ", [s:dark_grey1, s:light_grey1], [], "" )
+    call <SID>X( "cssURL", [s:dark_grey1, s:light_grey1], [], "" )
 
     "" PHP Highlighting
     call <SID>X( "phpRegionDelimiter", [s:dark_blue, s:light_fg], [], "" ) " <?php
