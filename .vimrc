@@ -14,9 +14,9 @@ set noswapfile
 set foldmethod=indent   " sets default fold method to indent
 set foldlevelstart=20
 set smartindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set incsearch           " auto-move to first found search member
 set hlsearch            " highlight all search matches
@@ -32,9 +32,10 @@ map h <Up>
 map l <Down>
 map j <Left>
 map k <Right>
+map 0 ^
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
-map <Space> :CtrlP<CR>
+" map <Space> :CtrlP<CR>
 
 " CtrlP
 let g:ctrlp_working_path_mode = 0                       "CtrlP working path fix
@@ -46,10 +47,25 @@ au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 
 " Status Line
 set statusline=%F\ %h%m%r%w\ %P%=
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
-set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
-set statusline+=%{&fileformat}]              " file format
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
+set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
+set statusline+=%{&fileformat}]                                     " file format
 
 syntax enable
 colorscheme averted
+
+" Functions
+function! GenerateHTML()
+  :exe "normal i
+    \<!doctype html>\<CR>
+    \<html>\<CR>\<Tab>
+    \<head>\<CR>\<Tab>
+    \<title>Title</title>\<CR>\<BS>
+    \</head>\<CR>
+    \<body>\<CR>\<Tab>Body\<CR>\<BS>
+    \</body>\<CR>\<BS>
+    \</html>"
+endfunction
+
+command! H call GenerateHTML()
