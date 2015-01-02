@@ -30,27 +30,27 @@ let s:dark_black           = "000000"
 let s:dark_unknown         = "bc27f2"  " magenta
 
 " light-bg colors
-let s:light_fg              = "333333"
-let s:light_bg              = "f2f2f2"
+let s:light_fg              = "505050"
+let s:light_bg              = "fafafa"
 let s:light_red             = "d70000"
-let s:light_blue            = "268bd2" " 1e6ea7 268bd2
-let s:light_cyan            = "2aa198"
+let s:light_blue            = "0070af" " 1e6ea7 268bd2
+let s:light_cyan            = "008B8B"
 let s:light_orange          = "ff7302"
 let s:light_white           = "ffffff"
 let s:light_yellow          = "af8700"
 let s:light_violet          = "6c71c4"
-let s:light_magenta         = "d33682"
+let s:light_magenta         = "FF1493"
 let s:light_gold            = "c3a922"
-let s:light_green           = "327e17"
+let s:light_green           = "1d771d"
 let s:light_grey            = "444444"
 let s:light_grey1           = "7f7f7f"
 let s:light_grey2           = "262626"
 let s:light_grey3           = "888a85"
-let s:light_grey4           = "999999"
-let s:light_black           = "000000"
+let s:light_grey4           = "a6a6a6"
+let s:light_black           = "073642"
 let s:light_unknown         = "f856f9"
 
-let s:curr_bg = "dark" "&bg
+let s:curr_bg = "light" "&bg
 
 let g:colors_name="averted"
 
@@ -291,7 +291,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "Search", [s:dark_bg, s:light_bg],  [s:dark_orange, s:light_grey], "")  " Last search pattern highlighting (see 'hlsearch').
     call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
-    call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey], "none" )  " status line of current window
+    call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "none" )  " status line of current window
     call <SID>X( "StatusLineNC", [s:dark_orange, s:light_blue], [s:dark_black, s:light_black], "reverse" )  " status lines of not-current windows
     "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
     "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
@@ -328,8 +328,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "CursorLine", [], [s:dark_bg, s:light_bg], "none" )  " the screen line that the cursor is in when 'cursorline' is set
     "call <SID>X( "CursorColumn", [], [s:dark_bg, s:light_bg], "" )  " the screen column that the cursor is in when 'cursorcolumn' is set
 
-    "call <SID>X( "PMenu", [s:dark_blue, s:light_blue], [s:dark_lightblue, s:light_lightblue], "none" )  " popup menu: normal item
-    "call <SID>X( "PMenuSel", [s:dark_lightblue, s:light_lightblue], [s:dark_blue, s:light_blue], "none" )  " popup menu: selected item
+    "call <SID>X( "PMenu", [s:dark_blue, s:light_], [s:dark_lightblue, s:light_lightblue], "none" )  " popup menu: normal item
+    "call <SID>X( "PMenuSel", [s:dark_lightblue, s:light_lightblue], [s:dark_blue, s:light_], "none" )  " popup menu: selected item
     "call <SID>X( "PMenuSBar", [s:dark_grey, s:light_grey1], [s:dark_grey, s:light_grey1], "none" )  " popup menu: scrollbar
     "call <SID>X( "PMenuThumb", [s:dark_grey, s:light_grey1], [s:dark_lightgrey, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
 
@@ -353,24 +353,24 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     end
 
     " Standard Language Highlighting
-    call <SID>X( "Constant", [s:dark_fg, s:light_red], [], "" )  " any constant
-    call <SID>X( "String", [s:dark_green, s:light_green], [], "" )   " a string constant: 'this is a string'
+    call <SID>X( "Constant", [s:dark_fg, s:light_blue], [], "" )  " any constant
+    call <SID>X( "String", [s:dark_green, s:light_red], [], "" )   " a string constant: 'this is a string'
     "call <SID>X( "Character", [s:dark_plum, s:light_green], [], "" )  " a character constant: 'c', '\n'
     "call <SID>X( "Number", [s:dark_grey, s:light_grey1], [], "" )  " a number constant: 234, 0xff
     "call <SID>X( "Boolean", [s:dark_grey, s:light_green], [], "" )  " a boolean constant: TRUE, false
     "call <SID>X( "Float", [s:dark_grey, s:light_grey1], [], "" )  " a floating point constant: 2.3e10
-    call <SID>X( "Identifier", [s:dark_orange, s:light_blue], [], "none" )  " any variable name
+    call <SID>X( "Identifier", [s:dark_orange, s:light_black], [], "" )  " any variable name
     call <SID>X( "Identifiero", [s:dark_unknown, s:light_unknown], [], "none")
-    "call <SID>X( "Function", [s:dark_blue, s:light_blue], [], "" )  " function name (also: methods for classes)
-    call <SID>X( "Statement",  [s:dark_orange, s:light_black], [], "none" )  " any statement
-    call <SID>X( "Conditional",[s:dark_orange, s:light_red], [], "" )  " if, then, else, endif, switch, etc
+    call <SID>X( "Function", [s:dark_blue, s:light_blue], [], "" )  " function name (also: methods for classes)
+    call <SID>X( "Statement",  [s:dark_orange, s:light_blue], [], "" )  " any statement
+    call <SID>X( "Conditional",[s:dark_orange, s:light_blue], [], "" )  " if, then, else, endif, switch, etc
     "call <SID>X( "Label", [s:dark_pink, s:light_purple], [], "" )  "  case, default, etc.
     "call <SID>X( "Repeat", [s:dark_orange, s:light_orange], [], "" )  " for, do, while, etc.
-    call <SID>X( "Comment", [s:dark_grey, s:light_grey3], [], "")  " any comment
+    call <SID>X( "Comment", [s:dark_grey, s:light_grey4], [], "")  " any comment
     "call <SID>X( "Operator", [s:dark_cyan, s:light_cyan], [], "none" )  " 'sizeof', '+', '*', etc.
     "call <SID>X( "Keyword", [s:dark_fg, s:light_fg], [], "" )  " any other keyword
     "call <SID>X( "Exception", [s:dark_red, s:light_lightred], [], "" )  " try, catch, throw
-    call <SID>X( "PreProc", [s:dark_orange, s:light_black], [], "" )  " generic Preprocessor
+    call <SID>X( "PreProc", [s:dark_orange, s:light_fg], [], "" )  " generic Preprocessor
     "call <SID>X( "Include", [s:dark_darkerfg, s:light_grey1], [], "" )  " preprocessor #include
     "call <SID>X( "Define", [s:dark_pink, s:light_purple], [], "none" )  " preprocessor #define
     "call <SID>X( "Macro", [s:dark_pink, s:light_purple], [], "none" )  " preprocessor #define
@@ -383,7 +383,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "Underlined", [s:dark_unknown, s:light_unknown], [], "underline" )  " text that stands out, HTML links
     call <SID>X( "Title", [s:dark_orange, s:light_orange], [s:dark_black, s:light_black], "bold" )
     call <SID>X( "Error", [], [s:dark_red, s:light_red], "none" )  " any erroneous construct
-    call <SID>X( "Todo", [s:dark_black, s:light_black], [s:dark_grey, s:light_white], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    call <SID>X( "Todo", [s:dark_black, s:light_white], [s:dark_grey, s:light_grey4], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     "" Vimrc Highlighting
     call <SID>X( "vimCommand", [s:dark_blue, s:light_blue], [], "none" )
@@ -414,7 +414,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "htmlScriptTag", [s:dark_paleblue, s:light_grey1], [], "" )
 
     "" JavaScript Highlighting
-    "call <SID>X( "javaScriptBraces", [s:dark_darkerfg, s:light_grey1], [], "" )
+    "call <SID>X( "javaScriptBraces", [s:dark_magenta, s:light_white], [], "" )
     "call <SID>X( "javaScriptIdentifier", [s:dark_darkerfg, s:light_fg], [], "" )
     "call <SID>X( "javaScriptLabel", [s:dark_pink, s:light_purple], [], "" )
     "call <SID>X( "javaScriptMember", [s:dark_darkerfg, s:light_purple], [], "" )
@@ -427,12 +427,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     "" CoffeeScript Highlighting
     call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
-    call <SID>X( "coffeeParen", [s:dark_magenta, s:light_red], [s:dark_bg, s:light_bg], "" )
-    call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
-    call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeParen", [s:dark_magenta, s:light_blue], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeSpecialOp", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "" )
-    call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_blue], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeGlobal", [s:dark_yellow, s:light_red], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeDotAccess", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
+    "call <SID>X( "coffeeInterpDelim", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
 
     "" CSS Highlighting
     call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
