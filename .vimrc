@@ -27,6 +27,9 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+" remove all trailing whitespace on file write
+autocmd BufWritePre * :%s/\s\+$//e
+
 " movement key remaps
 map h <Up>
 map l <Down>
@@ -35,6 +38,7 @@ map k <Right>
 map 0 ^
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
+map <F3> :call Retab()<CR>
 " map <Space> :CtrlP<CR>
 
 " CtrlP
@@ -66,6 +70,18 @@ function! GenerateHTML()
     \<body>\<CR>\<Tab>Body\<CR>\<BS>
     \</body>\<CR>\<BS>
     \</html>"
+endfunction
+
+function! Retab()
+  :exe "set noexpandtab"
+  :exe "set tabstop=4"
+  :exe "set shiftwidth=4"
+  :exe "retab!"
+
+  :exe "set tabstop=2"
+  :exe "set shiftwidth=2"
+  :exe "set expandtab"
+  :exe "retab!"
 endfunction
 
 command! H call GenerateHTML()

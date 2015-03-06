@@ -14,7 +14,7 @@
 let s:dark_fg              = "d7d7d7"
 let s:dark_bg              = "292929"
 let s:dark_red             = "df4320"  " f22c40
-let s:dark_blue            = "3f7ac4"  " 407ee7 a bit lighter blue / 4271ae default
+let s:dark_blue            = "4193a0"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "45abb1"  " 3e999f / 00ad9c / 159393
 let s:dark_orange          = "ff7302"
 let s:dark_green           = "4bbf23"
@@ -50,7 +50,7 @@ let s:light_grey4           = "a6a6a6"
 let s:light_black           = "073642"
 let s:light_unknown         = "FF1493"
 
-let s:curr_bg = "light"
+let s:curr_bg = "dark"
 
 let g:colors_name = "averted"
 
@@ -285,8 +285,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " Vim Highlighting
     call <SID>X( "Normal", [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
     call <SID>X( "Cursor", [], [s:dark_cyan, s:light_blue], "")  " the character under the cursor
-    call <SID>X( "NonText", [s:dark_orange, s:light_blue], [], "none")  " '~' and '@' at the end of the window 
-    call <SID>X( "SpecialKey", [s:dark_grey3, s:light_red], [s:dark_black, s:light_black], "none")  " Meta and special keys listed with ':map' 
+    call <SID>X( "NonText", [s:dark_orange, s:light_blue], [], "none")  " '~' and '@' at the end of the window
+    call <SID>X( "SpecialKey", [s:dark_grey3, s:light_red], [s:dark_black, s:light_black], "none")  " Meta and special keys listed with ':map'
 
     call <SID>X( "Search", [s:dark_bg, s:light_bg],  [s:dark_orange, s:light_grey], "")  " Last search pattern highlighting (see 'hlsearch').
     call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
@@ -407,37 +407,66 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "markdownBlockquote", [s:dark_darkerfg, s:light_grey1], [], "" )
 
     "" HTML Highlighting
-    call <SID>X( "htmlTag", [s:dark_blue, s:light_fg], [], "" )
-    call <SID>X( "htmlTagName", [s:dark_blue, s:light_fg], [], "" )
-    call <SID>X( "htmlArg", [s:dark_fg, s:light_blue],[], "" )
-    "call <SID>X( "htmlEndTag", [s:dark_paleblue, s:light_grey1], [], "" )
+    call <SID>X( "htmlTag", [s:dark_yellow, s:light_fg], [], "" )
+    call <SID>X( "htmlTagName", [s:dark_yellow, s:light_fg], [], "" )
+    call <SID>X( "htmlEndTag", [s:dark_yellow, s:light_grey1], [], "" )
+    call <SID>X( "htmlArg", [s:dark_yellow, s:light_blue],[], "" )
     "call <SID>X( "htmlScriptTag", [s:dark_paleblue, s:light_grey1], [], "" )
 
     "" Jade Highlighting
-    call <SID>X( "jadeClass", [s:dark_fg, s:light_blue], [], "" )
-    call <SID>X( "jadeClassChar", [s:dark_fg, s:light_blue], [], "" )
-    call <SID>X( "jadeId", [s:dark_fg, s:light_black], [], "" )
-    call <SID>X( "jadeIdChar", [s:dark_fg, s:light_black], [], "" )
+    call <SID>X( "jadeClass", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "jadeClassChar", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "jadeId", [s:dark_blue, s:light_black], [], "" )
+    call <SID>X( "jadeIdChar", [s:dark_blue, s:light_black], [], "" )
+    call <SID>X( "jadeAttributes", [s:dark_yellow, s:light_black], [], "" )
+    call <SID>X( "jadeAttributesDelimiter", [s:dark_orange, s:light_black], [], "" )
+    call <SID>X( "jadeHtmlArg", [s:dark_yellow, s:light_violet], [], "" )
+    call <SID>X( "jadePipeChar", [s:dark_red, s:light_black], [], "" )
+    call <SID>X( "jadePipedText", [s:dark_green, s:light_black], [], "" )
     call <SID>X( "jadeTagBlockChar", [s:dark_fg, s:light_black], [], "" )
     call <SID>X( "jadeBlockExpansionChar", [s:dark_fg, s:light_black], [], "" )
-    call <SID>X( "jadeHtmlArg", [s:dark_fg, s:light_violet], [], "" )
-    call <SID>X( "jadeScriptStatement", [s:dark_fg, s:light_green], [], "" )
+    call <SID>X( "jadeScriptStatement", [s:dark_orange, s:light_green], [], "" )
 
     "" JavaScript Highlighting
-    "call <SID>X( "javaScriptBraces", [s:dark_magenta, s:light_white], [], "" )
     "call <SID>X( "javaScriptIdentifier", [s:dark_darkerfg, s:light_fg], [], "" )
     "call <SID>X( "javaScriptLabel", [s:dark_pink, s:light_purple], [], "" )
     "call <SID>X( "javaScriptMember", [s:dark_darkerfg, s:light_purple], [], "" )
     "call <SID>X( "javaScriptGlobal", [s:dark_darkerfg, s:light_orange], [], "" )
     "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
     "call <SID>X( "javaScriptNull", [s:dark_grey, s:light_cyan], [], "" )
+
+    call <SID>X( "javaScriptFunction", [s:dark_yellow, s:light_fg], [], "" )
+    call <SID>X( "javaScriptParens", [s:dark_yellow, s:light_white], [], "" )
+    call <SID>X( "javaScriptBraces", [s:dark_yellow, s:light_white], [], "" )
+    call <SID>X( "javaScriptEndColons", [s:dark_yellow, s:light_white], [], "" )
+
+    call <SID>X( "javaScriptDocTags", [s:dark_grey, s:light_white], [], "" )
+    call <SID>X( "javaScriptDocParam", [s:dark_grey, s:light_white], [], "" )
+    call <SID>X( "javaScriptFuncKeyword", [s:dark_cyan, s:light_white], [], "" )
+    call <SID>X( "javaScriptFuncDef", [s:dark_violet, s:light_white], [], "" )
+    call <SID>X( "javaScriptFuncArg", [s:dark_fg, s:light_white], [], "" )
+    call <SID>X( "javaScriptEventListenerKeywords", [s:dark_fg, s:light_white], [], "" )
+    call <SID>X( "javaScriptOpSymbols", [s:dark_fg, s:light_white], [], "" )
+
+    call <SID>X( "javaScriptMessage", [s:dark_cyan, s:light_white], [], "" )
+    call <SID>X( "javaScriptStatement", [s:dark_cyan, s:light_white], [], "" )
+    call <SID>X( "javaScriptNumber", [s:dark_blue, s:light_white], [], "" )
+    call <SID>X( "javaScriptFloat", [s:dark_blue, s:light_white], [], "" )
+    call <SID>X( "javaScriptNull", [s:dark_blue, s:light_fg], [], "" )
+
+    call <SID>X( "javaScriptGlobalObjects", [s:dark_cyan, s:light_fg], [s:dark_bg, s:light_bg], "underline" )
+    call <SID>X( "javaScriptPrototype", [s:dark_red, s:light_fg], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "javaScriptExceptions", [s:dark_red, s:light_fg], [s:dark_bg, s:light_bg], "" )
+
     call <SID>X( "javaScriptType", [s:dark_orange, s:light_fg], [], "" )
     call <SID>X( "javaScriptBoolean", [s:dark_orange, s:light_fg], [], "" )
-    "call <SID>X( "javaScriptNumber", [s:dark_grey, s:light_cyan], [], "" )
+    call <SID>X( "javaScriptAjaxMethods", [s:dark_orange, s:light_fg], [], "" )
+
+    call <SID>X( "javaScriptHtmlEvents", [s:dark_yellow, s:light_violet], [], "" )
 
     "" CoffeeScript Highlighting
     call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
-    call <SID>X( "coffeeParen", [s:dark_cyan, s:light_fg], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_blue], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeSpecialOp", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "" )
@@ -501,7 +530,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "cssFontDescriptorAttr", [s:dark_grey1, s:light_grey1], [], "" )
     call <SID>X( "cssTableAttr", [s:dark_grey1, s:light_grey1], [], "" )
     call <SID>X( "cssUIAttr", [s:dark_grey1, s:light_grey1], [], "" )
-    
+
     call <SID>X( "cssColor", [s:dark_grey1, s:light_grey1], [], "" )
     call <SID>X( "cssValueNumber", [s:dark_grey1, s:light_grey1], [], "" )
     call <SID>X( "cssValueTime", [s:dark_grey1, s:light_grey1], [], "" )
@@ -516,7 +545,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "phpVarSelector", [s:dark_yellow, s:light_fg], [], "" )
     call <SID>X( "phpSuperglobal", [s:dark_yellow, s:light_fg], [], "" )
     call <SID>X( "phpMemberHere", [s:dark_grey1, s:light_fg], [], "" )
-    
+
     call <SID>X( "phpParent", [s:dark_grey1, s:light_fg], [], "" )
     call <SID>X( "phpBrace", [s:dark_orange, s:light_fg], [], "" )
     call <SID>X( "phpBraceFunc", [s:dark_grey1, s:light_fg], [], "" )
@@ -530,22 +559,22 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "phpControlParent", [s:dark_grey1, s:light_fg], [], "" )
     call <SID>X( "phpQuoteSingle", [s:dark_green, s:light_fg], [], "" )
     call <SID>X( "phpQuoteDouble", [s:dark_green, s:light_fg], [], "" )
-    
+
     call <SID>X( "phpStatement", [s:dark_yellow, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpFunctions", [s:dark_violet, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpSpecialFunction", [s:dark_violet, s:light_fg], [], "" )  " class structure
-    
+
     call <SID>X( "phpStructure", [s:dark_blue, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpDefineClassName", [s:dark_cyan, s:light_fg], [], "" )
     call <SID>X( "phpDefineClassImplementsName", [s:dark_cyan, s:light_fg], [], "" )
-    
+
     call <SID>X( "phpArrayParens", [s:dark_orange, s:light_fg], [], "" )  " class structure
     call <SID>X( "phpArrayPair", [s:dark_orange, s:light_fg], [], "" )
 
     call <SID>X( "phpType", [s:dark_orange, s:light_fg], [], "" )
     "call <SID>X( "phpMagicConstant", [s:dark_orange, s:light_fg], [], "" )
     "call <SID>X( "phpCoreConstant", [s:dark_orange, s:light_fg], [], "" )
-    
+
     call <SID>X( "phpStorageClass2", [s:dark_orange, s:light_fg], [], "" )  " public, static
     call <SID>X( "phpDefineMethod", [s:dark_orange, s:light_fg], [], "" )  " function
     call <SID>X( "phpDefineMethodName", [s:dark_fg, s:light_fg], [], "" )
@@ -562,7 +591,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "phpSemicolon", [s:dark_blue, s:light_grey1], [], "" )
     "call <SID>X( "phpSemicolon", [s:dark_blue, s:light_grey1], [], "" )
     "call <SID>X( "phpSemicolon", [s:dark_blue, s:light_grey1], [], "" )
-    
+
     " delete functions
     delf <SID>X
     delf <SID>rgb
