@@ -15,7 +15,13 @@ alias ls='ls -G'
 alias celar='clear'
 alias cealr='clear'
 
+# Dashboard aliases
+alias modules='cd /Users/averted/pressly/pressly-dashboard/webapp/src/modules'
+alias model='cd /Users/averted/pressly/pressly-dashboard/webapp/src/modules/app/models'
+alias app='cd /Users/averted/pressly/pressly-dashboard/webapp/src/app'
+
 # LS Colors
+export CLICOLOR=1
 export LSCOLORS=exFxCxDxbxegedabagacab
 
 # Deafult editor
@@ -54,7 +60,7 @@ parse_remote_state() {
 }
 
 prompt() {
-  PS1="${GREEN}[$(parse_git_branch)$(parse_remote_state)]${COLOREND} \h:${BLUE}\W${COLOREND} $ "
+  PS1="${GREEN}[$(parse_git_branch)$(parse_remote_state)]${COLOREND} \h:${BLUE}\W$ ${COLOREND}"
 }
 
 PROMPT_COMMAND=prompt
