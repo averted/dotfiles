@@ -16,9 +16,9 @@ alias celar='clear'
 alias cealr='clear'
 
 # Dashboard aliases
-alias modules='cd /Users/averted/pressly/pressly-dashboard/webapp/src/modules'
-alias model='cd /Users/averted/pressly/pressly-dashboard/webapp/src/modules/app/models'
-alias app='cd /Users/averted/pressly/pressly-dashboard/webapp/src/app'
+alias modules="cd $HOME/pressly/pressly-dashboard/webapp/src/modules"
+alias models="cd $HOME/pressly/pressly-dashboard/webapp/src/modules/app/models"
+alias app="cd $HOME/pressly/pressly-dashboard/webapp/src/app"
 
 # LS Colors
 export CLICOLOR=1
