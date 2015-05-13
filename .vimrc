@@ -48,6 +48,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
+au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
 
 " Status Line
 set statusline=%F\ %h%m%r%w\ %P%=

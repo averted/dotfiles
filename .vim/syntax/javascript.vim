@@ -184,6 +184,13 @@ syn match javaScriptParens       "[()]"
 syn match javaScriptOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
 syn match javaScriptEndColons    "[;,]"
 syn match javaScriptLogicSymbols "\(&&\)\|\(||\)"
+
+" ES6 String Interpolation
+syntax match  javaScriptTemplateDelim    "\${\|}" contained
+syntax region javaScriptTemplateVar      start=+${+ end=+}+                        contains=javaScriptTemplateDelim keepend
+syntax region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
+
+
 "}}}
 " JavaScriptFold Function {{{
 

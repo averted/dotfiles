@@ -1,10 +1,13 @@
 # PATH
 export PATH="/usr/local/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/usr/local/go/bin" # Add go to PATH
+export PATH="$PATH:/usr/local/go/bin"
 
 # GOPATH
-export PATH="$PATH:$HOME/gocode/bin" # Add go to PATH
-export GOPATH="$HOME/gocode" # Add GOPATH
+export PATH="$PATH:$HOME/gocode/bin"
+export GOPATH="$HOME/gocode"
+
+# POSTGRES
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 
 # set .bash_history line limit
 export HISTFILESIZE=

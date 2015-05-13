@@ -464,6 +464,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     call <SID>X( "javaScriptHtmlEvents", [s:dark_yellow, s:light_violet], [], "" )
 
+    call <SID>X( "javaScriptTemplateDelim", [s:dark_yellow, s:light_white], [], "" )
+    call <SID>X( "javaScriptTemplateVar", [s:dark_yellow, s:light_white], [], "" )
+    call <SID>X( "javaScriptTemplateString", [s:dark_green, s:light_white], [], "" )
+
     "" CoffeeScript Highlighting
     call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
     call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
