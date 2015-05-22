@@ -21,6 +21,9 @@ set shiftwidth=2
 set incsearch           " auto-move to first found search member
 set hlsearch            " highlight all search matches
 
+" copy selected to buffer
+command! -range W :<line1>,<line2>w !pbcopy
+
 " return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -57,7 +60,7 @@ set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
 set statusline+=%{&fileformat}]                                     " file format
 
-syntax enable
+syntax on
 colorscheme averted
 
 " Functions
