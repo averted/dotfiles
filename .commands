@@ -5,7 +5,7 @@ chmod 755 # DIR     -rwxr-xr-x
 chmod 644 # FILE    -
 
 # change all dirs to 755
-find .dir -type d -exec chmod 755 {} \;
+find . -type d -exec chmod 755 {} \;
 
 # change all files to 644 under a directory
-find .dir -type f -exec chmod 644 {} \;
+find . -type f -exec chmod 644 {} \;

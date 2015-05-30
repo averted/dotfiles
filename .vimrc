@@ -49,6 +49,7 @@ let g:ctrlp_working_path_mode = 0                       "CtrlP working path fix
 set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip     "Skip the following dirs
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
