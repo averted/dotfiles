@@ -1,8 +1,5 @@
-# PATH
-export PATH="/usr/local/bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/usr/local/go/bin"
-
 # GOPATH
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/gocode/bin"
 export GOPATH="$HOME/gocode"
 
@@ -19,9 +16,9 @@ alias celar='clear'
 alias cealr='clear'
 
 # Dashboard aliases
-alias modules="cd $HOME/pressly/pressly-dashboard/webapp/src/modules"
-alias models="cd $HOME/pressly/pressly-dashboard/webapp/src/modules/app/models"
-alias app="cd $HOME/pressly/pressly-dashboard/webapp/src/app"
+alias modules="cd $HOME/pressly/dashboard/webapp/src/modules"
+alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
+alias app="cd $HOME/pressly/dashboard/webapp/src/app"
 
 # LS Colors
 export CLICOLOR=1

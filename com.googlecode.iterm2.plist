@@ -84,41 +84,18 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSColorPanelMode</key>
-	<string>6</string>
-	<key>NSColorPickerSlidersDefaults</key>
-	<string>1</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~</string>
+	<string>~/git/configs</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
 	<string></string>
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
-	<key>NSTableView Columns KeyBingingTable</key>
-	<array>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATCG
-		</data>
-		<string>198</string>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
-		hAErATGG
-		</data>
-		<string>302</string>
-	</array>
-	<key>NSTableView Hidden Columns KeyBingingTable</key>
-	<array/>
-	<key>NSTableView Sort Ordering KeyBingingTable</key>
-	<array/>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>486 352 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>316 303 924 485 0 0 1440 878 </string>
+	<string>269 127 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 70 1440 808 0 0 1440 878 </string>
+	<string>0 69 1440 808 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1572,10 +1549,12 @@
 			<string>/Users/averted</string>
 		</dict>
 	</array>
+	<key>NoSyncNeverRemindPrefsChangesCopy</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>453216858.18955702</real>
+	<real>454683621.05729502</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>453935574.43323398</real>
+	<real>454683621.05734599</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1622,7 +1601,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/averted/git/configs</string>
+	<string>/Users/av/git/configs</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -1638,7 +1617,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-21T21:12:44Z</date>
+	<date>2015-05-30T12:59:55Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -4752,7 +4731,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>0.99503803253173828</real>
+													<real>0.99765098094940186</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -4765,7 +4744,7 @@
 												<key>Rows</key>
 												<integer>22</integer>
 												<key>Working Directory</key>
-												<string>/Users/averted/pressly/pressly-dashboard/webapp</string>
+												<string>/Users/av/pressly/dashboard</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -5504,7 +5483,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>0.99503803253173828</real>
+													<real>0.99765098094940186</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -5517,7 +5496,7 @@
 												<key>Rows</key>
 												<integer>20</integer>
 												<key>Working Directory</key>
-												<string>/Users/averted/pressly/ng-pressilla</string>
+												<string>/Users/av/pressly/ng-pressilla</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -6276,7 +6255,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>0.99503803253173828</real>
+													<real>0.99765098094940186</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -6289,7 +6268,7 @@
 												<key>Rows</key>
 												<integer>22</integer>
 												<key>Working Directory</key>
-												<string>/Users/averted/gocode/src/github.com/pressly/reeler</string>
+												<string>/Users/av/gocode/src/github.com/pressly/reeler</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -7028,7 +7007,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>0.99503803253173828</real>
+													<real>0.99765098094940186</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -7041,7 +7020,7 @@
 												<key>Rows</key>
 												<integer>20</integer>
 												<key>Working Directory</key>
-												<string>/Users/averted/pressly/pressly.com/pressly.com</string>
+												<string>/Users/av/pressly/papi.js</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -7102,7 +7081,7 @@
 				<key>X Origin</key>
 				<real>0.0</real>
 				<key>Y Origin</key>
-				<real>70</real>
+				<real>69</real>
 			</dict>
 		</array>
 		<key>4x PAPI</key>
