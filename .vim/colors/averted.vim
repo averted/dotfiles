@@ -13,7 +13,8 @@
 " dark-bg colors
 let s:dark_fg              = "d7d7d7"
 let s:dark_bg              = "292929"
-let s:dark_red             = "df4320"  " f22c40
+let s:dark_red             = "df4320"  " f22c40 bright red
+let s:dark_pink            = "df205d"
 let s:dark_blue            = "4193a0"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "45abb1"  " 3e999f / 00ad9c / 159393
 let s:dark_orange          = "ff7302"
@@ -443,8 +444,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "javaScriptDocTags", [s:dark_grey, s:light_white], [], "" )
     call <SID>X( "javaScriptDocParam", [s:dark_grey, s:light_white], [], "" )
     call <SID>X( "javaScriptFuncKeyword", [s:dark_cyan, s:light_white], [], "" )
-    call <SID>X( "javaScriptFuncDef", [s:dark_violet, s:light_white], [], "" )
-    call <SID>X( "javaScriptFuncArg", [s:dark_fg, s:light_white], [], "" )
+    call <SID>X( "javaScriptFuncDef", [s:dark_pink, s:light_white], [], "" )
+    call <SID>X( "javaScriptFuncArg", [s:dark_yellow, s:light_white], [], "" )
     call <SID>X( "javaScriptEventListenerKeywords", [s:dark_fg, s:light_white], [], "" )
     call <SID>X( "javaScriptOpSymbols", [s:dark_fg, s:light_white], [], "" )
     call <SID>X( "javaScriptHtmlElemProperties", [s:dark_fg, s:light_white], [], "" )
