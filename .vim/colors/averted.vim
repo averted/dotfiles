@@ -13,8 +13,8 @@
 " dark-bg colors
 let s:dark_fg              = "d7d7d7"
 let s:dark_bg              = "292929"
-let s:dark_red             = "df4320"  " f22c40 bright red
-let s:dark_pink            = "df205d"
+let s:dark_red             = "cd0000"  " f22c40 bright red
+let s:dark_pink            = "e2366d"
 let s:dark_blue            = "4193a0"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "45abb1"  " 3e999f / 00ad9c / 159393
 let s:dark_orange          = "ff7302"
@@ -434,7 +434,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "javaScriptMember", [s:dark_darkerfg, s:light_purple], [], "" )
     "call <SID>X( "javaScriptGlobal", [s:dark_darkerfg, s:light_orange], [], "" )
     "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
-    "call <SID>X( "javaScriptNull", [s:dark_grey, s:light_cyan], [], "" )
 
     call <SID>X( "javaScriptFunction", [s:dark_yellow, s:light_fg], [], "" )
     call <SID>X( "javaScriptParens", [s:dark_yellow, s:light_white], [], "" )
@@ -471,6 +470,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "javaScriptTemplateString", [s:dark_green, s:light_white], [], "" )
     call <SID>X( "javaScriptDotAccess", [s:dark_fg, s:light_white], [], "" )
 
+    call <SID>X( "javaScriptWebAPI", [s:dark_fg, s:light_white], [], "" )
+
     "" CoffeeScript Highlighting
     call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
     call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
@@ -487,8 +488,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
     call <SID>X( "stylusVariable", [s:dark_grey1, s:light_grey1], [], "" )
     call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_grey1], [], "" )
-    call <SID>X( "stylusClass", [s:dark_blue, s:light_blue], [], "" )
-    call <SID>X( "stylusClassChar", [s:dark_blue, s:light_blue], [], "" )
+    call <SID>X( "stylusClass", [s:dark_cyan, s:light_blue], [], "" )
+    call <SID>X( "stylusClassChar", [s:dark_cyan, s:light_blue], [], "" )
     call <SID>X( "stylusProperty", [s:dark_orange, s:light_blue], [], "" )
 
     call <SID>X( "cssIdentifier", [s:dark_blue, s:light_blue], [], "" )

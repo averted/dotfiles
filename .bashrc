@@ -11,6 +11,7 @@ export HISTFILESIZE=
 export HISTSIZE=25000
 
 # LS alias
+alias ..='cd ..'
 alias ls='ls -G'
 alias celar='clear'
 alias cealr='clear'
