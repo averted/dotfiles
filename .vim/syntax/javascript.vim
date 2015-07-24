@@ -36,6 +36,7 @@ hi link shebang Comment
 
 " Statement Keywords {{{
 syntax keyword javaScriptSource         import export
+syntax keyword javaScriptAsync          async await
 syntax keyword javaScriptIdentifier     arguments this let var void yield
 syntax keyword javaScriptOperator       delete new instanceof typeof
 syntax keyword javaScriptBoolean        true false

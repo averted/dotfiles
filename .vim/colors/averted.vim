@@ -435,6 +435,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "javaScriptGlobal", [s:dark_darkerfg, s:light_orange], [], "" )
     "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
 
+    call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
+
     call <SID>X( "javaScriptFunction", [s:dark_yellow, s:light_fg], [], "" )
     call <SID>X( "javaScriptParens", [s:dark_yellow, s:light_white], [], "" )
     call <SID>X( "javaScriptBraces", [s:dark_yellow, s:light_white], [], "" )
