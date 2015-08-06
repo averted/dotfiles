@@ -20,6 +20,8 @@ alias cealr='clear'
 alias modules="cd $HOME/pressly/dashboard/webapp/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias app="cd $HOME/pressly/dashboard/webapp/src/app"
+alias mobile-compose="cd $HOME/pressly/mobile-app/app/scenes/Main/views/contents/compose"
+alias mobile-signup="cd $HOME/pressly/mobile-app/app/scenes/Signup/scenes/org"
 
 # LS Colors
 export CLICOLOR=1
