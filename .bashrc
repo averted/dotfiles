@@ -12,7 +12,10 @@ export HISTSIZE=25000
 
 # LS alias
 alias ..='cd ..'
-alias ls='ls -G'
+alias ls='ls -laG'
+alias c='clear'
+alias cl='clear'
+alias claer='clear'
 alias celar='clear'
 alias cealr='clear'
 
@@ -20,8 +23,13 @@ alias cealr='clear'
 alias modules="cd $HOME/pressly/dashboard/webapp/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias app="cd $HOME/pressly/dashboard/webapp/src/app"
-alias mobile-compose="cd $HOME/pressly/mobile-app/app/scenes/Main/views/contents/compose"
-alias mobile-signup="cd $HOME/pressly/mobile-app/app/scenes/Signup/scenes/org"
+
+# Mobile App aliases
+alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main/views"
+alias m-signup="cd $HOME/pressly/mobile-app/app/scenes/Signup/scenes"
+
+# Git
+alias gti="git"
 
 # LS Colors
 export CLICOLOR=1
