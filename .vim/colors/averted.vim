@@ -297,7 +297,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
     "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
 
-    call <SID>X( "VertSplit", [s:dark_unknown, s:light_unknown],  [s:dark_cyan, s:light_cyan], "inverse" )  " the column separating vertically split windows
+    call <SID>X( "VertSplit", [s:dark_black, s:light_unknown],  [s:dark_orange, s:light_cyan], "" )  " the column separating vertically split windows
 
     call <SID>X( "Visual", [s:dark_black, s:light_white], [s:dark_orange, s:light_blue], "")  " visual mode selection
     call <SID>X( "MatchParen", [s:dark_black, s:light_bg], [s:dark_orange, s:light_blue], "")  " The character under the cursor or just before it, if it is a paired bracket, and its match.
@@ -305,7 +305,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "Directory", [s:dark_blue, s:light_blue], [], "" )  " directory names (and other special names in listings
 
     call <SID>X( "Folded", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "")  " line used for closed folds
-    call <SID>X( "FoldColumn", [s:dark_unknown, s:light_unknown], [], "")  " see 'foldcolumn'
+    call <SID>X( "FoldColumn", [s:dark_orange, s:light_unknown], [s:dark_bg, s:light_grey1], "")  " see 'foldcolumn'
 
     call <SID>X( "WarningMsg", [s:dark_orange, s:light_black], [], "" ) " warning messages
     call <SID>X( "ErrorMsg", [s:dark_black, s:light_bg], [s:dark_orange, s:light_grey], "")  " error messages on the command line
@@ -318,10 +318,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     call <SID>X( "Linenr", [s:dark_orange, s:light_grey4], [], "" )  " line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
 
-    "call <SID>X( "DiffAdd", [s:dark_bg, s:light_bg], [s:dark_cyan, s:light_green], "")  " diff mode: Added line
-    "call <SID>X( "DiffDelete", [s:dark_bg, s:light_bg], [s:dark_red, s:light_lightred], "" )  " diff mode: Deleted line
-    "call <SID>X( "DiffChange", [s:dark_bg, s:light_bg], [s:dark_paleblue, s:light_gold], "" )  " diff mode: Changed line
-    "call <SID>X( "DiffText", [s:dark_bg, s:light_bg], [s:dark_red, s:light_lightred], "none" )  " diff mode: Changed text within a changed line
+    call <SID>X( "DiffAdd", [s:dark_bg, s:light_bg], [s:dark_green, s:light_green], "")  " diff mode: Added line
+    call <SID>X( "DiffDelete", [s:dark_bg, s:light_bg], [s:dark_red, s:light_red], "" )  " diff mode: Deleted line
+    call <SID>X( "DiffChange", [s:dark_bg, s:light_bg], [s:dark_blue, s:light_gold], "" )  " diff mode: Changed line
+    call <SID>X( "DiffText", [s:dark_bg, s:light_bg], [s:dark_orange, s:light_red], "" )  " diff mode: Changed text within a changed line
 
     if version >= 700
 
