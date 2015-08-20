@@ -61,6 +61,9 @@ set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
 set statusline+=%{&fileformat}]                                     " file format
 
+" pathogen
+execute pathogen#infect()
+
 syntax on
 colorscheme averted
 
