@@ -24,6 +24,7 @@ let s:dark_gold            = "c3a922"
 let s:dark_violet          = "6666ea"
 let s:dark_magenta         = "bc27f2"
 let s:dark_grey            = "747474"  " 68615e
+let s:dark_grey0           = "353535"
 let s:dark_grey1           = "848484"
 let s:dark_grey2           = "9c9491"
 let s:dark_grey3           = "a8a19f"  " 888a85
@@ -322,6 +323,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "DiffDelete", [s:dark_bg, s:light_bg], [s:dark_red, s:light_red], "" )  " diff mode: Deleted line
     call <SID>X( "DiffChange", [s:dark_bg, s:light_bg], [s:dark_blue, s:light_gold], "" )  " diff mode: Changed line
     call <SID>X( "DiffText", [s:dark_bg, s:light_bg], [s:dark_orange, s:light_red], "" )  " diff mode: Changed text within a changed line
+    call <SID>X( "ColorColumn", [], [s:dark_grey0, s:light_red], "" )  " used for the columns set with 'colorcolumn'
 
     if version >= 700
 
@@ -342,7 +344,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     if version >= 703
 
-    "call <SID>X( "ColorColumn", [], [s:dark_lighterbg1, s:light_grey4], "" )  " used for the columns set with 'colorcolumn'
 
     "call <SID>X( "Conceal", [s:dark_lighterbg2, s:light_grey2], [s:dark_bg, s:light_bg], "" )  " placeholder characters substituted for concealed text (see 'conceallevel')
 
@@ -478,6 +479,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
     call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeNumber", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
+    call <SID>X( "coffeeFloat", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_blue], [s:dark_bg, s:light_bg], "" )
     call <SID>X( "coffeeSpecialOp", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "" )
