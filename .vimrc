@@ -7,6 +7,7 @@ set smarttab            " indent start of line based on context
 set history=50          " keep 50 lines of command line history
 set expandtab           " replace <TAB> with spaces
 set laststatus=2        " always show statusline
+"set colorcolumn=80      " show column at 80 char limit
 
 set nobackup
 set noswapfile
