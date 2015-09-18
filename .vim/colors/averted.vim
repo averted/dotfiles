@@ -468,8 +468,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     call <SID>X( "javaScriptHtmlEvents", [s:dark_yellow, s:light_violet], [], "" )
 
-    call <SID>X( "javaScriptTemplateDelim", [s:dark_orange, s:light_white], [], "" )
     call <SID>X( "javaScriptTemplateVar", [s:dark_yellow, s:light_white], [], "" )
+    call <SID>X( "javaScriptTemplateDelim", [s:dark_orange, s:light_white], [], "" )
     call <SID>X( "javaScriptTemplateString", [s:dark_green, s:light_white], [], "" )
     call <SID>X( "javaScriptDotAccess", [s:dark_fg, s:light_white], [], "" )
 

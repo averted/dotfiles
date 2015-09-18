@@ -18,6 +18,7 @@ alias cl='clear'
 alias claer='clear'
 alias celar='clear'
 alias cealr='clear'
+alias cealr='clear'
 
 # Dashboard aliases
 alias modules="cd $HOME/pressly/dashboard/webapp/src/modules"
@@ -27,6 +28,8 @@ alias app="cd $HOME/pressly/dashboard/webapp/src/app"
 # Mobile App aliases
 alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main/views"
 alias m-signup="cd $HOME/pressly/mobile-app/app/scenes/Signup/scenes"
+
+alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 
 # Git
 alias gti="git"
