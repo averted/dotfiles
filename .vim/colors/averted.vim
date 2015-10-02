@@ -23,13 +23,16 @@ let s:dark_yellow          = "c3b622"
 let s:dark_gold            = "c3a922"
 let s:dark_violet          = "6666ea"
 let s:dark_magenta         = "bc27f2"
-let s:dark_grey            = "747474"  " 68615e
-let s:dark_grey0           = "353535"
-let s:dark_grey1           = "848484"
-let s:dark_grey2           = "9c9491"
-let s:dark_grey3           = "a8a19f"  " 888a85
+let s:dark_grey_comment    = "747474"  " 68615e
+let s:dark_grey0           = "848484"
+let s:dark_grey1           = "919191"
+let s:dark_grey2           = "9e9e9e"
+let s:dark_grey3           = "aaaaaa"
+let s:dark_grey4           = "b7b7b7"
+let s:dark_grey5           = "c4c4c4"
 let s:dark_black           = "000000"
 let s:dark_unknown         = "bc27f2"  " magenta
+let s:dark_test            = "c6708c"  " magenta
 
 " light-bg colors
 let s:light_fg              = "505050"
@@ -357,9 +360,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Constant", [s:dark_fg, s:light_green], [], "" )  " any constant
   call <SID>X( "String", [s:dark_green, s:light_red], [], "" )   " a string constant: 'this is a string'
   "call <SID>X( "Character", [s:dark_plum, s:light_green], [], "" )  " a character constant: 'c', '\n'
-  "call <SID>X( "Number", [s:dark_grey, s:light_grey1], [], "" )  " a number constant: 234, 0xff
-  "call <SID>X( "Boolean", [s:dark_grey, s:light_green], [], "" )  " a boolean constant: TRUE, false
-  "call <SID>X( "Float", [s:dark_grey, s:light_grey1], [], "" )  " a floating point constant: 2.3e10
   call <SID>X( "Identifier", [s:dark_orange, s:light_black], [], "" )  " any variable name
   call <SID>X( "Identifiero", [s:dark_unknown, s:light_fg], [], "none")
   call <SID>X( "Function", [s:dark_blue, s:light_blue], [], "" )  " function name (also: methods for classes)
@@ -367,7 +367,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Conditional",[s:dark_orange, s:light_blue], [], "" )  " if, then, else, endif, switch, etc
   "call <SID>X( "Label", [s:dark_pink, s:light_purple], [], "" )  "  case, default, etc.
   "call <SID>X( "Repeat", [s:dark_orange, s:light_orange], [], "" )  " for, do, while, etc.
-  call <SID>X( "Comment", [s:dark_grey, s:light_grey4], [], "")  " any comment
+  call <SID>X( "Comment", [s:dark_grey_comment, s:light_grey4], [], "")  " any comment
   "call <SID>X( "Operator", [s:dark_cyan, s:light_cyan], [], "none" )  " 'sizeof', '+', '*', etc.
   "call <SID>X( "Keyword", [s:dark_fg, s:light_fg], [], "" )  " any other keyword
   "call <SID>X( "Exception", [s:dark_red, s:light_lightred], [], "" )  " try, catch, throw
@@ -384,7 +384,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Underlined", [s:dark_unknown, s:light_fg], [], "underline" )  " text that stands out, HTML links
   call <SID>X( "Title", [s:dark_orange, s:light_black], [], "bold" )
   call <SID>X( "Error", [], [s:dark_red, s:light_red], "none" )  " any erroneous construct
-  call <SID>X( "Todo", [s:dark_black, s:light_white], [s:dark_grey, s:light_grey4], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+  call <SID>X( "Todo", [s:dark_black, s:light_white], [s:dark_grey_comment, s:light_grey4], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
   "" Vimrc Highlighting
   call <SID>X( "vimCommand", [s:dark_blue, s:light_blue], [], "none" )
@@ -411,6 +411,36 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jadeBlockExpansionChar", [s:dark_fg, s:light_black], [], "" )
   call <SID>X( "jadeScriptStatement", [s:dark_orange, s:light_green], [], "" )
 
+  "" JS Highlighting
+  call <SID>X( "jsNull", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsNumber", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsOperator", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
+
+  call <SID>X( "jsNoise", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsObjectKey", [s:dark_fg, s:light_fg], [], "" )
+
+  call <SID>X( "jsFunction", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsFuncCall", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsFuncName", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsArrowFunction", [s:dark_cyan, s:light_fg], [], "" )
+
+  call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsBooleanFalse", [s:dark_orange, s:light_fg], [], "" )
+
+  call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsClass", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsThis", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
+
+  call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
+
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
 
@@ -419,8 +449,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "javaScriptBraces", [s:dark_yellow, s:light_white], [], "" )
   call <SID>X( "javaScriptEndColons", [s:dark_yellow, s:light_white], [], "" )
 
-  call <SID>X( "javaScriptDocTags", [s:dark_grey, s:light_white], [], "" )
-  call <SID>X( "javaScriptDocParam", [s:dark_grey, s:light_white], [], "" )
+  call <SID>X( "javaScriptDocTags", [s:dark_grey_comment, s:light_white], [], "" )
+  call <SID>X( "javaScriptDocParam", [s:dark_grey_comment, s:light_white], [], "" )
   call <SID>X( "javaScriptFuncKeyword", [s:dark_cyan, s:light_white], [], "" )
   call <SID>X( "javaScriptFuncDef", [s:dark_pink, s:light_white], [], "" )
   call <SID>X( "javaScriptFuncArg", [s:dark_pink, s:light_white], [], "" )
