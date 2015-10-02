@@ -20,6 +20,14 @@ alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
 
+l() {
+  if [[ $@ == "s-la" || $@ == "s-l" ]]; then
+    command ls -la
+  else
+    command ls "$@"
+  fi
+}
+
 # Dashboard aliases
 alias modules="cd $HOME/pressly/dashboard/webapp/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
