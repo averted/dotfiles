@@ -45,11 +45,15 @@ map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
 " map <Space> :CtrlP<CR>
 
+" vim-javascript
+let g:javascript_enable_domhtmlcss = 1
+
 " CtrlP
 let g:ctrlp_working_path_mode = 0                       "CtrlP working path fix
 set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip     "Skip the following dirs
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+" filetypes
 au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
@@ -68,19 +72,6 @@ execute pathogen#infect()
 syntax on
 colorscheme averted
 
-" Functions
-function! GenerateHTML()
-  :exe "normal i
-    \<!doctype html>\<CR>
-    \<html>\<CR>\<Tab>
-    \<head>\<CR>\<Tab>
-    \<title>Title</title>\<CR>\<BS>
-    \</head>\<CR>
-    \<body>\<CR>\<Tab>Body\<CR>\<BS>
-    \</body>\<CR>\<BS>
-    \</html>"
-endfunction
-
 function! Retab()
   :exe "set noexpandtab"
   :exe "set tabstop=4"
@@ -92,5 +83,3 @@ function! Retab()
   :exe "set expandtab"
   :exe "retab!"
 endfunction
-
-command! H call GenerateHTML()
