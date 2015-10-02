@@ -26,8 +26,8 @@ alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias app="cd $HOME/pressly/dashboard/webapp/src/app"
 
 # Mobile App aliases
-alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main/views"
-alias m-signup="cd $HOME/pressly/mobile-app/app/scenes/Signup/scenes"
+alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main"
+alias m-compose="cd $HOME/pressly/mobile-app/app/scenes/Main/compose"
 
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 
