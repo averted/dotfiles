@@ -1,0 +1,31 @@
+[user]
+	name = averted
+	email = #email
+
+[core]
+	editor = vim
+  quotepath = false
+  # http://stackoverflow.com/questions/136178/git-diff-handling-long-lines
+  pager = less -r
+
+[mergetool]
+  keepBackup = true
+
+[push]
+  default = simple # [ matching | simple ]
+
+[color]
+  ui = auto
+  interactive = auto
+
+[diff "exif"]
+  textconv = exif
+
+[alias]
+  s = status
+  d = diff
+  l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  ll = log --stat --abbrev-commit
+  lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
