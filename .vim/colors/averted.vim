@@ -414,6 +414,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "" JS Highlighting
   call <SID>X( "jsNull", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsNumber", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsFloat", [s:dark_blue, s:light_fg], [], "" )
+
   call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
