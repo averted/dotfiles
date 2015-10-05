@@ -413,13 +413,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   "" JS Highlighting
   call <SID>X( "jsNull", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsUndefined", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsNumber", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsFloat", [s:dark_blue, s:light_fg], [], "" )
 
   call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "jsOperator", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
 
   call <SID>X( "jsNoise", [s:dark_fg, s:light_fg], [], "" )
@@ -427,8 +428,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsFunction", [s:dark_cyan, s:light_fg], [], "" )
   call <SID>X( "jsFuncCall", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsFuncName", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsArrowFunction", [s:dark_cyan, s:light_fg], [], "" )
+
+  call <SID>X( "jsFuncName", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsFuncBraces", [s:dark_cyan, s:light_fg], [], "" )
 
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
@@ -442,6 +446,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsHtmlEvents", [s:dark_violet, s:light_fg], [], "" )
 
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
