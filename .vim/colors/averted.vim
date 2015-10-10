@@ -417,6 +417,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsNumber", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsFloat", [s:dark_blue, s:light_fg], [], "" )
 
+  call <SID>X( "jsParen", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
@@ -431,6 +432,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsArrowFunction", [s:dark_cyan, s:light_fg], [], "" )
 
   call <SID>X( "jsFuncName", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsFunctionKey", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsFuncBraces", [s:dark_cyan, s:light_fg], [], "" )
 
@@ -441,7 +443,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsClass", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsThis", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsThis", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
