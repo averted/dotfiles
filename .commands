@@ -2,7 +2,7 @@
 PS1='\h:\W \u$ '
 
 chmod 755 # DIR     -rwxr-xr-x
-chmod 644 # FILE    -
+chmod 644 # FILE    -rw-r--r--
 
 # change all dirs to 755
 find . -type d -exec chmod 755 {} \;
