@@ -41,6 +41,7 @@ alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip 
 
 # Git
 alias gti="git"
+alias gits="git s"
 
 # LS Colors
 export CLICOLOR=1
