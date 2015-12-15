@@ -118,7 +118,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>516 224 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2560 201 2560 1216 -2560 0 2560 1417 </string>
+	<string>0 55 1440 822 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -1579,7 +1579,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>454683621.05729502</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>470688031.53031301</real>
+	<real>471803445.36224598</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1644,7 +1644,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-01T18:35:58Z</date>
+	<date>2015-12-14T16:30:43Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -3267,7 +3267,7 @@
 									<array>
 										<dict>
 											<key>Is Active</key>
-											<true/>
+											<false/>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -3514,7 +3514,7 @@
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
-													<real>1</real>
+													<real>0.89999997615814209</real>
 													<key>Idle Code</key>
 													<integer>0</integer>
 													<key>Initial Text</key>
@@ -3822,7 +3822,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Monaco 12</string>
+													<string>Hack 12</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -3832,7 +3832,7 @@
 													<key>Rows</key>
 													<integer>47</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -4266,7 +4266,7 @@
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
-													<real>1</real>
+													<real>0.89999997615814209</real>
 													<key>Idle Code</key>
 													<integer>0</integer>
 													<key>Initial Text</key>
@@ -4574,7 +4574,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Monaco 12</string>
+													<string>Hack 12</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -4584,7 +4584,7 @@
 													<key>Rows</key>
 													<integer>47</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -4791,7 +4791,7 @@
 									<array>
 										<dict>
 											<key>Is Active</key>
-											<false/>
+											<true/>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -5038,7 +5038,7 @@
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
-													<real>1</real>
+													<real>0.89999997615814209</real>
 													<key>Idle Code</key>
 													<integer>0</integer>
 													<key>Initial Text</key>
@@ -5346,7 +5346,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Monaco 12</string>
+													<string>Hack 12</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -5356,7 +5356,7 @@
 													<key>Rows</key>
 													<integer>47</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -5525,7 +5525,7 @@
 												<key>Rows</key>
 												<integer>21</integer>
 												<key>Working Directory</key>
-												<string>/Users/av/gocode/src/github.com/pressly/reeler</string>
+												<string>/Users/av/gocode/src/github.com/pressly/api</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -5790,7 +5790,7 @@
 													<key>Hide After Opening</key>
 													<false/>
 													<key>Horizontal Spacing</key>
-													<real>1</real>
+													<real>0.89999997615814209</real>
 													<key>Idle Code</key>
 													<integer>0</integer>
 													<key>Initial Text</key>
@@ -6098,7 +6098,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Monaco 12</string>
+													<string>Hack 12</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -6108,7 +6108,7 @@
 													<key>Rows</key>
 													<integer>47</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
