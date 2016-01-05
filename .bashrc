@@ -30,9 +30,11 @@ l() {
 
 # Dashboard aliases
 alias ui="cd $HOME/pressly/ui-components"
+alias api="cd $HOME/pressly/api"
 alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
 alias press="cd $HOME/pressly/ng-pressilla/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
+alias postman="cd $HOME/pressly/postman"
 
 # Mobile App aliases
 alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main"
