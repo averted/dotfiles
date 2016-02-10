@@ -6,11 +6,7 @@ export GOPATH="$HOME/gocode"
 # POSTGRES
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 
-# set .bash_history line limit
-export HISTFILESIZE=
-export HISTSIZE=25000
-
-# LS alias
+# General alias
 alias ..='cd ..'
 alias ls='ls -laG'
 alias c='clear'
@@ -19,6 +15,7 @@ alias claer='clear'
 alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
+alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 
 l() {
   if [[ $@ == "s-la" || $@ == "s-l" ]]; then
@@ -28,7 +25,24 @@ l() {
   fi
 }
 
-# Dashboard aliases
+# Git
+alias gti="git"
+alias gits="git s"
+
+# AWS EC2
+ec2() {
+  if [[ $1 == "-d" ]]; then
+    command aws ec2 describe-instances
+  elif [[ $1 == "-s" || $1 == "-start" ]]; then
+    command aws ec2 start-instances --instance-ids=$2
+  elif [[ $1 == "-stop" ]]; then
+    command aws ec2 stop-instances --instance-ids=$2
+  else
+    command aws ec2
+  fi
+}
+
+# Pressly aliases
 alias ui="cd $HOME/pressly/ui-components"
 alias api="cd $HOME/pressly/api"
 alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
@@ -36,19 +50,13 @@ alias press="cd $HOME/pressly/ng-pressilla/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias postman="cd $HOME/pressly/postman"
 
-# Mobile App aliases
-alias m-main="cd $HOME/pressly/mobile-app/app/scenes/Main"
-alias m-compose="cd $HOME/pressly/mobile-app/app/scenes/Main/compose"
-
-alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
-
-# Git
-alias gti="git"
-alias gits="git s"
-
 # LS Colors
 export CLICOLOR=1
 export LSCOLORS=exFxCxDxbxegedabagacab
+
+# set .bash_history line limit
+export HISTFILESIZE=
+export HISTSIZE=25000
 
 # Deafult editor
 export EDITOR=vim
