@@ -221,12 +221,17 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>629 148 811 268 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-2451 446 605 485 -2560 0 2560 1417 </string>
+	<string>139 233 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 55 1440 822 0 0 1440 877 </string>
+	<string>-2560 59 2560 1358 -2560 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -268,20 +273,20 @@
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.23935893177986145</real>
+				<real>0.23055088520050049</real>
 				<key>Green Component</key>
-				<real>0.7900053858757019</real>
+				<real>0.77738982439041138</real>
 				<key>Red Component</key>
-				<real>0.86240106821060181</real>
+				<real>0.84809786081314087</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.81568628549575806</real>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.81568628549575806</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.82745099067687988</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
@@ -1687,7 +1692,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>454683621.05729502</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>476382224.016204</real>
+	<real>476809394.21017402</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1752,7 +1757,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-05T16:23:11Z</date>
+	<date>2016-02-10T20:51:08Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

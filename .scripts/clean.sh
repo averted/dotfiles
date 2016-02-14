@@ -2,6 +2,6 @@
 # Clean up logs / unnecessary files here
 
 cd ~/Library/Application\ Support/uTorrent
-rm -rf *.torrent
+rm -rfv *.torrent
 
 exit 0
