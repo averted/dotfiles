@@ -9,6 +9,7 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 # General alias
 alias ..='cd ..'
 alias ls='ls -laG'
+alias mv='mv -v'
 alias c='clear'
 alias cl='clear'
 alias claer='clear'
@@ -33,12 +34,14 @@ alias gits="git s"
 ec2() {
   if [[ $1 == "-d" ]]; then
     command aws ec2 describe-instances
-  elif [[ $1 == "-s" || $1 == "-start" ]]; then
+  elif [[ $1 == "-start" || $1 == "-s" ]]; then
     command aws ec2 start-instances --instance-ids=$2
   elif [[ $1 == "-stop" ]]; then
     command aws ec2 stop-instances --instance-ids=$2
+  elif [[ $1 == "-elastic" ]]; then
+    command aws ec2 describe-addresses
   else
-    command aws ec2
+    command aws ec2 $1
   fi
 }
 
