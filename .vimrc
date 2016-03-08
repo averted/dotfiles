@@ -58,6 +58,7 @@ au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / 
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
 
 " Makefile
 au FileType make setlocal noexpandtab
