@@ -9,7 +9,6 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 # General alias
 alias ..='cd ..'
 alias ls='ls -laG'
-alias mv='mv -v'
 alias c='clear'
 alias cl='clear'
 alias claer='clear'
@@ -17,6 +16,10 @@ alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
+
+# Grep
+export GREP_COLOR="91"
+alias grep='grep --color=always'
 
 l() {
   if [[ $@ == "s-la" || $@ == "s-l" ]]; then
@@ -52,6 +55,11 @@ alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
 alias press="cd $HOME/pressly/ng-pressilla/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias postman="cd $HOME/pressly/postman"
+
+# Sportling aliases
+alias sc="cd $HOME/sportling/client"
+alias ss="cd $HOME/sportling/server"
+alias sa="cd $HOME/sportling/aws"
 
 # LS Colors
 export CLICOLOR=1
