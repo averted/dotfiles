@@ -8,19 +8,42 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 
 # General alias
 alias ..='cd ..'
-alias ls='ls -laG'
+alias ls='ls -lahG'
 alias c='clear'
 alias cl='clear'
 alias claer='clear'
 alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
+alias scripts="cd $HOME/.scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 
 # Grep
 export GREP_COLOR="91"
 alias grep='grep --color=always'
 
+# Git
+alias gti="git"
+alias gits="git s"
+
+# Pressly aliases
+alias ui="cd $HOME/pressly/ui-components"
+alias api="cd $HOME/pressly/api"
+alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
+alias press="cd $HOME/pressly/ng-pressilla/src/modules"
+alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
+alias postman="cd $HOME/pressly/postman"
+
+# Sportling aliases
+alias sc="cd $HOME/sportling/client"
+alias ss="cd $HOME/sportling/server"
+alias sa="cd $HOME/sportling/aws"
+
+##
+# Utility functions.
+#
+
+# LS alias
 l() {
   if [[ $@ == "s-la" || $@ == "s-l" ]]; then
     command ls -la
@@ -28,10 +51,6 @@ l() {
     command ls "$@"
   fi
 }
-
-# Git
-alias gti="git"
-alias gits="git s"
 
 # AWS EC2
 ec2() {
@@ -48,18 +67,14 @@ ec2() {
   fi
 }
 
-# Pressly aliases
-alias ui="cd $HOME/pressly/ui-components"
-alias api="cd $HOME/pressly/api"
-alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
-alias press="cd $HOME/pressly/ng-pressilla/src/modules"
-alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
-alias postman="cd $HOME/pressly/postman"
+# Encryption
+encrypt() {
+  command openssl enc -aes-256-cbc -salt -in $1 -out $2
+}
 
-# Sportling aliases
-alias sc="cd $HOME/sportling/client"
-alias ss="cd $HOME/sportling/server"
-alias sa="cd $HOME/sportling/aws"
+decrypt() {
+  command openssl enc -d -aes-256-cbc -in $1 -out $2
+}
 
 # LS Colors
 export CLICOLOR=1
