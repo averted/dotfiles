@@ -74,7 +74,7 @@ set statusline+=%{&fileformat}]                                     " file forma
 execute pathogen#infect()
 
 syntax on
-colorscheme averted
+colorscheme averted-v2
 
 function! Retab()
   :exe "set noexpandtab"
