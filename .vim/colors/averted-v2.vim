@@ -17,6 +17,7 @@ let s:dark_red             = "e2366d"  " f22c40 bright red
 let s:dark_pink            = "ef27f2"
 let s:dark_blue            = "407ee7"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "00c7bb"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
+let s:dark_light_blue      = "36c3e2"
 let s:dark_orange          = "ff9000"  " ff9000 - orange (dark)
 let s:dark_green           = "4bbf23"  " 4bbf23 | 53d527
 let s:dark_yellow          = "c3b622"
@@ -316,7 +317,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "ModeMsg", [s:dark_orange, s:light_black], [], "none")  " 'showmode' message (e.g., '-- INSERT --')
   call <SID>X( "MoreMsg", [s:dark_orange, s:light_black], [], "")  " more-prompt
 
-  call <SID>X( "Question", [s:dark_unknown, s:light_unknown],  [], "")  " hit-enter prompt and yes/no questions
+  call <SID>X( "Question", [s:dark_red, s:light_unknown],  [], "")  " hit-enter prompt and yes/no questions
   call <SID>X( "WildMenu", [s:dark_red, s:light_red], [s:dark_bg, s:light_bg], "" )  " current match in 'wildmenu' completion
   call <SID>X( "SignColumn", [], [s:dark_red, s:light_red], "" )  " column where signs are displayed
 
@@ -392,9 +393,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   "" HTML Highlighting
   call <SID>X( "htmlTag", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "htmlTagN", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "htmlTagName", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "htmlEndTag", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "htmlArg", [s:dark_yellow, s:light_blue],[], "" )
+  call <SID>X( "htmlSpecialChar", [s:dark_red, s:light_blue],[], "" )
   "call <SID>X( "htmlScriptTag", [s:dark_paleblue, s:light_grey1], [], "" )
 
   "" Jade Highlighting
@@ -428,13 +431,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsObjectKey", [s:dark_fg, s:light_fg], [], "" )
 
-  call <SID>X( "jsFunction", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsFunction", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncName", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncCall", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncArgs", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsFunctionKey", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "jsFuncBraces", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsFuncBraces", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsArrowFunction", [s:dark_red, s:light_fg], [], "" )
 
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
@@ -443,14 +446,19 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsClass", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsPrototype", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsThis", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsClass", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsPrototype", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsSuper", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsThis", [s:dark_cyan, s:light_fg], [], "" )
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
   call <SID>X( "jsHtmlEvents", [s:dark_violet, s:light_fg], [], "" )
+
+  call <SID>X( "jsDocTags", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocType", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocTypeNoParam", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocParam", [s:dark_grey_comment, s:light_fg], [], "" )
 
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
@@ -508,6 +516,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeGlobal", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeDotAccess", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
+  call <SID>X( "coffeeSpecialOp", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
   "call <SID>X( "coffeeInterpDelim", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
 
   "" CSS Highlighting
@@ -516,8 +525,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssClassName", [s:dark_blue, s:light_blue], [], "" )
   call <SID>X( "cssPseudoClass", [s:dark_green, s:light_green], [], "" )
   call <SID>X( "cssPseudoClassId", [s:dark_green, s:light_green], [], "" )
-  call <SID>X( "cssBraces", [s:dark_orange, s:light_blue], [], "" )
   call <SID>X( "cssTagName", [s:dark_yellow, s:light_blue], [], "" )
+
+  call <SID>X( "cssNoise", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "cssParens", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssBrackets", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssParentSelector", [s:dark_red, s:light_grey1], [], "" )
 
   call <SID>X( "cssBoxProp", [s:dark_orange, s:light_black], [], "" )
   call <SID>X( "cssFontProp", [s:dark_orange, s:light_black], [], "" )
@@ -568,11 +581,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssURL", [s:dark_grey1, s:light_grey1], [], "" )
 
   "" Stylus Highlighting
+  call <SID>X( "stylusIdChar", [s:dark_orange, s:light_blue], [], "" )
   call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
-  call <SID>X( "stylusVariable", [s:dark_grey1, s:light_grey1], [], "" )
-  call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_grey1], [], "" )
-  call <SID>X( "stylusClass", [s:dark_cyan, s:light_blue], [], "" )
-  call <SID>X( "stylusClassChar", [s:dark_cyan, s:light_blue], [], "" )
+  call <SID>X( "stylusVariable", [s:dark_grey2, s:light_grey1], [], "" )
+  call <SID>X( "stylusCssAttribute", [s:dark_grey2, s:light_grey1], [], "" )
+  call <SID>X( "stylusClass", [s:dark_red, s:light_blue], [], "" )
+  call <SID>X( "stylusClassChar", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "stylusProperty", [s:dark_orange, s:light_blue], [], "" )
 
   "" PHP Highlighting
