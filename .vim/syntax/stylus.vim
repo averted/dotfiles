@@ -64,6 +64,11 @@ syn match cssValueAngle "[-+]\=\d\+\(\.\d*\)\=\(deg\|grad\|rad\|turn\)" containe
 syn match cssValueTime "+\=\d\+\(\.\d*\)\=\(ms\|s\)" contained
 syn match cssValueFrequency "+\=\d\+\(\.\d*\)\=\(Hz\|kHz\)" contained
 
+" Noise
+syn match cssNoise "\%(;\|,\)"
+syn match cssParens "\%((\|)\)"
+syn match cssBrackets "\%({\|}\)"
+syn match cssParentSelector ">"
 
 " Properties http://www.w3.org/community/webed/wiki/CSS/Properties
 " background http://www.w3.org/TR/css3-background/
