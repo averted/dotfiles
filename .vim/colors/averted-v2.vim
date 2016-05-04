@@ -446,10 +446,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsClass", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsPrototype", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsSuper", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsThis", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsPrototype", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsSuper", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsThis", [s:dark_orange, s:light_fg], [], "underline" )
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )

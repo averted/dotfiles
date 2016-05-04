@@ -45,7 +45,7 @@ alias sa="cd $HOME/sportling/aws"
 
 # LS alias
 l() {
-  if [[ $@ == "s-la" || $@ == "s-l" ]]; then
+  if [[ $@ == "s-la" || $@ == "s-al" || $@ == "s-l" ]]; then
     command ls -lahG
   else
     command ls "$@"

@@ -24,12 +24,13 @@
 [alias]
   s = status
   d = diff
+  sl = stash list
+  co = checkout
   ck = checkout
   out = checkout
   cp = cherry-pick
   l = log --color --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold green)%d%Creset %s %C(bold blue)(%cr)%Creset %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative
-  lg = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-  ll = log --stat --abbrev-commit
+  lp = log -p --color --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold green)%d%Creset %s %C(bold blue)(%cr)%Creset %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative
   llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
   purge = !git branch --merged | grep -v '\\*' | grep -v 'master' | xargs -n 1 git branch -d
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
