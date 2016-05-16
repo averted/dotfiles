@@ -439,6 +439,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsFuncBraces", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsArrowFunction", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsExceptions", [s:dark_pink, s:light_fg], [], "" )
 
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
@@ -459,6 +460,21 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDocType", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsDocTypeNoParam", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsDocParam", [s:dark_grey_comment, s:light_fg], [], "" )
+
+  "" GO Highlighting
+  "call <SID>X( "goDirective", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "goDeclaration", [s:dark_red, s:light_fg], [], "" )
+
+  call <SID>X( "goType", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goSignedInts", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goUnsignedInts", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goComplexes", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goDecimalInt", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "goFloats", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goImaginary", [s:dark_light_blue, s:light_fg], [], "" )
+
+  call <SID>X( "goFormatSpecifier", [s:dark_orange, s:light_fg], [], "" )
+  " call <SID>X( "goEscapeC", [s:dark_light_blue, s:light_fg], [], "" )
 
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
@@ -520,15 +536,17 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "coffeeInterpDelim", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
 
   "" CSS Highlighting
-  call <SID>X( "cssIdentifier", [s:dark_blue, s:light_blue], [], "" )
+  call <SID>X( "cssIdentifier", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "cssImportant", [s:dark_cyan, s:light_red], [], "" )
-  call <SID>X( "cssClassName", [s:dark_blue, s:light_blue], [], "" )
+  call <SID>X( "cssClassName", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "cssPseudoClass", [s:dark_green, s:light_green], [], "" )
   call <SID>X( "cssPseudoClassId", [s:dark_green, s:light_green], [], "" )
   call <SID>X( "cssTagName", [s:dark_yellow, s:light_blue], [], "" )
 
+  call <SID>X( "cssStyle", [s:dark_orange, s:light_grey1], [], "" )
   call <SID>X( "cssNoise", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssParens", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssBraces", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "cssBrackets", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "cssParentSelector", [s:dark_red, s:light_grey1], [], "" )
 
