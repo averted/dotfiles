@@ -1,10 +1,11 @@
 #!/bin/bash
+DOTFILES=$HOME/git/dotfiles
 
 # vim
-cp -R $HOME/.vim/* $HOME/git/dotfiles/.vim/
+cp -R $HOME/.vim/* $DOTFILES/.vim/
 
 # dotfiles
-cp $HOME/.bash_profile $HOME/git/dotfiles/
-cp $HOME/.bashrc $HOME/git/dotfiles/
-cp $HOME/.vimrc $HOME/git/dotfiles/
-cp $HOME/.gitconfig $HOME/git/dotfiles/
+cp $HOME/.bash_profile $DOTFILES
+cp $HOME/.bashrc $DOTFILES
+cp $HOME/.vimrc $DOTFILES
+cp $HOME/.gitconfig $DOTFILES
