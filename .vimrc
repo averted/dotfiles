@@ -22,6 +22,8 @@ set shiftwidth=2
 set incsearch           " auto-move to first found search member
 set hlsearch            " highlight all search matches
 
+set splitright
+
 " copy selected to buffer
 command! -range W :<line1>,<line2>w !pbcopy
 
@@ -40,9 +42,16 @@ map l <Down>
 map j <Left>
 map k <Right>
 map 0 ^
+:nmap <F1> <nop>
+:imap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
+map <Tab> <C-W><C-W>
+map <S-Tab> <C-W>W
+map - <C-W>>
+map = <C-W><
+map <S-E> :vsp<CR>
 " map <Space> :CtrlP<CR>
 
 " vim-javascript
