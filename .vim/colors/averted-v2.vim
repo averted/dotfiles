@@ -14,16 +14,16 @@
 let s:dark_fg              = "dfdfdf"
 let s:dark_bg              = "303030"
 let s:dark_red             = "e2366d"  " f22c40 bright red
-let s:dark_pink            = "ef27f2"
+let s:dark_pink            = "f66fd6"
 let s:dark_blue            = "407ee7"  " 407ee7 a bit lighter blue / 4271ae default
-let s:dark_cyan            = "00c7bb"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
+let s:dark_cyan            = "00aea3"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
 let s:dark_light_blue      = "36c3e2"
 let s:dark_orange          = "ff9000"  " ff9000 - orange (dark)
 let s:dark_green           = "4bbf23"  " 4bbf23 | 53d527
 let s:dark_yellow          = "c3b622"
 let s:dark_gold            = "c3a922"
 let s:dark_violet          = "5353fe"
-let s:dark_magenta         = "bc27f2"
+let s:dark_magenta         = "a30dd9"
 let s:dark_grey_comment    = "808080"  " 68615e
 let s:dark_grey0           = "848484"
 let s:dark_grey1           = "919191"
@@ -298,7 +298,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
   call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "none" )  " status line of current window
-  call <SID>X( "StatusLineNC", [s:dark_orange, s:light_blue], [s:dark_black, s:light_black], "reverse" )  " status lines of not-current windows
+  call <SID>X( "StatusLineNC", [s:dark_bg, s:light_blue], [s:dark_grey_comment, s:light_black], "" )  " status lines of not-current windows
   "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
   "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
 
@@ -426,6 +426,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
+  "call <SID>X( "jsBuiltins", [s:dark_cyan, s:light_fg], [], "" )
 
   call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
@@ -439,7 +440,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsFuncBraces", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsArrowFunction", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "jsExceptions", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsExceptions", [s:dark_red, s:light_fg], [], "underline" )
 
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
@@ -449,8 +450,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsPrototype", [s:dark_orange, s:light_fg], [], "underline" )
-  call <SID>X( "jsSuper", [s:dark_orange, s:light_fg], [], "underline" )
-  call <SID>X( "jsThis", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsThis", [s:dark_pink, s:light_fg], [], "" )
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
