@@ -247,13 +247,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-811 256 811 134 -2560 0 2560 1417 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>139 401 796 474 0 0 1440 877 </string>
+	<string>139 419 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 348 700 431 0 0 1440 877 </string>
+	<string>-1630 739 700 431 -2560 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 55 1440 822 0 0 1440 877 </string>
+	<string>-2560 59 2560 1358 -2560 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -2460,6 +2460,8 @@
 			<string>/Users/averted</string>
 		</dict>
 	</array>
+	<key>NoSyncConfirmBeta</key>
+	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
@@ -2564,7 +2566,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-14T14:19:43Z</date>
+	<date>2016-06-15T14:05:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -5903,11 +5905,11 @@
 												<key>Rows</key>
 												<integer>36</integer>
 												<key>Server PID</key>
-												<integer>36365</integer>
+												<integer>35941</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>2CC188FB-7FD7-40C6-AC83-4FF421CD1B0E</string>
+												<string>4D92FF4C-5F19-4614-887C-91C5AD80A99D</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -6703,11 +6705,11 @@
 												<key>Rows</key>
 												<integer>36</integer>
 												<key>Server PID</key>
-												<integer>36367</integer>
+												<integer>35943</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>DA861D29-4462-4C5C-A2AA-AC674C3038E9</string>
+												<string>F98D880D-380E-4E3D-94F9-40FFEDBE9073</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -6750,7 +6752,7 @@
 								</dict>
 								<dict>
 									<key>Is Active</key>
-									<integer>1</integer>
+									<integer>0</integer>
 									<key>Session</key>
 									<dict>
 										<key>Bookmark</key>
@@ -7520,11 +7522,11 @@
 										<key>Rows</key>
 										<integer>74</integer>
 										<key>Server PID</key>
-										<integer>36372</integer>
+										<integer>35948</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>168E9DEC-B4F6-4FBF-B490-F1DAD9DB1CA5</string>
+										<string>B8B75AA6-63D2-4F50-A2D5-FF5E49F754D9</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Shell Integration Ever Used</key>
@@ -7532,7 +7534,7 @@
 										<key>Substitutions</key>
 										<dict/>
 										<key>Working Directory</key>
-										<string>/Users/av/pressly/ng-pressilla/src/modules/hub-analytics/overview</string>
+										<string>/Users/av/pressly/ng-pressilla/src/modules</string>
 									</dict>
 									<key>View Type</key>
 									<string>SessionView</string>
@@ -8323,11 +8325,11 @@
 												<key>Rows</key>
 												<integer>36</integer>
 												<key>Server PID</key>
-												<integer>36385</integer>
+												<integer>35953</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>361F79F9-0468-4674-BF97-E3320ED294EB</string>
+												<string>36DCF0AD-AF5B-4EDB-8F9B-3F268E99C2F8</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -8353,7 +8355,7 @@
 										</dict>
 										<dict>
 											<key>Is Active</key>
-											<integer>0</integer>
+											<integer>1</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -9123,11 +9125,11 @@
 												<key>Rows</key>
 												<integer>36</integer>
 												<key>Server PID</key>
-												<integer>36398</integer>
+												<integer>35962</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>3615A63B-0E27-4D7E-9153-87BBD570BAD9</string>
+												<string>445E4799-C185-4635-8FEC-B32ED3CF41F2</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -9135,7 +9137,7 @@
 												<key>Substitutions</key>
 												<dict/>
 												<key>Working Directory</key>
-												<string>/Users/av/gocode/src/github.com/pressly/postman</string>
+												<string>/Users/av/pressly/embeds</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -9987,7 +9989,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/av/sportling/server</string>
+													<string>/Users/av/sportling/client</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -10001,11 +10003,11 @@
 												<key>Rows</key>
 												<integer>42</integer>
 												<key>Server PID</key>
-												<integer>36430</integer>
+												<integer>35982</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>D1BD6583-F602-44CA-8D85-94E9CAC7BE20</string>
+												<string>DF53B34F-38B8-4963-92CB-B30D4B2ECB09</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -10789,7 +10791,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/av/pressly/ng-pressilla/src/modules/hub-analytics/overview</string>
+													<string>/Users/av/sportling/server</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -10803,11 +10805,11 @@
 												<key>Rows</key>
 												<integer>16</integer>
 												<key>Server PID</key>
-												<integer>36432</integer>
+												<integer>36001</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>54EDCA6E-295B-419B-B125-785CDC089449</string>
+												<string>8C12EEF0-4C73-4AC7-B9DC-9DB4B0261E63</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -11605,11 +11607,11 @@
 												<key>Rows</key>
 												<integer>14</integer>
 												<key>Server PID</key>
-												<integer>37365</integer>
+												<integer>36014</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>B1888BED-EF49-441E-B856-24DCA1EAEF65</string>
+												<string>7DC9B922-C862-441E-A39F-FDB967AEF4EC</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -12410,7 +12412,7 @@
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/av/pressly/ng-pressilla/src/modules/hub-analytics/overview</string>
+											<string>/Users/av/sportling/client/test</string>
 										</dict>
 										<key>Hosts</key>
 										<array/>
@@ -12424,11 +12426,11 @@
 										<key>Rows</key>
 										<integer>74</integer>
 										<key>Server PID</key>
-										<integer>36437</integer>
+										<integer>36019</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>53E583CF-30B9-4C6B-8C97-E58D8B043101</string>
+										<string>EF6E5FF0-589C-492F-BE36-0E45B51AB048</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Session Window Title</key>
@@ -12497,7 +12499,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160510</string>
+	<string>3.0.1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
