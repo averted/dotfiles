@@ -20,7 +20,7 @@ alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip 
 
 # Grep
 export GREP_COLOR="91"
-alias grep='grep --color=always'
+alias grep='grep --color=always --exclude-dir=node_modules'
 
 # Git
 alias gti="git"
@@ -32,10 +32,11 @@ alias api="cd $HOME/pressly/api"
 alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
 alias press="cd $HOME/pressly/ng-pressilla/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
+alias pressly="cd $HOME/pressly"
 alias postman="cd $HOME/pressly/postman"
 
 # Sportling aliases
-alias sc="cd $HOME/sportling/client"
+alias sc="cd $HOME/sportling/client/src"
 alias ss="cd $HOME/sportling/server"
 alias sa="cd $HOME/sportling/aws"
 
