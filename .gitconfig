@@ -22,6 +22,7 @@
   textconv = exif
 
 [alias]
+  find = grep --break
   s = status
   d = diff
   sl = stash list

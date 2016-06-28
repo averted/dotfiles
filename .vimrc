@@ -11,6 +11,7 @@ set laststatus=2        " always show statusline
 
 set nobackup
 set noswapfile
+set showcmd             " show incomplete commands
 
 set foldmethod=indent   " sets default fold method to indent
 set foldlevelstart=20
