@@ -34,6 +34,9 @@ alias press="cd $HOME/pressly/ng-pressilla/src/modules"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias pressly="cd $HOME/pressly"
 alias postman="cd $HOME/pressly/postman"
+alias embeds="cd $HOME/pressly/embeds"
+alias embed="cd $HOME/pressly/embeds/embeds/grid-widget/src"
+alias blue="cd $HOME/pressly/blue-suede/src"
 
 # Sportling aliases
 alias sc="cd $HOME/sportling/client/src"

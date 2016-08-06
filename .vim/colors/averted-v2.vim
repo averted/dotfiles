@@ -17,7 +17,7 @@ let s:dark_red             = "e2366d"  " f22c40 bright red
 let s:dark_pink            = "f66fd6"
 let s:dark_blue            = "407ee7"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "00aea3"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
-let s:dark_light_blue      = "36c3e2"
+let s:dark_light_blue      = "00b3c8"
 let s:dark_orange          = "ff9000"  " ff9000 - orange (dark)
 let s:dark_green           = "4bbf23"  " 4bbf23 | 53d527
 let s:dark_yellow          = "c3b622"
@@ -414,6 +414,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jadeBlockExpansionChar", [s:dark_fg, s:light_black], [], "" )
   call <SID>X( "jadeScriptStatement", [s:dark_orange, s:light_green], [], "" )
 
+  "" GIT Highlighting
+  call <SID>X( "gitrebasePick", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseReword", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseEdit", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseSquash", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseFixup", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseExec", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseDrop", [s:dark_red, s:light_violet], [], "" )
+
   "" JS Highlighting
   call <SID>X( "jsNull", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsUndefined", [s:dark_blue, s:light_fg], [], "" )
@@ -430,8 +439,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "jsObjectKey", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsObjectKey", [s:dark_light_blue, s:light_fg], [], "" )
 
+  call <SID>X( "jsStatic", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFunction", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncName", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncCall", [s:dark_red, s:light_fg], [], "" )
@@ -446,8 +456,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanFalse", [s:dark_orange, s:light_fg], [], "" )
 
-  call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsDecorator", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsDecoratorFunction", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsPrototype", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
@@ -455,7 +465,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
-  call <SID>X( "jsHtmlEvents", [s:dark_violet, s:light_fg], [], "" )
+  call <SID>X( "jsHtmlEvents", [s:dark_yellow, s:light_fg], [], "" )
 
   call <SID>X( "jsDocTags", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsDocType", [s:dark_orange, s:light_fg], [], "" )
