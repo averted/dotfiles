@@ -25,19 +25,29 @@ set hlsearch            " highlight all search matches
 
 set splitright
 
+""
 " copy selected to buffer
+""
 command! -range W :<line1>,<line2>w !pbcopy
+"command! W execute ":w"
 
+
+""
 " return to last edit position when opening files
+""
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
 
+""
 " remove all trailing whitespace on file write
+""
 autocmd BufWritePre * :%s/\s\+$//e
 
+""
 " movement key remaps
+""
 map h <Up>
 map l <Down>
 map j <Left>
@@ -55,37 +65,54 @@ map = <C-W><
 map <S-E> :vsp<CR>
 " map <Space> :CtrlP<CR>
 
+""
+" vim-flow
+""
+let g:flow#autoclose = 1
+
+""
 " vim-javascript
+""
 let g:javascript_enable_domhtmlcss = 1
 
+""
 " CtrlP
+""
 let g:ctrlp_working_path_mode = 0                       "CtrlP working path fix
 set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip     "Skip the following dirs
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+""
 " Filetypes
+""
 au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
 au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
+au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
+au FileType make setlocal noexpandtab                   "Makefile
 
-" Makefile
-au FileType make setlocal noexpandtab
-
+""
 " Status Line
+""
 set statusline=%F\ %h%m%r%w\ %P%=
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
 set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
 set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
 set statusline+=%{&fileformat}]                                     " file format
 
+""
 " pathogen
+""
 execute pathogen#infect()
 
 syntax on
-colorscheme averted-v2
+colorscheme averted
 
+""
+" Functions
+""
 function! Retab()
   :exe "set noexpandtab"
   :exe "set tabstop=4"

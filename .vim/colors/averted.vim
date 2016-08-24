@@ -11,26 +11,27 @@
 " Init colors
 
 " dark-bg colors
-let s:dark_fg              = "d7d7d7"
-let s:dark_bg              = "292929"
-let s:dark_red             = "cd0000"  " f22c40 bright red
-let s:dark_pink            = "e2366d"
-let s:dark_blue            = "4193a0"  " 407ee7 a bit lighter blue / 4271ae default
-let s:dark_cyan            = "45abb1"  " 3e999f / 00ad9c / 159393
-let s:dark_orange          = "ff7302"
+let s:dark_fg              = "dfdfdf"
+let s:dark_bg              = "303030"
+let s:dark_red             = "e2366d"  " f22c40 bright red
+let s:dark_pink            = "f66fd6"
+let s:dark_blue            = "407ee7"  " 407ee7 a bit lighter blue / 4271ae default
+let s:dark_cyan            = "00aea3"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
+let s:dark_light_blue      = "00b3c8"
+let s:dark_orange          = "ff9000"  " ff9000 - orange (dark)
 let s:dark_green           = "4bbf23"  " 4bbf23 | 53d527
 let s:dark_yellow          = "c3b622"
 let s:dark_gold            = "c3a922"
 let s:dark_violet          = "5353fe"
-let s:dark_magenta         = "bc27f2"
-let s:dark_grey_comment    = "747474"  " 68615e
+let s:dark_magenta         = "a30dd9"
+let s:dark_grey_comment    = "808080"  " 68615e
 let s:dark_grey0           = "848484"
 let s:dark_grey1           = "919191"
 let s:dark_grey2           = "9e9e9e"
 let s:dark_grey3           = "aaaaaa"
 let s:dark_grey4           = "b7b7b7"
 let s:dark_grey5           = "c4c4c4"
-let s:dark_black           = "000000"
+let s:dark_black           = "1f1f1f"
 let s:dark_unknown         = "bc27f2"  " magenta
 let s:dark_test            = "c6708c"  " magenta
 
@@ -297,7 +298,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
   call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "none" )  " status line of current window
-  call <SID>X( "StatusLineNC", [s:dark_orange, s:light_blue], [s:dark_black, s:light_black], "reverse" )  " status lines of not-current windows
+  call <SID>X( "StatusLineNC", [s:dark_bg, s:light_blue], [s:dark_grey_comment, s:light_black], "" )  " status lines of not-current windows
   "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
   "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
 
@@ -316,7 +317,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "ModeMsg", [s:dark_orange, s:light_black], [], "none")  " 'showmode' message (e.g., '-- INSERT --')
   call <SID>X( "MoreMsg", [s:dark_orange, s:light_black], [], "")  " more-prompt
 
-  call <SID>X( "Question", [s:dark_unknown, s:light_unknown],  [], "")  " hit-enter prompt and yes/no questions
+  call <SID>X( "Question", [s:dark_red, s:light_unknown],  [], "")  " hit-enter prompt and yes/no questions
   call <SID>X( "WildMenu", [s:dark_red, s:light_red], [s:dark_bg, s:light_bg], "" )  " current match in 'wildmenu' completion
   call <SID>X( "SignColumn", [], [s:dark_red, s:light_red], "" )  " column where signs are displayed
 
@@ -334,10 +335,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "CursorLine", [], [s:dark_bg, s:light_bg], "none" )  " the screen line that the cursor is in when 'cursorline' is set
   "call <SID>X( "CursorColumn", [], [s:dark_bg, s:light_bg], "" )  " the screen column that the cursor is in when 'cursorcolumn' is set
 
-  "call <SID>X( "PMenu", [s:dark_blue, s:light_], [s:dark_lightblue, s:light_lightblue], "none" )  " popup menu: normal item
-  "call <SID>X( "PMenuSel", [s:dark_lightblue, s:light_lightblue], [s:dark_blue, s:light_], "none" )  " popup menu: selected item
-  "call <SID>X( "PMenuSBar", [s:dark_grey, s:light_grey1], [s:dark_grey, s:light_grey1], "none" )  " popup menu: scrollbar
-  "call <SID>X( "PMenuThumb", [s:dark_grey, s:light_grey1], [s:dark_lightgrey, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
+  call <SID>X( "PMenu", [s:dark_orange, s:light_blue], [s:dark_black, s:light_fg], "none" )  " popup menu: normal item
+  call <SID>X( "PMenuSel", [s:dark_black, s:light_fg], [s:dark_orange, s:light_blue], "none" )  " popup menu: selected item
+  call <SID>X( "PMenuSBar", [s:dark_grey0, s:light_grey1], [s:dark_grey0, s:light_grey1], "none" )  " popup menu: scrollbar
+  call <SID>X( "PMenuThumb", [s:dark_grey0, s:light_grey1], [s:dark_grey3, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
 
   "call <SID>X( "TabLine", [s:dark_fg, s:light_grey1], [s:dark_lighterbg2, s:light_grey4], "none" )  " tab pages line, not active tab page label
   "call <SID>X( "TabLineSel", [s:dark_bg, s:light_bg], [s:dark_lightblue, s:light_lightblue], "none" )  " tab pages line, active tab page label
@@ -392,9 +393,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   "" HTML Highlighting
   call <SID>X( "htmlTag", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "htmlTagN", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "htmlTagName", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "htmlEndTag", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "htmlArg", [s:dark_yellow, s:light_blue],[], "" )
+  call <SID>X( "htmlSpecialChar", [s:dark_red, s:light_blue],[], "" )
   "call <SID>X( "htmlScriptTag", [s:dark_paleblue, s:light_grey1], [], "" )
 
   "" Jade Highlighting
@@ -411,6 +414,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jadeBlockExpansionChar", [s:dark_fg, s:light_black], [], "" )
   call <SID>X( "jadeScriptStatement", [s:dark_orange, s:light_green], [], "" )
 
+  "" GIT Highlighting
+  call <SID>X( "gitrebasePick", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseReword", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseEdit", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseSquash", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseFixup", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseExec", [s:dark_red, s:light_violet], [], "" )
+  call <SID>X( "gitrebaseDrop", [s:dark_red, s:light_violet], [], "" )
+
   "" JS Highlighting
   call <SID>X( "jsNull", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsUndefined", [s:dark_blue, s:light_fg], [], "" )
@@ -423,33 +435,57 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
+  "call <SID>X( "jsBuiltins", [s:dark_cyan, s:light_fg], [], "" )
 
-  call <SID>X( "jsNoise", [s:dark_fg, s:light_fg], [], "" )
-  call <SID>X( "jsObjectKey", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsObjectKey", [s:dark_light_blue, s:light_fg], [], "" )
 
-  call <SID>X( "jsFunction", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsFuncCall", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "jsArrowFunction", [s:dark_cyan, s:light_fg], [], "" )
-
-  call <SID>X( "jsFuncName", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsFunctionKey", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsStatic", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsFunction", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsFuncName", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsFuncCall", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsFuncArgs", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsFunctionKey", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "jsFuncBraces", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsFuncBraces", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsArrowFunction", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsExceptions", [s:dark_red, s:light_fg], [], "underline" )
 
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanFalse", [s:dark_orange, s:light_fg], [], "" )
 
-  call <SID>X( "jsDecorator", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsDecoratorFunction", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsClass", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsPrototype", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "jsThis", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDecorator", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsDecoratorFunction", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsPrototype", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "jsThis", [s:dark_pink, s:light_fg], [], "" )
 
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
-  call <SID>X( "jsHtmlEvents", [s:dark_violet, s:light_fg], [], "" )
+  call <SID>X( "jsHtmlEvents", [s:dark_yellow, s:light_fg], [], "" )
+
+  call <SID>X( "jsDocTags", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocType", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocTypeNoParam", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsDocParam", [s:dark_grey_comment, s:light_fg], [], "" )
+
+  "" GO Highlighting
+  "call <SID>X( "goDirective", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "goDeclaration", [s:dark_red, s:light_fg], [], "" )
+
+  call <SID>X( "goType", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goSignedInts", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goUnsignedInts", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goComplexes", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goDecimalInt", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "goFloats", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "goImaginary", [s:dark_light_blue, s:light_fg], [], "" )
+
+  call <SID>X( "goFormatSpecifier", [s:dark_orange, s:light_fg], [], "" )
+  " call <SID>X( "goEscapeC", [s:dark_light_blue, s:light_fg], [], "" )
 
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
@@ -497,7 +533,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
 
   "" CoffeeScript Highlighting
-  call <SID>X( "coffeeObject", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "underline" )
+  call <SID>X( "coffeeObject", [s:dark_red, s:light_black], [s:dark_bg, s:light_bg], "underline" )
   call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeNumber", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeFloat", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
@@ -507,16 +543,23 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeGlobal", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
   call <SID>X( "coffeeDotAccess", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
+  call <SID>X( "coffeeSpecialOp", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
   "call <SID>X( "coffeeInterpDelim", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
 
   "" CSS Highlighting
-  call <SID>X( "cssIdentifier", [s:dark_blue, s:light_blue], [], "" )
+  call <SID>X( "cssIdentifier", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "cssImportant", [s:dark_cyan, s:light_red], [], "" )
-  call <SID>X( "cssClassName", [s:dark_blue, s:light_blue], [], "" )
+  call <SID>X( "cssClassName", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "cssPseudoClass", [s:dark_green, s:light_green], [], "" )
   call <SID>X( "cssPseudoClassId", [s:dark_green, s:light_green], [], "" )
-  call <SID>X( "cssBraces", [s:dark_orange, s:light_blue], [], "" )
   call <SID>X( "cssTagName", [s:dark_yellow, s:light_blue], [], "" )
+
+  call <SID>X( "cssStyle", [s:dark_orange, s:light_grey1], [], "" )
+  call <SID>X( "cssNoise", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "cssParens", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssBraces", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssBrackets", [s:dark_yellow, s:light_grey1], [], "" )
+  call <SID>X( "cssParentSelector", [s:dark_red, s:light_grey1], [], "" )
 
   call <SID>X( "cssBoxProp", [s:dark_orange, s:light_black], [], "" )
   call <SID>X( "cssFontProp", [s:dark_orange, s:light_black], [], "" )
@@ -567,11 +610,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssURL", [s:dark_grey1, s:light_grey1], [], "" )
 
   "" Stylus Highlighting
+  call <SID>X( "stylusIdChar", [s:dark_orange, s:light_blue], [], "" )
   call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
-  call <SID>X( "stylusVariable", [s:dark_grey1, s:light_grey1], [], "" )
-  call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_grey1], [], "" )
-  call <SID>X( "stylusClass", [s:dark_cyan, s:light_blue], [], "" )
-  call <SID>X( "stylusClassChar", [s:dark_cyan, s:light_blue], [], "" )
+  call <SID>X( "stylusVariable", [s:dark_grey2, s:light_grey1], [], "" )
+  call <SID>X( "stylusCssAttribute", [s:dark_grey2, s:light_grey1], [], "" )
+  call <SID>X( "stylusClass", [s:dark_red, s:light_blue], [], "" )
+  call <SID>X( "stylusClassChar", [s:dark_red, s:light_blue], [], "" )
   call <SID>X( "stylusProperty", [s:dark_orange, s:light_blue], [], "" )
 
   "" PHP Highlighting
