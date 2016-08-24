@@ -15,7 +15,7 @@ alias claer='clear'
 alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
-alias scripts="cd $HOME/.scripts"
+alias scripts="cd $HOME/scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 
 # Grep
