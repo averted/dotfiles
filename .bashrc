@@ -1,10 +1,10 @@
-# GOPATH
+# PATH
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/gocode/bin"
-export GOPATH="$HOME/gocode"
-
-# POSTGRES
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+
+# GOPATH
+export GOPATH="$HOME/gocode"
 
 # General alias
 alias ..='cd ..'
@@ -30,7 +30,7 @@ alias gits="git s"
 alias ui="cd $HOME/pressly/ui-components"
 alias api="cd $HOME/pressly/api"
 alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
-alias press="cd $HOME/pressly/ng-pressilla/src/modules"
+alias press="cd $HOME/pressly/ng-pressilla/src"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias pressly="cd $HOME/pressly"
 alias postman="cd $HOME/pressly/postman"
@@ -42,6 +42,10 @@ alias blue="cd $HOME/pressly/blue-suede/src"
 alias sc="cd $HOME/sportling/client/src"
 alias ss="cd $HOME/sportling/server"
 alias sa="cd $HOME/sportling/aws"
+
+# Other
+alias jasmine="jasmine-node --autotest --color"
+alias md="msee"
 
 ##
 # Utility functions.
@@ -64,6 +68,18 @@ function ls() {
   fi
 }
 
+# CD alias
+# Move into files directory if extention is matching .js or .css
+function cd() {
+  string=$@
+
+  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" ]]; then
+    command cd "$(dirname $string)"
+  else
+    command cd "$@"
+  fi
+}
+
 # AWS EC2
 ec2() {
   if [[ $1 == "-d" ]]; then
@@ -77,6 +93,12 @@ ec2() {
   else
     command aws ec2 $1
   fi
+}
+
+# Exercism
+exe() {
+  command cd $HOME/git/exercism/javascript
+  command cd $(ls -1dt ./*/ | head -n 1)
 }
 
 # Encryption
