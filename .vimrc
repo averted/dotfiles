@@ -24,6 +24,7 @@ set incsearch           " auto-move to first found search member
 set hlsearch            " highlight all search matches
 
 set splitright
+set backspace=indent,eol,start " allow backspacing indents
 
 ""
 " copy selected to buffer
@@ -43,11 +44,13 @@ autocmd BufReadPost *
 ""
 " remove all trailing whitespace on file write
 ""
+autocmd BufWritePre * :retab
 autocmd BufWritePre * :%s/\s\+$//e
 
 ""
 " movement key remaps
 ""
+map <space> <leader>
 map h <Up>
 map l <Down>
 map j <Left>
@@ -55,6 +58,7 @@ map k <Right>
 map 0 ^
 :nmap <F1> <nop>
 :imap <F1> <nop>
+inoremap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
@@ -64,6 +68,9 @@ map - <C-W>>
 map = <C-W><
 map <S-E> :vsp<CR>
 " map <Space> :CtrlP<CR>
+" inoremap jj <Esc>
+"noremap ff :call ConsoleLog()<CR>
+"inoremap ff console.log('--
 
 ""
 " vim-flow
@@ -123,4 +130,8 @@ function! Retab()
   :exe "set shiftwidth=2"
   :exe "set expandtab"
   :exe "retab!"
+endfunction
+
+function! ConsoleLog()
+  :exe ":normal o" . "console.log('--')"
 endfunction
