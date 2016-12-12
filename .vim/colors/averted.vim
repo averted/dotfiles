@@ -290,7 +290,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   " Vim Highlighting
   call <SID>X( "Normal", [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
-  call <SID>X( "Cursor", [], [s:dark_cyan, s:light_blue], "")  " the character under the cursor
+  call <SID>X( "Cursor", [s:dark_red, s:light_red], [s:dark_cyan, s:light_blue], "")  " the character under the cursor
   call <SID>X( "NonText", [s:dark_orange, s:light_blue], [], "none")  " '~' and '@' at the end of the window
   call <SID>X( "SpecialKey", [s:dark_grey3, s:light_red], [s:dark_black, s:light_black], "none")  " Meta and special keys listed with ':map'
 
@@ -675,6 +675,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "markdownCode", [s:dark_paleblue, s:light_grey2], [], "" )
   "call <SID>X( "markdownBold", [s:dark_darkerfg, s:light_grey1], [], "bold" )
   "call <SID>X( "markdownBlockquote", [s:dark_darkerfg, s:light_grey1], [], "" )
+  call <SID>X( "markdownLinkText", [s:dark_green, s:light_grey1], [], "" )
+  call <SID>X( "markdownHeadingDelimiter", [s:dark_red, s:light_grey1], [], "" )
 
   " delete functions
   delf <SID>X
