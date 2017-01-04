@@ -73,7 +73,7 @@ function ls() {
 function cd() {
   string=$@
 
-  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" ]]; then
+  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -7} == ".coffee" ]]; then
     command cd "$(dirname $string)"
   else
     command cd "$@"
