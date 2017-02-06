@@ -90,6 +90,11 @@ set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip     "Skip the following dirs
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 ""
+" vim-json
+""
+let g:vim_json_syntax_conceal = 0
+
+""
 " Filetypes
 ""
 au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus

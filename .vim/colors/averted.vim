@@ -472,6 +472,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDocTypeNoParam", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsDocParam", [s:dark_grey_comment, s:light_fg], [], "" )
 
+  "" JSON Highlighting
+  call <SID>X( "jsonBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsonQuote", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsonNumber", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "jsonNoise", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsonKeyword", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsonKeywordMatch", [s:dark_yellow, s:light_fg], [], "" )
+
   "" GO Highlighting
   "call <SID>X( "goDirective", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "goDeclaration", [s:dark_red, s:light_fg], [], "" )
