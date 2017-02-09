@@ -1,7 +1,7 @@
 # PATH
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/gocode/bin"
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+export PATH="$HOME/pressly/api/scripts:$PATH"
 
 # GOPATH
 export GOPATH="$HOME/gocode"
