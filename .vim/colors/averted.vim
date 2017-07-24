@@ -23,7 +23,7 @@ let s:dark_green           = "4bbf23"  " 4bbf23 | 53d527
 let s:dark_yellow          = "c3b622"
 let s:dark_gold            = "c3a922"
 let s:dark_violet          = "5353fe"
-let s:dark_magenta         = "a30dd9"
+let s:dark_magenta         = "d90da9"
 let s:dark_grey_comment    = "808080"  " 68615e
 let s:dark_grey0           = "848484"
 let s:dark_grey1           = "919191"
@@ -33,7 +33,7 @@ let s:dark_grey4           = "b7b7b7"
 let s:dark_grey5           = "c4c4c4"
 let s:dark_black           = "1f1f1f"
 let s:dark_unknown         = "bc27f2"  " magenta
-let s:dark_test            = "c6708c"  " magenta
+let s:dark_test            = "f6708d"  " magenta
 
 " light-bg colors
 let s:light_fg              = "505050"
@@ -435,7 +435,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
-  "call <SID>X( "jsBuiltins", [s:dark_cyan, s:light_fg], [], "" )
+  call <SID>X( "jsBuiltins", [s:dark_magenta, s:light_fg], [], "" )
 
   call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
