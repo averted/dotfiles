@@ -17,6 +17,8 @@ alias cealr='clear'
 alias cealr='clear'
 alias scripts="cd $HOME/scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
+alias sleep="pmset sleepnow"
 
 # Grep
 export GREP_COLOR="91"
@@ -25,6 +27,7 @@ alias grep='grep --color=always --exclude-dir=node_modules'
 # Git
 alias gti="git"
 alias gits="git s"
+alias gtis="git s"
 
 # Pressly aliases
 alias ui="cd $HOME/pressly/ui-components"
@@ -34,20 +37,29 @@ alias press="cd $HOME/pressly/ng-pressilla/src"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias pressly="cd $HOME/pressly"
 alias postman="cd $HOME/pressly/postman"
-alias embeds="cd $HOME/pressly/embeds"
-alias embed="cd $HOME/pressly/embeds/embeds/grid-widget/src"
+#alias embeds="cd $HOME/pressly/embeds"
+#alias embed="cd $HOME/pressly/embeds/embeds/grid-widget/src"
+alias embed="cd $HOME/pressly/embeds/src"
 alias blue="cd $HOME/pressly/blue-suede/src"
+alias ext="cd $HOME/pressly/chrome-extension/src"
+alias extent="cd $HOME/pressly/chrome-extension/src"
+alias extension="cd $HOME/pressly/chrome-extension/src"
+alias extensions="cd $HOME/pressly/chrome-extension/src"
 
 # Sportling aliases
 alias sc="cd $HOME/sportling/client/src"
 alias ss="cd $HOME/sportling/server"
 alias sa="cd $HOME/sportling/aws"
 
+# NPM
+alias list="npm list -g --depth=0"
+alias outdated="sudo npm outdated -g --depth=0"
+
 # Other
 alias jasmine="jasmine-node --autotest --color"
 alias md="msee"
 
-##
+#
 # Utility functions.
 #
 
@@ -73,7 +85,7 @@ function ls() {
 function cd() {
   string=$@
 
-  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -7} == ".coffee" ]]; then
+  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -5} == ".styl" || ${string: -7} == ".coffee" ]]; then
     command cd "$(dirname $string)"
   else
     command cd "$@"
