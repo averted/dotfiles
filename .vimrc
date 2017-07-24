@@ -76,6 +76,7 @@ map <S-E> :vsp<CR>
 " vim-flow
 ""
 let g:flow#autoclose = 1
+let g:flow#timeout = 10
 
 ""
 " vim-javascript
@@ -98,11 +99,11 @@ let g:vim_json_syntax_conceal = 0
 " Filetypes
 ""
 au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
-au BufNewFile,BufRead *.twig set syntax=html            "Color-coding for twig
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
 au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
+au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
 au FileType make setlocal noexpandtab                   "Makefile
 
 ""
