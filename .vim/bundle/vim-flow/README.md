@@ -23,7 +23,7 @@ A vim plugin for [Flow][flow].
 Add this to your `~/.vimrc`
 
 ```VimL
-  NeoBundleLazy 'facebook/vim-flow', {
+  NeoBundleLazy 'flowtype/vim-flow', {
             \ 'autoload': {
             \     'filetypes': 'javascript'
             \ }}
@@ -32,7 +32,7 @@ Add this to your `~/.vimrc`
 #### With [Flow][flow] build step, using [flow-bin][flowbin]
 
 ```VimL
-  NeoBundleLazy 'facebook/vim-flow', {
+  NeoBundleLazy 'flowtype/vim-flow', {
             \ 'autoload': {
             \     'filetypes': 'javascript'
             \ },
@@ -58,6 +58,10 @@ Turns automatic checks on save on or off.
 #### `FlowType` 
 
 Display the type of the variable under the cursor.
+
+#### `FlowJumpToDef` 
+
+Jump to the definition of the variable under the cursor.
 
 ## Configuration
 
@@ -102,6 +106,15 @@ By default `omnifunc` will be set to provide omni completion. To disable it
 
 ```VimL
 let g:flow#omnifunc = 0
+```
+
+#### `g:flow#timeout`
+
+By default `timeout` will be set to 2 seconds. If you are working on a larger
+codebase, you may want to increase this to avoid errors when Flow initializes.
+
+```VimL
+let g:flow#timeout = 4
 ```
 
 #### `g:flow#qfsize`
