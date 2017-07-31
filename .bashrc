@@ -29,6 +29,9 @@ alias gti="git"
 alias gits="git s"
 alias gtis="git s"
 
+# Postgress
+alias lpsql="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
+
 # Pressly aliases
 alias ui="cd $HOME/pressly/ui-components"
 alias api="cd $HOME/pressly/api"
