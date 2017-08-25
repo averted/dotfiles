@@ -265,7 +265,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -283,15 +283,15 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>330 326 735 382 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1630 739 700 431 -2560 0 2560 1417 </string>
+	<string>-1310 393 700 431 -1920 -76 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-2291 139 606 456 -2560 0 2560 1417 </string>
+	<string>-1739 11 606 456 -1920 -76 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1438 214 918 495 -1920 0 1920 1057 </string>
+	<string>276 209 937 465 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 5 1920 1052 -1920 0 1920 1057 </string>
+	<string>1440 0 2560 1057 1440 0 2560 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -3363,9 +3363,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-07T14:08:03Z</date>
+	<date>2017-08-13T02:25:06Z</date>
 	<key>SUSkippedVersion</key>
-	<string>3.1.beta.5</string>
+	<string>3.1.beta.6</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -3449,7 +3449,7 @@
 									<array>
 										<dict>
 											<key>Is Active</key>
-											<integer>1</integer>
+											<integer>0</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -3524,12 +3524,16 @@
 													</dict>
 													<key>Ansi 14 Color</key>
 													<dict>
+														<key>Alpha Component</key>
+														<real>1</real>
 														<key>Blue Component</key>
-														<real>1</real>
+														<real>0.060253970324993134</real>
+														<key>Color Space</key>
+														<string>Calibrated</string>
 														<key>Green Component</key>
-														<real>1</real>
+														<real>0.66646546125411987</real>
 														<key>Red Component</key>
-														<real>0.3333333432674408</real>
+														<real>0.74320822954177856</real>
 													</dict>
 													<key>Ansi 15 Color</key>
 													<dict>
@@ -3596,12 +3600,16 @@
 													</dict>
 													<key>Ansi 8 Color</key>
 													<dict>
+														<key>Alpha Component</key>
+														<real>1</real>
 														<key>Blue Component</key>
-														<real>0.0</real>
+														<real>0.060867574065923691</real>
+														<key>Color Space</key>
+														<string>Calibrated</string>
 														<key>Green Component</key>
-														<real>0.8436616063117981</real>
+														<real>0.66602247953414917</real>
 														<key>Red Component</key>
-														<real>0.0035872308071702719</real>
+														<real>0.7448919415473938</real>
 													</dict>
 													<key>Ansi 9 Color</key>
 													<dict>
@@ -4012,7 +4020,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Hack 13</string>
+													<string>Hack 14</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -4170,7 +4178,7 @@
 													<key>Terminal Type</key>
 													<string>xterm-256color</string>
 													<key>Thin Strokes</key>
-													<integer>1</integer>
+													<integer>0</integer>
 													<key>Transparency</key>
 													<real>0.0</real>
 													<key>Triggers</key>
@@ -4186,7 +4194,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>1</real>
+													<real>0.90776778990963858</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -4205,7 +4213,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/av/gocode/src/github.com/pressly/postman</string>
+													<string>/Users/av/sportling/server</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -4219,17 +4227,19 @@
 												<key>Rows</key>
 												<integer>28</integer>
 												<key>Server PID</key>
-												<integer>1975</integer>
+												<integer>39421</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>3615A63B-0E27-4D7E-9153-87BBD570BAD9</string>
+												<string>88426EE5-D6CE-404D-8A66-A067A5EDC0B5</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
 												<false/>
 												<key>Substitutions</key>
 												<dict/>
+												<key>TTY</key>
+												<string>/dev/ttys001</string>
 												<key>Working Directory</key>
 												<string>/Users/av/sportling/server</string>
 											</dict>
@@ -4324,12 +4334,16 @@
 													</dict>
 													<key>Ansi 14 Color</key>
 													<dict>
+														<key>Alpha Component</key>
+														<real>1</real>
 														<key>Blue Component</key>
-														<real>1</real>
+														<real>0.060253970324993134</real>
+														<key>Color Space</key>
+														<string>Calibrated</string>
 														<key>Green Component</key>
-														<real>1</real>
+														<real>0.66646546125411987</real>
 														<key>Red Component</key>
-														<real>0.3333333432674408</real>
+														<real>0.74320822954177856</real>
 													</dict>
 													<key>Ansi 15 Color</key>
 													<dict>
@@ -4396,12 +4410,16 @@
 													</dict>
 													<key>Ansi 8 Color</key>
 													<dict>
+														<key>Alpha Component</key>
+														<real>1</real>
 														<key>Blue Component</key>
-														<real>0.0</real>
+														<real>0.060867574065923691</real>
+														<key>Color Space</key>
+														<string>Calibrated</string>
 														<key>Green Component</key>
-														<real>0.8436616063117981</real>
+														<real>0.66602247953414917</real>
 														<key>Red Component</key>
-														<real>0.0035872308071702719</real>
+														<real>0.7448919415473938</real>
 													</dict>
 													<key>Ansi 9 Color</key>
 													<dict>
@@ -4812,7 +4830,7 @@
 													<key>Non-ASCII Anti Aliased</key>
 													<true/>
 													<key>Normal Font</key>
-													<string>Hack 13</string>
+													<string>Hack 14</string>
 													<key>Option Key Sends</key>
 													<integer>0</integer>
 													<key>Prompt Before Closing 2</key>
@@ -4970,7 +4988,7 @@
 													<key>Terminal Type</key>
 													<string>xterm-256color</string>
 													<key>Thin Strokes</key>
-													<integer>1</integer>
+													<integer>0</integer>
 													<key>Transparency</key>
 													<real>0.0</real>
 													<key>Triggers</key>
@@ -4986,7 +5004,7 @@
 													<key>Use Italic Font</key>
 													<true/>
 													<key>Vertical Spacing</key>
-													<real>1</real>
+													<real>0.90776778990963858</real>
 													<key>Visual Bell</key>
 													<false/>
 													<key>Window Type</key>
@@ -5005,7 +5023,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/av/gocode/src/github.com/pressly/postman</string>
+													<string>/Users/av/sportling/client</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -5019,11 +5037,11 @@
 												<key>Rows</key>
 												<integer>28</integer>
 												<key>Server PID</key>
-												<integer>2037</integer>
+												<integer>39423</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>A983349A-B137-4AB9-8607-B1545894FBED</string>
+												<string>601EFAE9-456D-48F4-857D-24076CB0899E</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -5032,6 +5050,8 @@
 												<false/>
 												<key>Substitutions</key>
 												<dict/>
+												<key>TTY</key>
+												<string>/dev/ttys002</string>
 												<key>Working Directory</key>
 												<string>/Users/av/sportling/client</string>
 											</dict>
@@ -5068,7 +5088,7 @@
 								</dict>
 								<dict>
 									<key>Is Active</key>
-									<integer>0</integer>
+									<integer>1</integer>
 									<key>Session</key>
 									<dict>
 										<key>Bookmark</key>
@@ -5143,12 +5163,16 @@
 											</dict>
 											<key>Ansi 14 Color</key>
 											<dict>
+												<key>Alpha Component</key>
+												<real>1</real>
 												<key>Blue Component</key>
-												<real>1</real>
+												<real>0.060253970324993134</real>
+												<key>Color Space</key>
+												<string>Calibrated</string>
 												<key>Green Component</key>
-												<real>1</real>
+												<real>0.66646546125411987</real>
 												<key>Red Component</key>
-												<real>0.3333333432674408</real>
+												<real>0.74320822954177856</real>
 											</dict>
 											<key>Ansi 15 Color</key>
 											<dict>
@@ -5215,12 +5239,16 @@
 											</dict>
 											<key>Ansi 8 Color</key>
 											<dict>
+												<key>Alpha Component</key>
+												<real>1</real>
 												<key>Blue Component</key>
-												<real>0.0</real>
+												<real>0.060867574065923691</real>
+												<key>Color Space</key>
+												<string>Calibrated</string>
 												<key>Green Component</key>
-												<real>0.8436616063117981</real>
+												<real>0.66602247953414917</real>
 												<key>Red Component</key>
-												<real>0.0035872308071702719</real>
+												<real>0.7448919415473938</real>
 											</dict>
 											<key>Ansi 9 Color</key>
 											<dict>
@@ -5631,7 +5659,7 @@
 											<key>Non-ASCII Anti Aliased</key>
 											<true/>
 											<key>Normal Font</key>
-											<string>Hack 13</string>
+											<string>Hack 14</string>
 											<key>Option Key Sends</key>
 											<integer>0</integer>
 											<key>Prompt Before Closing 2</key>
@@ -5789,7 +5817,7 @@
 											<key>Terminal Type</key>
 											<string>xterm-256color</string>
 											<key>Thin Strokes</key>
-											<integer>1</integer>
+											<integer>0</integer>
 											<key>Transparency</key>
 											<real>0.0</real>
 											<key>Triggers</key>
@@ -5805,7 +5833,7 @@
 											<key>Use Italic Font</key>
 											<true/>
 											<key>Vertical Spacing</key>
-											<real>1</real>
+											<real>0.90776778990963858</real>
 											<key>Visual Bell</key>
 											<false/>
 											<key>Window Type</key>
@@ -5824,7 +5852,7 @@
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/av/gocode/src/github.com/pressly/postman</string>
+											<string>/Users/av/sportling/client/src</string>
 										</dict>
 										<key>Hosts</key>
 										<array/>
@@ -5838,11 +5866,11 @@
 										<key>Rows</key>
 										<integer>57</integer>
 										<key>Server PID</key>
-										<integer>2011</integer>
+										<integer>39428</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>FAE34CB0-0504-4F47-A455-55B1BA308AC6</string>
+										<string>97686CC3-42BA-43A9-A6F8-F70E6BB65151</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Session Window Title</key>
@@ -5851,6 +5879,8 @@
 										<false/>
 										<key>Substitutions</key>
 										<dict/>
+										<key>TTY</key>
+										<string>/dev/ttys003</string>
 										<key>Working Directory</key>
 										<string>/Users/av/sportling/client/src</string>
 									</dict>
@@ -5894,7 +5924,7 @@
 				<key>Window Type</key>
 				<integer>2</integer>
 				<key>X Origin</key>
-				<real>-2560</real>
+				<real>1440</real>
 				<key>Y Origin</key>
 				<real>0.0</real>
 			</dict>
