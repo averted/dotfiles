@@ -1,4 +1,5 @@
 # PATH
+export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/gocode/bin"
 export PATH="$HOME/pressly/api/scripts:$PATH"
@@ -53,10 +54,11 @@ alias extensions="cd $HOME/pressly/chrome-extension/src"
 alias sc="cd $HOME/sportling/client/src"
 alias ss="cd $HOME/sportling/server"
 alias sa="cd $HOME/sportling/aws"
+alias sx="cd $HOME/sportling/aws"
 
 # NPM
-alias list="npm list -g --depth=0"
-alias outdated="sudo npm outdated -g --depth=0"
+alias npm-list="npm list -g --depth=0"
+alias npm-dated="sudo npm outdated -g --depth=0"
 
 # Other
 alias jasmine="jasmine-node --autotest --color"
