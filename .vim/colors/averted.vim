@@ -14,6 +14,7 @@
 let s:dark_fg              = "dfdfdf"
 let s:dark_bg              = "303030"
 let s:dark_red             = "e2366d"  " f22c40 bright red
+let s:dark_red_bright      = "d70000"
 let s:dark_pink            = "f66fd6"
 let s:dark_blue            = "407ee7"  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_cyan            = "00aea3"  " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
@@ -384,7 +385,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Special", [s:dark_unknown, s:light_fg], [], "")  " any special symbol
   call <SID>X( "Underlined", [s:dark_unknown, s:light_fg], [], "underline" )  " text that stands out, HTML links
   call <SID>X( "Title", [s:dark_orange, s:light_black], [], "bold" )
-  call <SID>X( "Error", [], [s:dark_red, s:light_red], "none" )  " any erroneous construct
+  call <SID>X( "Error", [s:dark_black, s:light_blue], [s:dark_red_bright, s:light_blue], "none" )  " any erroneous construct
   call <SID>X( "Todo", [s:dark_black, s:light_white], [s:dark_grey_comment, s:light_grey4], "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
   "" Vimrc Highlighting
