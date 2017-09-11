@@ -67,7 +67,6 @@ map <S-Tab> <C-W>W
 map - <C-W>>
 map = <C-W><
 map <S-E> :vsp<CR>
-" map <Space> :CtrlP<CR>
 " inoremap jj <Esc>
 "noremap ff :call ConsoleLog()<CR>
 "inoremap ff console.log('--
@@ -75,6 +74,7 @@ map <S-E> :vsp<CR>
 ""
 " vim-flow
 ""
+let g:flow#enable = 0
 let g:flow#autoclose = 1
 let g:flow#timeout = 10
 
@@ -86,9 +86,19 @@ let g:javascript_enable_domhtmlcss = 1
 ""
 " CtrlP
 ""
-let g:ctrlp_working_path_mode = 0                       "CtrlP working path fix
-set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip     "Skip the following dirs
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+map <Space> :CtrlP<CR>
+let g:ctrlp_working_path_mode = 0                                                       "CtrlP working path fix
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']     "Ignore files in .gitignore
+set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*.so,*.swp,*.zip                    "Skip the following dirs
+set runtimepath^=~/.vim/bundle/vim-ctrlp
+
+""
+" Show current colorscheme colors
+""
+:nmap <F8> <nop>
+:imap <F8> <nop>
+inoremap <F8> <nop>
+map <F8> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 
 ""
 " vim-json
