@@ -19,11 +19,10 @@ alias cealr='clear'
 alias scripts="cd $HOME/scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
-alias sleep="pmset sleepnow"
 
 # Grep
 export GREP_COLOR="91"
-alias grep='grep --color=always --exclude-dir=node_modules'
+alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache}'
 
 # Git
 alias gti="git"
@@ -41,10 +40,12 @@ alias press="cd $HOME/pressly/ng-pressilla/src"
 alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
 alias pressly="cd $HOME/pressly"
 alias postman="cd $HOME/pressly/postman"
-#alias embeds="cd $HOME/pressly/embeds"
-#alias embed="cd $HOME/pressly/embeds/embeds/grid-widget/src"
 alias embed="cd $HOME/pressly/embeds/src"
 alias blue="cd $HOME/pressly/blue-suede/src"
+alias bs="cd $HOME/pressly/blue-suede/src"
+alias little="cd $HOME/pressly/mobx-little-router"
+alias basic="cd $HOME/pressly/mobx-little-router/examples/basic"
+alias router="cd $HOME/pressly/mobx-little-router/packages/mobx-little-router"
 alias ext="cd $HOME/pressly/chrome-extension/src"
 alias extent="cd $HOME/pressly/chrome-extension/src"
 alias extension="cd $HOME/pressly/chrome-extension/src"
@@ -60,13 +61,17 @@ alias sx="cd $HOME/sportling/aws"
 alias npm-list="npm list -g --depth=0"
 alias npm-dated="sudo npm outdated -g --depth=0"
 
+s() {
+  if [ ! -f ./package.json ]; then
+    echo "[Error] Could not locate file: package.json"
+  else
+    npm run start
+  fi
+}
+
 # Other
 alias jasmine="jasmine-node --autotest --color"
 alias md="msee"
-
-#
-# Utility functions.
-#
 
 # LS alias
 l() {
@@ -85,8 +90,10 @@ function ls() {
   fi
 }
 
+##
 # CD alias
-# Move into files directory if extention is matching .js or .css
+# Move into files directory if known extension
+##
 function cd() {
   string=$@
 
