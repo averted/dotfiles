@@ -22,9 +22,12 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --i
 
 # Grep
 export GREP_COLOR="91"
-alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache}'
+alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build}'
 
 # Git
+alias gs="git status"
+alias gd="git diff"
+alias gp="git pull"
 alias gti="git"
 alias gits="git s"
 alias gtis="git s"
@@ -65,7 +68,7 @@ s() {
   if [ ! -f ./package.json ]; then
     echo "[Error] Could not locate file: package.json"
   else
-    npm run start
+    npm run start $@
   fi
 }
 
