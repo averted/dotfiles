@@ -447,12 +447,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsObjectKey", [s:dark_light_blue, s:light_fg], [], "" )
   call <SID>X( "jsObjectProp", [s:dark_fg, s:light_fg], [], "" )
   call <SID>X( "jsObjectSeparator", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsObjectFuncName", [s:dark_red, s:light_fg], [], "" )
 
   call <SID>X( "jsStatic", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFunction", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncName", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncCall", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncArgs", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsFuncArgCommas", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsFunctionKey", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFuncParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsFuncBraces", [s:dark_red, s:light_fg], [], "" )
@@ -482,6 +484,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsExportDefault", [s:dark_orange, s:light_fg], [], "" )
 
   call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsClassNoise", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsClassKeyword", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsExtendsKeyword", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsClassBlock", [s:dark_orange, s:light_fg], [], "" )
@@ -491,7 +494,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsModule", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsModuleBraces", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "jsModuleKeyword", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsModuleKeyword", [s:dark_fg, s:light_fg], [], "" )
 
   call <SID>X( "jsDestructuringNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDestructuringBraces", [s:dark_yellow, s:light_fg], [], "" )
@@ -517,8 +520,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowOrOperator", [s:dark_magenta, s:light_fg], [], "" )
   call <SID>X( "jsFlowWildcard", [s:dark_magenta, s:light_fg], [], "" )
 
-  call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")  " any comment
-  call <SID>X( "jsCommentTodo", [s:dark_grey1, s:light_grey4], [], "reverse")  " any comment
+  call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")
+  call <SID>X( "jsCommentTodo", [s:dark_grey1, s:light_grey4], [], "reverse")
+
+  call <SID>X( "jsTryCatchBraces", [s:dark_orange, s:light_grey4], [], "")
 
   " TODO: Remove after this issue is fixed (https://github.com/pangloss/vim-javascript/issues/955)
   call <SID>X( "jsParensError", [s:dark_orange, s:light_fg], [], "" )
