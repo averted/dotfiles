@@ -369,7 +369,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Conditional",[s:dark_orange, s:light_blue], [], "" )  " if, then, else, endif, switch, etc
   "call <SID>X( "Label", [s:dark_pink, s:light_purple], [], "" )  "  case, default, etc.
   "call <SID>X( "Repeat", [s:dark_orange, s:light_orange], [], "" )  " for, do, while, etc.
-  call <SID>X( "Comment", [s:dark_grey_comment, s:light_grey4], [], "")  " any comment
+  call <SID>X( "Comment", [s:dark_grey_comment, s:light_grey4], [], "italic")  " any comment
   "call <SID>X( "Operator", [s:dark_cyan, s:light_cyan], [], "none" )  " 'sizeof', '+', '*', etc.
   "call <SID>X( "Keyword", [s:dark_fg, s:light_fg], [], "" )  " any other keyword
   "call <SID>X( "Exception", [s:dark_red, s:light_lightred], [], "" )  " try, catch, throw
@@ -431,8 +431,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFloat", [s:dark_blue, s:light_fg], [], "" )
 
   call <SID>X( "jsParen", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsParenIfElse", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsObjectBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsIfElseBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
@@ -440,7 +443,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDotNotation", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsObject", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsObjectKey", [s:dark_light_blue, s:light_fg], [], "" )
+  call <SID>X( "jsObjectProp", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsObjectSeparator", [s:dark_yellow, s:light_fg], [], "" )
 
   call <SID>X( "jsStatic", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsFunction", [s:dark_red, s:light_fg], [], "" )
@@ -459,12 +465,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsDecorator", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsDecoratorFunction", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsPrototype", [s:dark_orange, s:light_fg], [], "underline" )
   call <SID>X( "jsSuper", [s:dark_pink, s:light_fg], [], "" )
   call <SID>X( "jsThis", [s:dark_pink, s:light_fg], [], "" )
 
-  call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsHtmlElemAttrs", [s:dark_fg, s:light_fg], [], "" )
   call <SID>X( "jsHtmlEvents", [s:dark_yellow, s:light_fg], [], "" )
 
@@ -473,12 +477,59 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDocTypeNoParam", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsDocParam", [s:dark_grey_comment, s:light_fg], [], "" )
 
+  call <SID>X( "jsImport", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsExport", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsExportDefault", [s:dark_orange, s:light_fg], [], "" )
+
+  call <SID>X( "jsClass", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsClassKeyword", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsExtendsKeyword", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "jsClassBlock", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsClassBraces", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsClassDefinition", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "jsClassMethodType", [s:dark_red, s:light_fg], [], "" )
+
+  call <SID>X( "jsModule", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsModuleBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsModuleKeyword", [s:dark_red, s:light_fg], [], "" )
+
+  call <SID>X( "jsDestructuringNoise", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsDestructuringBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsDestructuringBlock", [s:dark_yellow, s:light_fg], [], "" )
+
+  call <SID>X( "jsVariableDef", [s:dark_light_blue, s:light_fg], [], "" )
+
+  call <SID>X( "jsGlobalNodeObjects", [s:dark_red, s:light_fg], [], "" )
+
+  call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsTemplateBraces", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsTemplateExpression", [s:dark_yellow, s:light_fg], [], "" )
+
+  call <SID>X( "jsFlowNoise", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowArgumentDef", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowClassDef", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowClassProperty", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowType", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowTypeStatement", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowMaybe", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowObject", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowGroup", [s:dark_light_blue, s:light_fg], [], "" )
+  call <SID>X( "jsFlowOrOperator", [s:dark_magenta, s:light_fg], [], "" )
+  call <SID>X( "jsFlowWildcard", [s:dark_magenta, s:light_fg], [], "" )
+
+  call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")  " any comment
+  call <SID>X( "jsCommentTodo", [s:dark_grey1, s:light_grey4], [], "reverse")  " any comment
+
+  " TODO: Remove after this issue is fixed (https://github.com/pangloss/vim-javascript/issues/955)
+  call <SID>X( "jsParensError", [s:dark_orange, s:light_fg], [], "" )
+
   "" JSON Highlighting
   call <SID>X( "jsonBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsonQuote", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsonNumber", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "jsonNoise", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsonKeyword", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "jsonKeywordMatch", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsonKeywordMatch", [s:dark_yellow, s:light_fg], [], "" )
 
   "" GO Highlighting
