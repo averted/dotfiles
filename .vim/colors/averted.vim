@@ -461,6 +461,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsArrowFunction", [s:dark_red, s:light_fg], [], "" )
   call <SID>X( "jsExceptions", [s:dark_red, s:light_fg], [], "underline" )
 
+  call <SID>X( "jsFutureKeys", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsStorageClass", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanTrue", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBooleanFalse", [s:dark_orange, s:light_fg], [], "" )
@@ -500,7 +501,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsDestructuringBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsDestructuringBlock", [s:dark_yellow, s:light_fg], [], "" )
 
-  call <SID>X( "jsVariableDef", [s:dark_light_blue, s:light_fg], [], "" )
+  call <SID>X( "jsVariableDef", [s:dark_fg, s:light_fg], [], "" )
 
   call <SID>X( "jsGlobalNodeObjects", [s:dark_red, s:light_fg], [], "" )
 
@@ -511,6 +512,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowNoise", [s:dark_yellow, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowArgumentDef", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassDef", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowClassGroup", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassProperty", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowType", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeStatement", [s:dark_magenta, s:light_fg], [], "italic" )
@@ -521,7 +523,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowWildcard", [s:dark_magenta, s:light_fg], [], "" )
 
   call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")
-  call <SID>X( "jsCommentTodo", [s:dark_grey1, s:light_grey4], [], "reverse")
+  call <SID>X( "jsCommentTodo", [s:dark_bg, s:light_grey4], [s:dark_grey3, s:light_red], "italic")
 
   call <SID>X( "jsTryCatchBraces", [s:dark_orange, s:light_grey4], [], "")
 
