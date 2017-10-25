@@ -64,7 +64,7 @@ alias sx="cd $HOME/sportling/aws"
 alias npm-list="npm list -g --depth=0"
 alias npm-dated="sudo npm outdated -g --depth=0"
 
-s() {
+start() {
   if [ ! -f ./package.json ]; then
     echo "[Error] Could not locate file: package.json"
   else
