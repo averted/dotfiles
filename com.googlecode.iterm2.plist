@@ -81,10 +81,24 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x72-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
 			<integer>32</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xd-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -265,7 +279,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -281,17 +295,17 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>139 419 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>330 326 735 382 0 0 1440 877 </string>
+	<string>-1365 369 735 382 -1920 -76 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>370 348 700 431 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1739 87 606 456 -1920 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1330 337 918 498 -1920 0 1920 1057 </string>
+	<string>262 236 937 466 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 5 1920 1052 -1920 0 1920 1057 </string>
+	<string>-1920 -53 1920 1034 -1920 -76 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -3365,9 +3379,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-30T14:24:31Z</date>
+	<date>2017-10-24T14:00:23Z</date>
 	<key>SUSkippedVersion</key>
-	<string>3.1.3.beta.1</string>
+	<string>3.1.5.beta.1</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -7361,7 +7375,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -7558,11 +7572,11 @@
 												<key>Rows</key>
 												<integer>19</integer>
 												<key>Server PID</key>
-												<integer>15179</integer>
+												<integer>4441</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>3E120E1A-B027-4089-935B-B316709E6C4B</string>
+												<string>660152D1-6BFC-4960-A3A7-A1EB3D47F40C</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -8171,7 +8185,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -8368,11 +8382,11 @@
 												<key>Rows</key>
 												<integer>18</integer>
 												<key>Server PID</key>
-												<integer>15181</integer>
+												<integer>4443</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>D92BC694-B630-43EE-84AA-D33AC22BDF61</string>
+												<string>CA453BA2-9FF7-4C19-95AE-14FED0BBA7FD</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -8981,7 +8995,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -9164,7 +9178,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/av/pressly/blue-suede</string>
+													<string>/Users/av/pressly/mobx-little-router/examples/ssr</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -9178,11 +9192,11 @@
 												<key>Rows</key>
 												<integer>18</integer>
 												<key>Server PID</key>
-												<integer>15186</integer>
+												<integer>4447</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>DF4DD48C-13F6-4CE6-846B-84D23C965971</string>
+												<string>A048F231-6C3F-4DE4-A9B3-44C73E08BEEB</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -9194,7 +9208,7 @@
 												<key>TTY</key>
 												<string>/dev/ttys003</string>
 												<key>Working Directory</key>
-												<string>/Users/av/pressly/mobx-little-router/examples/ssr</string>
+												<string>/Users/av/pressly/blue-suede</string>
 											</dict>
 											<key>View Type</key>
 											<string>SessionView</string>
@@ -9810,7 +9824,7 @@
 											<key>Rows</key>
 											<integer>74</integer>
 											<key>Screen</key>
-											<integer>-1</integer>
+											<integer>0</integer>
 											<key>Scrollback Lines</key>
 											<integer>10000</integer>
 											<key>Scrollback With Status Bar</key>
@@ -9993,7 +10007,7 @@
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/av/pressly/blue-suede/src</string>
+											<string>/Users/av/pressly/mobx-little-router/examples/ssr</string>
 										</dict>
 										<key>Hosts</key>
 										<array/>
@@ -10007,11 +10021,11 @@
 										<key>Rows</key>
 										<integer>56</integer>
 										<key>Server PID</key>
-										<integer>15191</integer>
+										<integer>4453</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>D8B094BF-18A6-43E4-9639-F0C2EA839C14</string>
+										<string>F12E56DD-3288-4FD7-8F47-B9FBF14A8ADE</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Shell Integration Ever Used</key>
@@ -10021,7 +10035,7 @@
 										<key>TTY</key>
 										<string>/dev/ttys004</string>
 										<key>Working Directory</key>
-										<string>/Users/av/pressly/mobx-little-router/examples/ssr</string>
+										<string>/Users/av/pressly/blue-suede/src</string>
 									</dict>
 									<key>View Type</key>
 									<string>SessionView</string>
@@ -10623,7 +10637,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -10820,11 +10834,11 @@
 												<key>Rows</key>
 												<integer>19</integer>
 												<key>Server PID</key>
-												<integer>15195</integer>
+												<integer>4457</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>AA448BB7-3B41-4A5B-9146-F2D204F45EDB</string>
+												<string>1FE3B5CF-A74F-437F-A7E9-E27277DB0829</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -11433,7 +11447,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -11630,11 +11644,11 @@
 												<key>Rows</key>
 												<integer>18</integer>
 												<key>Server PID</key>
-												<integer>15202</integer>
+												<integer>4464</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>AAE47D55-6FE7-43A8-9A9B-03C43897385A</string>
+												<string>0458980D-1035-4219-95D0-7C6918DB5A3F</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -12245,7 +12259,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -12442,11 +12456,11 @@
 												<key>Rows</key>
 												<integer>18</integer>
 												<key>Server PID</key>
-												<integer>15205</integer>
+												<integer>4467</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>490E849D-2A49-411F-A716-1BB1E6BE6A69</string>
+												<string>C7701AE0-4D03-44A5-9375-C727E7A56219</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Shell Integration Ever Used</key>
@@ -13133,7 +13147,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -13308,7 +13322,7 @@
 												<key>Bookmark Name</key>
 												<string>Dark</string>
 												<key>Columns</key>
-												<integer>53</integer>
+												<integer>42</integer>
 												<key>Commands</key>
 												<array/>
 												<key>Directories</key>
@@ -13330,11 +13344,11 @@
 												<key>Rows</key>
 												<integer>30</integer>
 												<key>Server PID</key>
-												<integer>15215</integer>
+												<integer>4477</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>9BDB3BEB-06B5-4472-A01B-1C24ED1C6988</string>
+												<string>8B92D7B7-2565-4AB0-BD49-32ABF02D11D7</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -13355,7 +13369,7 @@
 												<key>height</key>
 												<real>552</real>
 												<key>width</key>
-												<real>437</real>
+												<real>349</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
@@ -13945,7 +13959,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -14120,7 +14134,7 @@
 												<key>Bookmark Name</key>
 												<string>Dark</string>
 												<key>Columns</key>
-												<integer>53</integer>
+												<integer>42</integer>
 												<key>Commands</key>
 												<array/>
 												<key>Directories</key>
@@ -14142,11 +14156,11 @@
 												<key>Rows</key>
 												<integer>12</integer>
 												<key>Server PID</key>
-												<integer>15217</integer>
+												<integer>4479</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>9EA80337-D38E-4C40-8473-C59DA22D73D6</string>
+												<string>4C5AAF50-FD55-4008-B492-78204F3318BA</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -14167,7 +14181,7 @@
 												<key>height</key>
 												<real>220</real>
 												<key>width</key>
-												<real>437</real>
+												<real>349</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
@@ -14757,7 +14771,7 @@
 													<key>Rows</key>
 													<integer>74</integer>
 													<key>Screen</key>
-													<integer>-1</integer>
+													<integer>0</integer>
 													<key>Scrollback Lines</key>
 													<integer>10000</integer>
 													<key>Scrollback With Status Bar</key>
@@ -14932,7 +14946,7 @@
 												<key>Bookmark Name</key>
 												<string>Dark</string>
 												<key>Columns</key>
-												<integer>53</integer>
+												<integer>42</integer>
 												<key>Commands</key>
 												<array/>
 												<key>Directories</key>
@@ -14954,11 +14968,11 @@
 												<key>Rows</key>
 												<integer>13</integer>
 												<key>Server PID</key>
-												<integer>15220</integer>
+												<integer>4484</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>85A76B3F-C61C-4AA7-B4B6-757DC96718A4</string>
+												<string>43C8908E-47C3-43DD-8F61-9ABCD9489F6C</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -14979,7 +14993,7 @@
 												<key>height</key>
 												<real>238</real>
 												<key>width</key>
-												<real>437</real>
+												<real>349</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
@@ -14994,7 +15008,7 @@
 										<key>height</key>
 										<real>1012</real>
 										<key>width</key>
-										<real>437</real>
+										<real>349</real>
 										<key>x</key>
 										<real>0.0</real>
 										<key>y</key>
@@ -15586,7 +15600,7 @@
 											<key>Rows</key>
 											<integer>74</integer>
 											<key>Screen</key>
-											<integer>-1</integer>
+											<integer>0</integer>
 											<key>Scrollback Lines</key>
 											<integer>10000</integer>
 											<key>Scrollback With Status Bar</key>
@@ -15761,7 +15775,7 @@
 										<key>Bookmark Name</key>
 										<string>Dark</string>
 										<key>Columns</key>
-										<integer>184</integer>
+										<integer>195</integer>
 										<key>Commands</key>
 										<array/>
 										<key>Directories</key>
@@ -15769,7 +15783,7 @@
 										<key>Environment</key>
 										<dict>
 											<key>PWD</key>
-											<string>/Users/av/sportling/client/src</string>
+											<string>/Users/av/git/react-ssr-example</string>
 										</dict>
 										<key>Hosts</key>
 										<array/>
@@ -15783,11 +15797,11 @@
 										<key>Rows</key>
 										<integer>56</integer>
 										<key>Server PID</key>
-										<integer>15227</integer>
+										<integer>4488</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>AD37C08B-D5B7-49A4-B38B-7740B5EA4BA0</string>
+										<string>18B7E87E-1DDE-45AB-9E86-2D5E7FA1496E</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Session Window Title</key>
@@ -15799,7 +15813,7 @@
 										<key>TTY</key>
 										<string>/dev/ttys011</string>
 										<key>Working Directory</key>
-										<string>/Users/av/git/react-ssr-example</string>
+										<string>/Users/av/sportling/client/src</string>
 									</dict>
 									<key>View Type</key>
 									<string>SessionView</string>
@@ -15808,9 +15822,9 @@
 										<key>height</key>
 										<real>1012</real>
 										<key>width</key>
-										<real>1482</real>
+										<real>1570</real>
 										<key>x</key>
-										<real>438</real>
+										<real>350</real>
 										<key>y</key>
 										<real>0.0</real>
 									</dict>
