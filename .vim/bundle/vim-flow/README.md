@@ -67,8 +67,8 @@ Jump to the definition of the variable under the cursor.
 
 #### `g:flow#autoclose`
 
-If this is set to `1`, the |quickfix| window opened when the plugin finds an error
-will close automatically.
+If this is set to `1`, the quickfix window will not be opened when there are
+no errors, and will be automatically closed when previous errors are cleared.
 
 Default is `0`.
 
@@ -120,6 +120,17 @@ let g:flow#timeout = 4
 #### `g:flow#qfsize`
 
 Leave this as default to let the plugin decide on the quickfix window size.
+
+#### `g:flow#showquickfix`
+
+By default, results are shown in a quickfix window. Setting this to 0 will
+stop the window from being shown. This is useful if you want to use
+vim-flow for the omnicomplete functionality, but are already using
+something like [ale](https://github.com/w0rp/ale).
+
+```VimL
+let g:flow#showquickfix = 0
+```
 
 [gflowenable]: https://github.com/flowtype/vim-flow#gflowenable
 [flow]: https://github.com/facebook/flow

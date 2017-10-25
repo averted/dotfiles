@@ -6,11 +6,12 @@ endif
 let g:loaded_flow = 1
 
 " Configuration switches:
-" - enable:     Typechecking is done on :w.
-" - autoclose:  Quickfix window closes automatically.
-" - errjmp:     Jump to errors after typechecking; default off.
-" - qfsize:     Let the plugin control the quickfix window size.
-" - flowpath:   Path to the flow executable - default is flow in path
+" - enable:       Typechecking is done on :w.
+" - autoclose:    Quickfix window closes automatically when there are no errors.
+" - errjmp:       Jump to errors after typechecking; default off.
+" - qfsize:       Let the plugin control the quickfix window size.
+" - flowpath:     Path to the flow executable - default is flow in path
+" - showquickfix  Show the quickfix window
 if !exists("g:flow#enable")
   let g:flow#enable = 1
 endif
@@ -29,6 +30,9 @@ endif
 if !exists("g:flow#timeout")
   let g:flow#timeout = 2
 endif
+if !exists("g:flow#showquickfix")
+  let g:flow#showquickfix = 1
+endif
 
 " Require the flow executable.
 if !executable(g:flow#flowpath)
@@ -42,14 +46,14 @@ let s:flow_from = '--from vim'
 
 
 " Call wrapper for flow.
-function! <SID>FlowClientCall(cmd, suffix)
+function! <SID>FlowClientCall(cmd, suffix, ...)
   " Invoke typechecker.
   " We also concatenate with the empty string because otherwise
   " cgetexpr complains about not having a String argument, even though
   " type(flow_result) == 1.
   let command = g:flow#flowpath.' '.a:cmd.' '.s:flow_from.' '.a:suffix
 
-  let flow_result = system(command)
+  let flow_result = a:0 > 0 ? system(command, a:1) : system(command)
 
   " Handle the server still initializing
   if v:shell_error == 1
@@ -76,7 +80,7 @@ endfunction
 function! flow#typecheck()
   " Flow current outputs errors to stderr and gets fancy with single character
   " files
-  let flow_result = <SID>FlowClientCall('--timeout '.g:flow#timeout.' --retry-if-init false'.expand('%:p'), '2> /dev/null')
+  let flow_result = <SID>FlowClientCall('--timeout '.g:flow#timeout.' --retry-if-init false "'.expand('%:p').'"', '2> /dev/null')
   let old_fmt = &errorformat
   let &errorformat = s:flow_errorformat
 
@@ -86,20 +90,24 @@ function! flow#typecheck()
     cgetexpr flow_result
   endif
 
-  if g:flow#autoclose
-    botright cwindow
-  else
-    botright copen
+  if g:flow#showquickfix
+    if g:flow#autoclose
+      botright cwindow
+    else
+      botright copen
+    endif
   endif
   let &errorformat = old_fmt
 endfunction
 
 " Get the Flow type at the current cursor position.
 function! flow#get_type()
-  let pos = fnameescape(expand('%')).' '.line('.').' '.col('.')
-  let cmd = g:flow#flowpath.' type-at-pos '.pos
+  let pos = line('.').' '.col('.')
+  let path = ' --path '.fnameescape(expand('%'))
+  let cmd = g:flow#flowpath.' type-at-pos '.pos.path
+  let stdin = join(getline(1,'$'), "\n")
 
-  let output = 'FlowType: '.system(cmd)
+  let output = 'FlowType: '.system(cmd, stdin)
   let output = substitute(output, '\n$', '', '')
   echo output
 endfunction
@@ -115,21 +123,23 @@ endfunction
 
 " Jump to Flow definition for the current cursor position
 function! flow#jump_to_def()
-  let pos = fnameescape(expand('%')).' '.line('.').' '.col('.')
-  let flow_result = <SID>FlowClientCall('get-def '.pos, '')
+  let pos = line('.').' '.col('.')
+  let path = ' --path '.fnameescape(expand('%'))
+  let stdin = join(getline(1,'$'), "\n")
+  let flow_result = <SID>FlowClientCall('get-def '.pos.path, '', stdin)
   " Output format is:
   "   File: "/path/to/file", line 1, characters 1-11
 
   " Flow returns a single line-feed if no result
   if strlen(flow_result) == 1
     echo 'No definition found'
-    return
+    return 1
   endif
 
   let parts = split(flow_result, ",")
   if len(parts) < 2
       echo 'cannot find definition'
-      return
+      return 1
   endif
 
   " File: "/path/to/file" => /path/to/file
@@ -144,15 +154,18 @@ function! flow#jump_to_def()
     let col = split(split(parts[2], " ")[1], "-")[0]
   endif
 
-  if filereadable(file)
-    execute 'edit' file
+  " File - means current file
+  if filereadable(file) || file == '-'
+    if file != '-'
+      execute 'edit' file
+    endif
     call cursor(row, col)
   end
 endfunction
 
 " Open importers of current file in quickfix window
 function! flow#get_importers()
-  let flow_result = <SID>FlowClientCall('get-importers '.expand('%').' --strip-root', '')
+  let flow_result = <SID>FlowClientCall('get-importers "'.expand('%').'" --strip-root', '')
   let importers = split(flow_result, '\n')[1:1000]
 
   let l:flow_errorformat = '%f'
