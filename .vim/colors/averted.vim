@@ -432,10 +432,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsParen", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsParenIfElse", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsParenSwitch", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsParens", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsSwitchColon", [s:dark_yellow, s:light_grey4], [], "")
+  call <SID>X( "jsSwitchBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsObjectBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsIfElseBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "jsRepeatBraces", [s:dark_yellow, s:light_grey4], [], "")
+  call <SID>X( "jsTryCatchBraces", [s:dark_orange, s:light_grey4], [], "")
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
@@ -515,20 +520,26 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowClassGroup", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassProperty", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowType", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowTypeValue", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowTypeCustom", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeStatement", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowMaybe", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowObject", [s:dark_yellow, s:light_fg], [], "italic" )
-  call <SID>X( "jsFlowGroup", [s:dark_light_blue, s:light_fg], [], "" )
+  call <SID>X( "jsFlowGroup", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowOrOperator", [s:dark_magenta, s:light_fg], [], "" )
   call <SID>X( "jsFlowWildcard", [s:dark_magenta, s:light_fg], [], "" )
+  call <SID>X( "jsFlowArrow", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowArrowArguments", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowArrowArguments", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowDefinition", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowParenAnnotation", [s:dark_magenta, s:light_fg], [], "italic" )
 
   call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")
   call <SID>X( "jsCommentTodo", [s:dark_bg, s:light_grey4], [s:dark_grey3, s:light_red], "italic")
 
-  call <SID>X( "jsTryCatchBraces", [s:dark_orange, s:light_grey4], [], "")
-
   " TODO: Remove after this issue is fixed (https://github.com/pangloss/vim-javascript/issues/955)
   call <SID>X( "jsParensError", [s:dark_orange, s:light_fg], [], "" )
+
 
   "" JSON Highlighting
   call <SID>X( "jsonBraces", [s:dark_yellow, s:light_fg], [], "" )
