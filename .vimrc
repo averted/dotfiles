@@ -79,6 +79,11 @@ let g:flow#autoclose = 1
 let g:flow#timeout = 10
 
 ""
+" vim-go
+""
+let g:go_version_warning = 0
+
+""
 " vim-javascript
 ""
 let g:javascript_enable_domhtmlcss = 1
