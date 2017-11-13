@@ -510,6 +510,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "jsGlobalNodeObjects", [s:dark_red, s:light_fg], [], "" )
 
+  call <SID>X( "jsTaggedTemplate", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsTemplateVar", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsTemplateBraces", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsTemplateExpression", [s:dark_yellow, s:light_fg], [], "" )
