@@ -1,0 +1,8 @@
+# vim bundles
+.vim/bundle
+
+# OSX
+.DS_Store
+Thumbs.db
+Desktop.ini
+.*.sw[a-z]
