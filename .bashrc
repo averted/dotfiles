@@ -55,10 +55,42 @@ alias extension="cd $HOME/pressly/chrome-extension/src"
 alias extensions="cd $HOME/pressly/chrome-extension/src"
 
 # Sportling aliases
-alias sc="cd $HOME/sportling/client/src"
-alias ss="cd $HOME/sportling/server"
-alias sa="cd $HOME/sportling/aws"
-alias sx="cd $HOME/sportling/aws"
+# alias sc="cd $HOME/sportling/client/src"
+# alias ss="cd $HOME/sportling/server"
+# alias sx="cd $HOME/sportling/aws"
+
+function sc() {
+  CLIENT_DIR="$HOME/sportling/client/src"
+  CLIENT_GIT_DIR="$HOME/git/client/src"
+
+  if [[ -d $CLIENT_DIR ]]; then
+    cd $CLIENT_DIR
+  else
+    cd $CLIENT_GIT_DIR
+  fi
+}
+
+function ss() {
+  SERVER_DIR="$HOME/sportling/server"
+  SERVER_GIT_DIR="$HOME/git/server"
+
+  if [[ -d $SERVER_DIR ]]; then
+    cd $SERVER_DIR
+  else
+    cd $SERVER_GIT_DIR
+  fi
+}
+
+function sx() {
+  AWS_DIR="$HOME/sportling/aws"
+  AWS_GIT_DIR="$HOME/git/aws"
+
+  if [[ -d $AWS_DIR ]]; then
+    cd $AWS_DIR
+  else
+    cd $AWS_GIT_DIR
+  fi
+}
 
 # NPM
 alias npm-list="npm list -g --depth=0"
@@ -77,7 +109,7 @@ alias jasmine="jasmine-node --autotest --color"
 alias md="msee"
 
 # LS alias
-l() {
+function l() {
   if [[ $@ == "s-la" || $@ == "s-al" || $@ == "s-l" ]]; then
     command ls -lahG
   else
