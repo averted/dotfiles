@@ -67,7 +67,7 @@ alias cc="cd $HOME/git/climby-client"
 # Sportling aliases
 function sc() {
   CLIENT_DIR="$HOME/sportling/client/src"
-  CLIENT_GIT_DIR="$HOME/git/client/src"
+  CLIENT_GIT_DIR="$HOME/git/sportling-client/src"
 
   if [[ -d $CLIENT_DIR ]]; then
     cd $CLIENT_DIR
@@ -78,7 +78,7 @@ function sc() {
 
 function ss() {
   SERVER_DIR="$HOME/sportling/server"
-  SERVER_GIT_DIR="$HOME/git/server"
+  SERVER_GIT_DIR="$HOME/git/sportling-server"
 
   if [[ -d $SERVER_DIR ]]; then
     cd $SERVER_DIR
