@@ -64,12 +64,18 @@ map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
 map <Tab> <C-W><C-W>
 map <S-Tab> <C-W>W
-map - <C-W>>
-map = <C-W><
+" map - <C-W>>
+" map = <C-W><
 map <S-E> :vsp<CR>
 " inoremap jj <Esc>
 "noremap ff :call ConsoleLog()<CR>
 "inoremap ff console.log('--
+
+""
+" Easy Vim Grep remaps
+""
+nnoremap - :vimgrep <cword> ./**/* <CR>:cw<CR>
+set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
 
 ""
 " vim-flow
