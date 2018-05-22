@@ -443,7 +443,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsTryCatchBraces", [s:dark_orange, s:light_grey4], [], "")
   call <SID>X( "jsBrackets", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsOperator", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "jsGlobalObjects", [s:dark_fg, s:light_fg], [], "" )
+  call <SID>X( "jsGlobalObjects", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "jsBuiltins", [s:dark_magenta, s:light_fg], [], "" )
 
   call <SID>X( "jsNoise", [s:dark_yellow, s:light_fg], [], "" )

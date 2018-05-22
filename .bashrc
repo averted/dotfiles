@@ -46,8 +46,10 @@ alias postman="cd $HOME/pressly/postman"
 alias embed="cd $HOME/pressly/embeds/src"
 alias blue="cd $HOME/pressly/blue-suede/src"
 alias bs="cd $HOME/pressly/blue-suede/src"
-alias mb="cd $HOME/pressly/moody-blue"
-alias moo="cd $HOME/pressly/moody-blue"
+alias mb="cd $HOME/pressly/moody-blue/applications/web/src"
+alias moo="cd $HOME/pressly/moody-blue/applications/web/src"
+alias moom="cd $HOME/pressly/moody-blue"
+alias moop="cd $HOME/pressly/moody-blue/packages"
 alias little="cd $HOME/pressly/mobx-little-router"
 alias basic="cd $HOME/pressly/mobx-little-router/examples/basic"
 alias router="cd $HOME/pressly/mobx-little-router/packages/mobx-little-router"
@@ -60,9 +62,9 @@ alias extensions="cd $HOME/pressly/chrome-extension/src"
 alias thunder="cd $HOME/git/thunderbox-client"
 alias thunderserver="cd $HOME/git/thunderbox-server"
 
-# Climby aliases
-alias cs="cd $HOME/git/climby-server"
-alias cc="cd $HOME/git/climby-client"
+# Climbee aliases
+alias cs="cd $HOME/git/climbee-server"
+alias cc="cd $HOME/git/climbee-client/src"
 
 # Sportling aliases
 function sc() {
