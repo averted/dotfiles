@@ -525,7 +525,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowTypeCustom", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeStatement", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowMaybe", [s:dark_magenta, s:light_fg], [], "italic" )
-  call <SID>X( "jsFlowObject", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowObject", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowGroup", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowOrOperator", [s:dark_magenta, s:light_fg], [], "" )
   call <SID>X( "jsFlowWildcard", [s:dark_magenta, s:light_fg], [], "" )
