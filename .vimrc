@@ -68,6 +68,7 @@ map <Tab> <C-W><C-W>
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
+noremap <Leader>c :call CommentBlock()<CR>
 " inoremap jj <Esc>
 
 " Show current colorscheme colors
@@ -166,5 +167,11 @@ endfunction
 function! ConsoleLog()
   :exe ":normal o" . "console.log('--',)"
   :exe ":startinsert"
+endfunction
+
+function! CommentBlock()
+  :exe ":normal o" . "/**"
+  :exe ":normal o" . " * Comment."
+  :exe ":normal o" . "*/"
 endfunction
 """"""""""""""""""""""""""""""
