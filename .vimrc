@@ -69,6 +69,7 @@ map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
+noremap <Leader>t :call TestSuite()<CR>
 " inoremap jj <Esc>
 
 " Show current colorscheme colors
@@ -173,5 +174,24 @@ function! CommentBlock()
   :exe ":normal o" . "/**"
   :exe ":normal o" . " * Comment."
   :exe ":normal o" . "*/"
+endfunction
+
+function! TestSuite()
+  :exe "set nopaste"
+  :exe ":normal o" . "describe('Test Suite', () => {"
+  :exe ":normal o" . "beforeEach(() => {"
+  :exe ":normal o" . "// before each"
+  :exe ":normal o" . "})"
+  :exe ":normal o"
+  :exe ":normal o" . "  test('works correctly', () => {"
+  :exe ":normal o" . "expect(someVar).not.toBeNull()"
+  :exe ":normal o" . "expect(someVar).toHaveLength(1)"
+  :exe ":normal o" . "expect(someVar[0].anotherVar).toEqual('test')"
+  :exe ":normal o" . "})"
+  :exe ":normal o"
+  :exe ":normal o" . "  afterEach(() => {"
+	:exe ":normal o" . "// after each"
+  :exe ":normal o" . "})"
+  :exe ":normal o" . "})"
 endfunction
 """"""""""""""""""""""""""""""
