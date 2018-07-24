@@ -1,0 +1,2 @@
+// Restore a specific file to the previous version before commit h0a0s0h (~1 for 1 above version)
+git checkout h0a0s0h~1 -- file1/to/restore file2/to/restore
