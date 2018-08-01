@@ -206,6 +206,9 @@ function! TestSuiteEnzyme()
   :exe ":normal o" . "it('renders', () => {"
   :exe ":normal o" . "const wrapper = mount(<Logo name=\"logo example name\" />)"
   :exe ":normal o" . "expect(wrapper.text()).toMatch(/logo example name/)"
+  :exe ":normal o" . "expect(wrapper.find('Logo')).toHaveLength(1)"
+  :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().tagName).toEqual('SPAN')"
+  :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().localName).toEqual('span')"
   :exe ":normal o" . "})"
   :exe ":normal o" . "})"
 endfunction
