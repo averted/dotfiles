@@ -1,14 +1,15 @@
 # PATH
 export PATH="$PATH:$HOME/scripts/bin"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$HOME/gocode/bin"
-export PATH="$HOME/pressly/api/scripts:$PATH"
+#export PATH="$PATH:/usr/local/go/bin"
+#export PATH="$PATH:$HOME/gocode/bin"
 
 # GOPATH
-export GOPATH="$HOME/gocode"
+#export GOPATH="$HOME/gocode"
 
 # General alias
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias ls='ls -lahG'
 alias c='clear'
 alias cl='clear'
@@ -36,26 +37,18 @@ alias gtis="git s"
 alias lpsql="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
 
 # Pressly aliases
-alias ui="cd $HOME/pressly/ui-components"
-alias api="cd $HOME/pressly/api"
-alias dash="cd $HOME/pressly/dashboard/webapp/src/app"
-alias press="cd $HOME/pressly/ng-pressilla/src"
-alias models="cd $HOME/pressly/dashboard/webapp/src/modules/app/models"
-alias pressly="cd $HOME/pressly"
-alias postman="cd $HOME/pressly/postman"
-alias embed="cd $HOME/pressly/embeds/src"
-alias blue="cd $HOME/pressly/blue-suede/src"
-alias bs="cd $HOME/pressly/blue-suede/src"
-alias mb="cd $HOME/pressly/moody-blue/applications/web/src"
-alias moo="cd $HOME/pressly/moody-blue/applications/web/src"
-alias moom="cd $HOME/pressly/moody-blue"
-alias moop="cd $HOME/pressly/moody-blue/packages"
-alias little="cd $HOME/pressly/mobx-little-router/packages/mobx-little-router/src"
-alias littlec="cd $HOME/pressly/mobx-little-router/examples/react-client"
-alias ext="cd $HOME/pressly/chrome-extension/src"
-alias extent="cd $HOME/pressly/chrome-extension/src"
-alias extension="cd $HOME/pressly/chrome-extension/src"
-alias extensions="cd $HOME/pressly/chrome-extension/src"
+alias embed="cd $HOME/press/embeds/src"
+alias blue="cd $HOME/press/blue-suede/src"
+alias bs="cd $HOME/press/blue-suede/src"
+alias moo="cd $HOME/press/mb/applications/web/src"
+alias moom="cd $HOME/press/mb"
+alias moop="cd $HOME/press/mb/packages"
+alias little="cd $HOME/press/mobx-little-router/packages/mobx-little-router/src"
+alias littlec="cd $HOME/press/mobx-little-router/examples/react-client"
+alias ext="cd $HOME/press/chrome-extension/src"
+alias extent="cd $HOME/press/chrome-extension/src"
+alias extension="cd $HOME/press/chrome-extension/src"
+alias extensions="cd $HOME/press/chrome-extension/src"
 alias pocket="cd $HOME/git/pocket-router"
 alias pocketc="cd $HOME/git/pocket-router/examples/client/src"
 
@@ -141,7 +134,7 @@ function ls() {
 function cd() {
   string=$@
 
-  if [[ ${string: -3} == ".js" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -5} == ".styl" || ${string: -7} == ".coffee" ]]; then
+  if [[ ${string: -3} == ".js" || ${string: -4} == ".jsx" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -5} == ".styl" || ${string: -7} == ".coffee" ]]; then
     command cd "$(dirname $string)"
   else
     command cd "$@"

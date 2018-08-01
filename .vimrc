@@ -70,6 +70,7 @@ map <S-E> :vsp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
+noremap <Leader>e :call TestSuiteEnzyme()<CR>
 " inoremap jj <Esc>
 
 " Show current colorscheme colors
@@ -191,6 +192,20 @@ function! TestSuite()
   :exe ":normal o"
   :exe ":normal o" . "  afterEach(() => {"
 	:exe ":normal o" . "// after each"
+  :exe ":normal o" . "})"
+  :exe ":normal o" . "})"
+endfunction
+
+function! TestSuiteEnzyme()
+  :exe "set nopaste"
+  :exe ":normal o" . "import React from 'react'"
+  :exe ":normal o" . "import { mount } from 'enzyme'"
+  :exe ":normal o" . "import Logo from '../'"
+  :exe ":normal o"
+  :exe ":normal o" . "describe('Logo', () => {"
+  :exe ":normal o" . "it('renders', () => {"
+  :exe ":normal o" . "const wrapper = mount(<Logo name=\"logo example name\" />)"
+  :exe ":normal o" . "expect(wrapper.text()).toMatch(/logo example name/)"
   :exe ":normal o" . "})"
   :exe ":normal o" . "})"
 endfunction

@@ -516,11 +516,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsTemplateExpression", [s:dark_yellow, s:light_fg], [], "" )
 
   call <SID>X( "jsFlowNoise", [s:dark_yellow, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowArray", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowArgumentDef", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassDef", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassGroup", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowClassProperty", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowType", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowTypeOf", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeValue", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeCustom", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowTypeStatement", [s:dark_magenta, s:light_fg], [], "italic" )
