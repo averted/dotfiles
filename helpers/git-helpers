@@ -1,2 +1,25 @@
-// Restore a specific file to the previous version before commit h0a0s0h (~1 for 1 above version)
-git checkout h0a0s0h~1 -- file1/to/restore file2/to/restore
+# #
+# Restore a specific file to the previous version before commit h0a0s0h (~1 for 1 above version)
+#
+#   git checkout h0a0s0h~1 -- file1/to/restore file2/to/restore
+#
+
+# #
+# Checkout a file from a specific branch during rebasing.
+#
+# Example - if your current branch is feature/123,
+# and you're rebasing it on top of master:
+#
+#   git checkout feature/123
+#   git rebase master
+#
+# and run into conflicts on file: src/some/file.js
+# You can revert this file to master's version with:
+#
+#   git checkout master -- src/some/file.js
+#
+# or use "ours" and "theirs" aliases:
+#
+#   git checkout --ours src/some/file.js
+#   git checkout --theirs src/some/file.js
+#
