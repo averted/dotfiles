@@ -30,6 +30,8 @@ set splitright
 set backspace=indent,eol,start  " allow backspacing indents
 let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
+let g:acp_behaviorKeywordLength = 1
+set completeopt=longest,menuone
 
 """"""""""""""""""""""""""""""
 " Auto CMD
@@ -64,6 +66,8 @@ map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
 map <Tab> <C-W><C-W>
+inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>Tab>"<CR>
+
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
 " Shift+R is REPLACE (unused)
@@ -137,6 +141,7 @@ au FileType make setlocal noexpandtab                   "Makefile
 au FileType java setlocal tabstop=4
 au FileType java setlocal softtabstop=4
 au FileType java setlocal shiftwidth=4
+
 " let java_highlight_debug=1
 let java_highlight_functions=1
 let java_highlight_java_lang_ids=1

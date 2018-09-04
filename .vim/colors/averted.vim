@@ -336,7 +336,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "CursorLine", [], [s:dark_bg, s:light_bg], "none" )  " the screen line that the cursor is in when 'cursorline' is set
   "call <SID>X( "CursorColumn", [], [s:dark_bg, s:light_bg], "" )  " the screen column that the cursor is in when 'cursorcolumn' is set
 
-  call <SID>X( "PMenu", [s:dark_orange, s:light_blue], [s:dark_black, s:light_fg], "none" )  " popup menu: normal item
+  call <SID>X( "PMenu", [s:dark_black, s:light_blue], [s:dark_grey1, s:light_fg], "none" )  " popup menu: normal item
   call <SID>X( "PMenuSel", [s:dark_black, s:light_fg], [s:dark_orange, s:light_blue], "none" )  " popup menu: selected item
   call <SID>X( "PMenuSBar", [s:dark_grey0, s:light_grey1], [s:dark_grey0, s:light_grey1], "none" )  " popup menu: scrollbar
   call <SID>X( "PMenuThumb", [s:dark_grey0, s:light_grey1], [s:dark_grey3, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
