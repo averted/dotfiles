@@ -67,6 +67,8 @@ map <F3> :call Retab()<CR>
 map <Tab> <C-W><C-W>
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
+" Shift+R is REPLACE (unused)
+map <S-R> :sp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
@@ -83,8 +85,12 @@ map <F8> :so $VIMRUNTIME/syntax/hitest.vim<CR>
 map [[ :prev<CR>
 map ]] :next<CR>
 
+" Increase / decrease split window width
+map - <C-W>>
+map = <C-W><
+
 " Easy Vim Grep remaps
-nnoremap - :vimgrep <cword> ./**/* <CR>:cw<CR>
+nnoremap \ :vimgrep <cword> ./**/* <CR>:cw<CR>
 set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
 """"""""""""""""""""""""""""""
 
@@ -127,6 +133,11 @@ au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as
 au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
 au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
 au FileType make setlocal noexpandtab                   "Makefile
+
+"Java
+au FileType java setlocal tabstop=4
+au FileType java setlocal softtabstop=4
+au FileType java setlocal shiftwidth=4
 """"""""""""""""""""""""""""""
 
 
@@ -167,7 +178,7 @@ function! Retab()
 endfunction
 
 function! ConsoleLog()
-  :exe ":normal o" . "console.log('--',)"
+  :exe ":normal o" . "console.log('-- "
   :exe ":startinsert"
 endfunction
 
@@ -191,7 +202,7 @@ function! TestSuite()
   :exe ":normal o" . "})"
   :exe ":normal o"
   :exe ":normal o" . "  afterEach(() => {"
-	:exe ":normal o" . "// after each"
+  :exe ":normal o" . "// after each"
   :exe ":normal o" . "})"
   :exe ":normal o" . "})"
 endfunction

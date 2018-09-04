@@ -6,6 +6,13 @@ export PATH="$PATH:$HOME/scripts/bin"
 # GOPATH
 #export GOPATH="$HOME/gocode"
 
+# JAVA
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$PATH:$HOME/java/maven/bin"
+
+# MySQL
+export PATH="$PATH:/usr/local/mysql/bin"
+
 # General alias
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -36,6 +43,20 @@ alias gtis="git s"
 # Postgress
 alias lpsql="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
 
+# Docker
+alias d="docker"
+
+function dc() {
+  container=$@
+  command docker exec -it $container /bin/bash
+}
+
+# Pay aliases
+alias map="cd $HOME/paytm/map-ui/src/app"
+alias cma="cd $HOME/java/code/map-cma/src/main/java/com/paytm/midgar/mapcma"
+alias cmam="cd $HOME/java/code/map-cma"
+alias paytm="cd $HOME/git/paytm/client/src"
+
 # Pressly aliases
 alias embed="cd $HOME/press/embeds/src"
 alias blue="cd $HOME/press/blue-suede/src"
@@ -57,8 +78,8 @@ alias thunder="cd $HOME/git/thunderbox-client"
 alias thunderserver="cd $HOME/git/thunderbox-server"
 
 # Climbee aliases
-alias cs="cd $HOME/git/climbee-server"
-alias cc="cd $HOME/git/climbee-client/src"
+alias cs="cd $HOME/git/climbee/server"
+alias cc="cd $HOME/git/climbee/client/src"
 
 # Sportling aliases
 function sc() {

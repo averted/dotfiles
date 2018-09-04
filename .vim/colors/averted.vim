@@ -536,6 +536,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "jsFlowArrowArguments", [s:dark_yellow, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowDefinition", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "jsFlowParenAnnotation", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "jsFlowFunctionGroup", [s:dark_magenta, s:light_fg], [], "italic" )
 
   call <SID>X( "jsComment", [s:dark_grey_comment, s:light_grey4], [], "italic")
   call <SID>X( "jsCommentTodo", [s:dark_bg, s:light_grey4], [s:dark_grey3, s:light_red], "italic")
