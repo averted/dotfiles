@@ -569,6 +569,26 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "goFormatSpecifier", [s:dark_orange, s:light_fg], [], "" )
   " call <SID>X( "goEscapeC", [s:dark_light_blue, s:light_fg], [], "" )
 
+  "" Java Highlighting
+  call <SID>X( "javaClassDecl", [s:dark_orange, s:light_fg], [], "underline" )
+  call <SID>X( "javaAnnotation", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "javaScopeDecl", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "javaStorageClass", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "javaType", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "javaTypedef", [s:dark_pink, s:light_fg], [], "" )
+  call <SID>X( "javaBraces", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "javaParen", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "javaParen1", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "javaParen2", [s:dark_orange, s:light_fg], [], "" )
+  call <SID>X( "javaFuncDef", [s:dark_yellow, s:light_fg], [], "" )
+
+  call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
+  call <SID>X( "javaCharacter", [s:dark_green, s:light_fg], [], "" )
+
+  call <SID>X( "javaC_JavaLang", [s:dark_magenta, s:light_fg], [], "italic" )
+  call <SID>X( "javaLangClass", [s:dark_violet, s:light_fg], [], "" )
+
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
 

@@ -31,7 +31,6 @@ set backspace=indent,eol,start  " allow backspacing indents
 let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""
 " Auto CMD
 "
@@ -138,6 +137,11 @@ au FileType make setlocal noexpandtab                   "Makefile
 au FileType java setlocal tabstop=4
 au FileType java setlocal softtabstop=4
 au FileType java setlocal shiftwidth=4
+" let java_highlight_debug=1
+let java_highlight_functions=1
+let java_highlight_java_lang_ids=1
+let java_space_errors=1
+let java_comment_strings=1
 """"""""""""""""""""""""""""""
 
 
