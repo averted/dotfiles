@@ -31,7 +31,7 @@ set backspace=indent,eol,start  " allow backspacing indents
 let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
 let g:acp_behaviorKeywordLength = 1
-set completeopt=longest,menuone
+set completeopt=menu
 
 """"""""""""""""""""""""""""""
 " Auto CMD
@@ -67,6 +67,7 @@ map <F2> :set nopaste<CR>
 map <F3> :call Retab()<CR>
 map <Tab> <C-W><C-W>
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>Tab>"<CR>
+inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
@@ -135,15 +136,19 @@ au BufNewFile,BufRead *.ino  set filetype=javascript    "Treat ES6 extensions as
 au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
 au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
 au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
-au FileType make setlocal noexpandtab                   "Makefile
+au BufNewFile,BufRead *.java set filetype=javaOverride
 
-"Java
-au FileType java setlocal tabstop=4
-au FileType java setlocal softtabstop=4
-au FileType java setlocal shiftwidth=4
+" Makefile
+au FileType make setlocal noexpandtab
 
-" let java_highlight_debug=1
-let java_highlight_functions=1
+" Java
+au FileType javaOverride setlocal tabstop=4
+au FileType javaOverride setlocal softtabstop=4
+au FileType javaOverride setlocal shiftwidth=4
+au FileType javaOverride execute 'setlocal dict+=~/.vim/dictionaries/java.dict'
+
+"let java_highlight_debug=1
+"let java_highlight_functions=1
 let java_highlight_java_lang_ids=1
 let java_space_errors=1
 let java_comment_strings=1

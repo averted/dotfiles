@@ -580,12 +580,17 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "javaParen", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "javaParen1", [s:dark_orange, s:light_fg], [], "" )
   call <SID>X( "javaParen2", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "javaFuncDef", [s:dark_yellow, s:light_fg], [], "" )
+  call <SID>X( "javaFuncDef", [s:dark_red, s:light_fg], [], "" )
 
   call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
   call <SID>X( "javaCharacter", [s:dark_green, s:light_fg], [], "" )
 
+  call <SID>X( "javaClassName", [s:dark_red, s:light_fg], [], "" )
+  call <SID>X( "javaFuncArgs", [s:dark_yellow, s:light_fg], [], "" )
+
+  call <SID>X( "javaVarDeclaration", [s:dark_light_blue, s:light_fg], [], "" )
+  call <SID>X( "javaTypeDeclaration", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "javaC_JavaLang", [s:dark_magenta, s:light_fg], [], "italic" )
   call <SID>X( "javaLangClass", [s:dark_violet, s:light_fg], [], "" )
 
@@ -600,7 +605,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "javaScriptDocTags", [s:dark_grey_comment, s:light_white], [], "" )
   call <SID>X( "javaScriptDocParam", [s:dark_grey_comment, s:light_white], [], "" )
   call <SID>X( "javaScriptFuncKeyword", [s:dark_cyan, s:light_white], [], "" )
-  call <SID>X( "javaScriptFuncDef", [s:dark_pink, s:light_white], [], "" )
+  call <SID>X( "javaScriptFuncDef", [s:dark_yellow, s:light_white], [], "" )
   call <SID>X( "javaScriptFuncArg", [s:dark_pink, s:light_white], [], "" )
   call <SID>X( "javaScriptEventListenerKeywords", [s:dark_fg, s:light_white], [], "" )
   call <SID>X( "javaScriptOpSymbols", [s:dark_fg, s:light_white], [], "" )

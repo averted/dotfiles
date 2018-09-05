@@ -39,18 +39,21 @@ syn keyword javaOperator  var new instanceof
 syn keyword javaType    boolean char byte short int long float double
 syn keyword javaType    void
 syn keyword javaStatement  return
-" syn keyword javaStorageClass  static synchronized transient volatile final strictfp serializable nextgroup=javaVarDef skipwhite
-syn keyword javaSomething    final nextgroup=javaVarDef skipwhite
-syn match   javaVarDef  "\k\+" contained
+syn keyword javaStorageClass  static synchronized transient volatile final strictfp serializable nextgroup=javaTypeDeclaration skipwhite
+syn match   javaTypeDeclaration "\k\+" contained nextgroup=javaVarDeclaration skipwhite
+syn match   javaVarDeclaration "\k\+" contained
 syn keyword javaExceptions  throw try catch finally
 syn keyword javaAssert    assert
 syn keyword javaMethodDecl  synchronized throws
-syn keyword javaClassDecl  extends implements interface
+syn keyword javaClassDecl  extends implements interface nextgroup=javaClassName skipwhite
 " to differentiate the keyword class from MyClass.class we use a match here
 syn match   javaTypedef    "\.\s*\<class\>"ms=s+1
-syn keyword javaClassDecl  enum
-syn match   javaClassDecl  "^class\>"
-syn match   javaClassDecl  "[^.]\s*\<class\>"ms=s+1
+
+syn keyword javaClassDecl  enum nextgroup=javaClassName skipwhite
+syn match   javaClassDecl  "^class\>" nextgroup=javaClassName skipwhite
+syn match   javaClassDecl  "[^.]\s*\<class\>"ms=s+1 nextgroup=javaClassName skipwhite
+syn match   javaClassName "\k\+" contained
+
 syn match   javaAnnotation  "@\([_$a-zA-Z][_$a-zA-Z0-9]*\.\)*[_$a-zA-Z][_$a-zA-Z0-9]*\>" contains=javaString
 syn match   javaClassDecl  "@interface\>"
 syn keyword javaBranch    break continue nextgroup=javaUserLabelRef skipwhite
@@ -205,11 +208,13 @@ if exists("java_highlight_functions")
     " two things:
     "  1. class names are always capitalized (ie: Button)
     "  2. method names are never capitalized (except constructors, of course)
-    "syn region javaFuncDef start=+^\s\+\(\(public\|protected\|private\|static\|abstract\|final\|native\|synchronized\)\s\+\)*\(\(void\|boolean\|char\|byte\|short\|int\|long\|float\|double\|\([A-Za-z_][A-Za-z0-9_$]*\.\)*[A-Z][A-Za-z0-9_$]*\)\(<[^>]*>\)\=\(\[\]\)*\s\+[a-z][A-Za-z0-9_$]*\|[A-Z][A-Za-z0-9_$]*\)\s*([^0-9]+ end=+)+ contains=javaScopeDecl,javaType,javaStorageClass,javaComment,javaLineComment,@javaClasses
-    syn region javaFuncDef start=+^\s\+\(\(public\|protected\|private\|static\|abstract\|final\|native\|synchronized\)\s\+\)*\(<.*>\s\+\)\?\(\(void\|boolean\|char\|byte\|short\|int\|long\|float\|double\|\([A-Za-z_][A-Za-z0-9_$]*\.\)*[A-Z][A-Za-z0-9_$]*\)\(<[^(){}]*>\)\=\(\[\]\)*\s\+[a-z][A-Za-z0-9_$]*\|[A-Z][A-Za-z0-9_$]*\)\s*(+ end=+)+ contains=javaScopeDecl,javaType,javaStorageClass,javaComment,javaLineComment,@javaClasses,javaAnnotation
+    "syn region javaFuncDef start=+^\s\+\(\(public\|protected\|private\|static\|abstract\|final\|native\|synchronized\)\s\+\)*\(\(void\|boolean\|char\|byte\|short\|int\|long\|float\|double\|\([A-Za-z_][A-Za-z0-9_$]*\.\)*[A-Z][A-Za-z0-9_$]*\)\(<[^>]*>\)\=\(\[\]\)*\s\+[a-z][A-Za-z0-9_$]*\|[A-Z][A-Za-z0-9_$]*\)\s*([^0-9]+ end=+)+ contains=javaScopeDecl,javaType,javaStorageClass,javaComment,javaLineComment,@javaClasses,javaAnnotation,javaFuncArgs
+    syn region javaFuncDef start=+^\s\+\(\(public\|protected\|private\|static\|abstract\|final\|native\|synchronized\)\s\+\)*\(<.*>\s\+\)\?\(\(void\|boolean\|char\|byte\|short\|int\|long\|float\|double\|\([A-Za-z_][A-Za-z0-9_$]*\.\)*[A-Z][A-Za-z0-9_$]*\)\(<[^(){}]*>\)\=\(\[\]\)*\s\+[a-z][A-Za-z0-9_$]*\|[A-Z][A-Za-z0-9_$]*\)\s*(+ end=+)+ contains=javaScopeDecl,javaType,javaStorageClass,javaComment,javaLineComment,@javaClasses,javaAnnotation,javaFuncArgs
   endif
   syn match javaLambdaDef "[a-zA-Z_][a-zA-Z0-9_]*\s*->"
   syn match  javaBraces  "[{}]"
+  syn region javaFuncArgs start=+(+ end=+)+ contains=javaString,javaConstant,javaBoolean,javaNumber,javaAnnotation
+  "syn match  javaSomething "\k\+" contained
   syn cluster javaTop add=javaFuncDef,javaBraces,javaLambdaDef
 endif
 
@@ -297,12 +302,10 @@ hi def link javaConditional    Conditional
 hi def link javaRepeat      Repeat
 hi def link javaExceptions    Exception
 hi def link javaAssert      Statement
-
-" CUSTOM
-" hi def link javaStorageClass    StorageClass
-" hi def link javaMethodDecl    javaStorageClass
-" hi def link javaClassDecl    javaStorageClass
-" hi def link javaScopeDecl    javaStorageClass
+hi def link javaStorageClass    StorageClass
+hi def link javaMethodDecl    javaStorageClass
+hi def link javaClassDecl    javaStorageClass
+hi def link javaScopeDecl    javaStorageClass
 
 hi def link javaBoolean    Boolean
 hi def link javaSpecial    Special
