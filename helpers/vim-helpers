@@ -1,0 +1,18 @@
+# #
+# Search and replace multiple buffers.
+#
+# Open multiple files into vim buffers:
+#
+#   vim ./*.js
+#
+# run:
+#
+#   :bufdo %s/pattern/replace/ge | update
+#
+# Definitions:
+#   - bufdo       Apply the following command to all buffers.
+#   - %s          Search and replace all lines in buffer.
+#   - g           Change all occurences (remove this for FIRST occurence).
+#   - |           Command separator.
+#   - update      Save (write file only if changes were made). Can be omitted with 'set hidden' flag.
+#
