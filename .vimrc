@@ -25,6 +25,7 @@ set shiftwidth=2
 
 set incsearch                   " auto-move to first found search member
 set hlsearch                    " highlight all search matches
+set hidden                      " no need to save buffers manually
 
 set splitright
 set backspace=indent,eol,start  " allow backspacing indents
@@ -133,10 +134,17 @@ au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / 
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.ino  set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.jsx  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
 au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
 au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
 au BufNewFile,BufRead *.java set filetype=javaOverride
+
+" JavaScript
+au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
+
+" JSON
+au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
 
 " Makefile
 au FileType make setlocal noexpandtab
