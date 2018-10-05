@@ -46,7 +46,11 @@ sectionBorderColor
 sectionBackgroundColor
 tooltipBackgroundColor
 
-React Component
+React Component PureComponent
 dangerouslySetInnerHTML
 console
 log
+decorators
+extends
+constructor
+toLowerCase

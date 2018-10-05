@@ -62,6 +62,7 @@ map k <Right>
 map 0 ^
 :nmap <F1> <nop>
 :imap <F1> <nop>
+noremap <F1> <nop>
 inoremap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
@@ -75,6 +76,7 @@ map <S-E> :vsp<CR>
 " Shift+R is REPLACE (unused)
 map <S-R> :sp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
+noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
 noremap <Leader>e :call TestSuiteEnzyme()<CR>
@@ -208,6 +210,16 @@ function! CommentBlock()
   :exe ":normal o" . "/**"
   :exe ":normal o" . " * Comment."
   :exe ":normal o" . "*/"
+endfunction
+
+function! ReactClass()
+  :exe "set nopaste"
+  :exe ":normal o" . "export default class ExampleClass extends React.Component<{}> {"
+  :exe ":normal o" . "render() {"
+  :exe ":normal o" . "return ("
+  :exe ":normal o" . ")"
+  :exe ":normal o" . "}"
+  :exe ":normal o" . "}"
 endfunction
 
 function! TestSuite()

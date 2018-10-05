@@ -273,7 +273,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1823 365 796 473 -2560 100 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2560 156 2560 1361 -2560 100 2560 1417 </string>
+	<string>-2560 213 2560 1304 -2560 100 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_36AE2FEF-8BDF-4A05-A176-DD7DE5D45869</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -6715,7 +6715,7 @@
 				<key>Has Toolbelt</key>
 				<false/>
 				<key>Height</key>
-				<real>1361</real>
+				<real>1304</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Hiding Toolbelt Should Resize Window</key>
@@ -7518,11 +7518,11 @@
 													<string>Shell Launcher</string>
 												</dict>
 												<key>Rows</key>
-												<integer>30</integer>
+												<integer>28</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>1EC11431-208D-4F3B-AFE2-10279D1908DF</string>
+												<string>5F02B21E-224C-41BE-ABC7-2D4DBFA7F5B9</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -7539,7 +7539,7 @@
 											<key>frame</key>
 											<dict>
 												<key>height</key>
-												<real>668</real>
+												<real>639</real>
 												<key>width</key>
 												<real>479</real>
 												<key>x</key>
@@ -7550,7 +7550,7 @@
 										</dict>
 										<dict>
 											<key>Is Active</key>
-											<integer>0</integer>
+											<integer>1</integer>
 											<key>Session</key>
 											<dict>
 												<key>Bookmark</key>
@@ -8328,11 +8328,11 @@
 													<string>Shell Launcher</string>
 												</dict>
 												<key>Rows</key>
-												<integer>30</integer>
+												<integer>28</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>D9C6319F-AD6D-406F-8071-DA8FC45EAB03</string>
+												<string>084A0AEC-4B7D-4120-ADF8-6E04903C19A5</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -8349,13 +8349,13 @@
 											<key>frame</key>
 											<dict>
 												<key>height</key>
-												<real>668</real>
+												<real>640</real>
 												<key>width</key>
 												<real>479</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
-												<real>669</real>
+												<real>640</real>
 											</dict>
 										</dict>
 									</array>
@@ -8364,7 +8364,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>1337</real>
+										<real>1280</real>
 										<key>width</key>
 										<real>479</real>
 										<key>x</key>
@@ -8377,7 +8377,7 @@
 								</dict>
 								<dict>
 									<key>Is Active</key>
-									<integer>1</integer>
+									<integer>0</integer>
 									<key>Session</key>
 									<dict>
 										<key>Bookmark</key>
@@ -9155,11 +9155,11 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>60</integer>
+										<integer>58</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>1D3F2101-3736-4CBE-9E90-346BDE2BC79C</string>
+										<string>3477996F-0CDF-43B0-9E8E-28E9D5EB318B</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Session Window Title</key>
@@ -9176,7 +9176,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>1337</real>
+										<real>1280</real>
 										<key>width</key>
 										<real>1589</real>
 										<key>x</key>
@@ -9956,7 +9956,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/alexvitiuk/paytm/map-ui/src</string>
+													<string>/Users/alexvitiuk/java/code/map-cma</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -9968,11 +9968,11 @@
 													<string>Shell Launcher</string>
 												</dict>
 												<key>Rows</key>
-												<integer>30</integer>
+												<integer>28</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>1EC6B2FD-85DD-44D1-BD86-EE51EA636EC0</string>
+												<string>B11928CD-1604-4401-AD49-FA4C165A8F42</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -9989,7 +9989,7 @@
 											<key>frame</key>
 											<dict>
 												<key>height</key>
-												<real>668</real>
+												<real>639</real>
 												<key>width</key>
 												<real>490</real>
 												<key>x</key>
@@ -10766,7 +10766,7 @@
 												<key>Environment</key>
 												<dict>
 													<key>PWD</key>
-													<string>/Users/alexvitiuk/paytm/map-ui/src</string>
+													<string>/Users/alexvitiuk/java/code/map-cma</string>
 												</dict>
 												<key>Hosts</key>
 												<array/>
@@ -10778,11 +10778,11 @@
 													<string>Shell Launcher</string>
 												</dict>
 												<key>Rows</key>
-												<integer>30</integer>
+												<integer>28</integer>
 												<key>Session Default Name</key>
 												<string>Dark</string>
 												<key>Session GUID</key>
-												<string>E09B1224-5EB8-488C-B12B-8980A563EF85</string>
+												<string>9F8ADE31-83B4-44AC-9911-91CAC10E1F0D</string>
 												<key>Session Name</key>
 												<string>Dark</string>
 												<key>Session Window Title</key>
@@ -10799,13 +10799,13 @@
 											<key>frame</key>
 											<dict>
 												<key>height</key>
-												<real>668</real>
+												<real>640</real>
 												<key>width</key>
 												<real>490</real>
 												<key>x</key>
 												<real>0.0</real>
 												<key>y</key>
-												<real>669</real>
+												<real>640</real>
 											</dict>
 										</dict>
 									</array>
@@ -10814,7 +10814,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>1337</real>
+										<real>1280</real>
 										<key>width</key>
 										<real>490</real>
 										<key>x</key>
@@ -10831,7 +10831,7 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>1337</real>
+								<real>1280</real>
 								<key>width</key>
 								<real>2560</real>
 								<key>x</key>
@@ -10853,7 +10853,7 @@
 				<key>X Origin</key>
 				<real>-2560</real>
 				<key>Y Origin</key>
-				<real>156</real>
+				<real>213</real>
 			</dict>
 			<dict>
 				<key>Desired Columns</key>
@@ -10863,7 +10863,7 @@
 				<key>Has Toolbelt</key>
 				<false/>
 				<key>Height</key>
-				<real>1361</real>
+				<real>1304</real>
 				<key>Hide After Opening</key>
 				<false/>
 				<key>Hiding Toolbelt Should Resize Window</key>
@@ -11663,11 +11663,11 @@
 											<string>Shell Launcher</string>
 										</dict>
 										<key>Rows</key>
-										<integer>60</integer>
+										<integer>58</integer>
 										<key>Session Default Name</key>
 										<string>Dark</string>
 										<key>Session GUID</key>
-										<string>16F374BB-2555-465E-AFA7-CE63E0428FB2</string>
+										<string>75F27F23-3C9B-4E8C-922A-506A7E1B2E81</string>
 										<key>Session Name</key>
 										<string>Dark</string>
 										<key>Session Window Title</key>
@@ -11684,7 +11684,7 @@
 									<key>frame</key>
 									<dict>
 										<key>height</key>
-										<real>1337</real>
+										<real>1280</real>
 										<key>width</key>
 										<real>2560</real>
 										<key>x</key>
@@ -11699,7 +11699,7 @@
 							<key>frame</key>
 							<dict>
 								<key>height</key>
-								<real>1337</real>
+								<real>1280</real>
 								<key>width</key>
 								<real>2560</real>
 								<key>x</key>
@@ -11721,7 +11721,7 @@
 				<key>X Origin</key>
 				<real>-2560</real>
 				<key>Y Origin</key>
-				<real>156</real>
+				<real>213</real>
 			</dict>
 		</array>
 		<key>work</key>
