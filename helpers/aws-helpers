@@ -1,0 +1,2 @@
+##  psql connect command
+psql -hlocalhost -Uusername -W -ddatabasename

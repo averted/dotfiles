@@ -1,0 +1,5 @@
+# #
+# Turn off WiFi's IPV6 on Mac OS
+#
+#		networksetup -setv6off Wi-Fi
+#

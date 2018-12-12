@@ -84,7 +84,7 @@ alias cc="cd $HOME/git/climbee/client/src"
 # Sportling aliases
 function sc() {
   CLIENT_DIR="$HOME/sportling/client/src"
-  CLIENT_GIT_DIR="$HOME/git/sportling-client/src"
+  CLIENT_GIT_DIR="$HOME/git/sportling/client/src"
 
   if [[ -d $CLIENT_DIR ]]; then
     cd $CLIENT_DIR
@@ -95,7 +95,7 @@ function sc() {
 
 function ss() {
   SERVER_DIR="$HOME/sportling/server"
-  SERVER_GIT_DIR="$HOME/git/sportling-server"
+  SERVER_GIT_DIR="$HOME/git/sportling/server"
 
   if [[ -d $SERVER_DIR ]]; then
     cd $SERVER_DIR
@@ -106,7 +106,7 @@ function ss() {
 
 function sx() {
   AWS_DIR="$HOME/sportling/aws"
-  AWS_GIT_DIR="$HOME/git/aws"
+  AWS_GIT_DIR="$HOME/git/sportling/aws"
 
   if [[ -d $AWS_DIR ]]; then
     cd $AWS_DIR
@@ -130,6 +130,9 @@ start() {
 # Other
 alias jasmine="jasmine-node --autotest --color"
 alias md="msee"
+alias sleep="pmset sleepnow"
+alias away="pmset sleepnow"
+alias off="pmset sleepnow"
 
 # LS alias
 function l() {

@@ -7,12 +7,11 @@
 #
 # run:
 #
-#   :bufdo %s/pattern/replace/ge | update
+#   :bufdo %s/pattern/replace/ge          [ | update ] - optional if you have 'set hidden' vim flag enabled
 #
 # Definitions:
 #   - bufdo       Apply the following command to all buffers.
 #   - %s          Search and replace all lines in buffer.
-#   - g           Change all occurences (remove this for FIRST occurence).
-#   - |           Command separator.
+
 #   - update      Save (write file only if changes were made). Can be omitted with 'set hidden' flag.
 #
