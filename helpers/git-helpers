@@ -5,7 +5,7 @@
 #
 
 # #
-# Checkout a file from a specific branch during rebasing.
+# Checkout a file from a specific branch during rebasing
 #
 # Example - if your current branch is feature/123,
 # and you're rebasing it on top of master:
@@ -22,4 +22,10 @@
 #
 #   git checkout --ours src/some/file.js
 #   git checkout --theirs src/some/file.js
+#
+
+# #
+# Show file difference between HEAD and another branch
+#
+#   git diff master src/some/file.js
 #
