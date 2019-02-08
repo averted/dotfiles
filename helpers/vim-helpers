@@ -1,5 +1,22 @@
-# #
-# Search and replace multiple buffers.
+# # # #
+# Search and replace multiple files
+#
+# Add files to arglist:
+#
+#   :argadd *.js
+#
+# Replace 'foo' with 'bar':
+#
+#   :argdo %s/foo/bar/ge          [ | update ] - optional if you have 'set hidden' vim flag enabled
+#
+# Definitions:
+#   - ardgo       Apply the following command to all files in arglist
+#   - %s          Search and replace all lines in buffer.
+#   - update      Save (write file only if changes were made). Can be omitted with 'set hidden' flag.
+#
+
+# # # #
+# Search and replace multiple buffers
 #
 # Open multiple files into vim buffers:
 #
@@ -7,11 +24,23 @@
 #
 # run:
 #
-#   :bufdo %s/pattern/replace/ge          [ | update ] - optional if you have 'set hidden' vim flag enabled
+#		:bufdo %s/pattern/replace/ge          [ | update ] - optional if you have 'set hidden' vim flag enabled
 #
 # Definitions:
 #   - bufdo       Apply the following command to all buffers.
 #   - %s          Search and replace all lines in buffer.
-
 #   - update      Save (write file only if changes were made). Can be omitted with 'set hidden' flag.
+#
+
+# # # #
+# Open all files returned from grep
+#
+#   vim $(grep -lri 'pattern' .)
+#
+
+# # # #
+# Navigate through buffers:
+#
+#		:next (or :n, or ]])
+#		:prev (or :p, or [[)
 #
