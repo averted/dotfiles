@@ -208,7 +208,7 @@ endfunction
 
 function! CommentBlock()
   :exe ":normal o" . "/**"
-  :exe ":normal o" . " * Comment."
+  :exe ":normal o" . " * Comment"
   :exe ":normal o" . "*/"
 endfunction
 

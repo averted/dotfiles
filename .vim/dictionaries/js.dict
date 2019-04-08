@@ -46,7 +46,8 @@ sectionBorderColor
 sectionBackgroundColor
 tooltipBackgroundColor
 
-React Component PureComponent
+React Component PureComponent Fragment
+defaultProps
 dangerouslySetInnerHTML
 console
 log
@@ -54,3 +55,4 @@ decorators
 extends
 constructor
 toLowerCase
+static
