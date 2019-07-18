@@ -41,6 +41,14 @@ overlayDark
 overlayLight
 overlayLighter
 
+shadowLightest
+shadowLighter
+shadowLight
+shadow
+shadowDark
+shadowDarker
+shadowDarkest
+
 sectionWhiteColor
 sectionBorderColor
 sectionBackgroundColor
