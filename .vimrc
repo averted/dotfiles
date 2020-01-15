@@ -80,6 +80,7 @@ noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
 noremap <Leader>e :call TestSuiteEnzyme()<CR>
+noremap <Leader>f :call FlowFixMe()<CR>
 " inoremap jj <Esc>
 
 " Show current colorscheme colors
@@ -214,8 +215,12 @@ endfunction
 
 function! ReactClass()
   :exe "set nopaste"
+  :exe ":normal o" . "// @flow"
+  :exe ":normal o" . "import React from 'react'"
+  :exe ":normal o" . ""
   :exe ":normal o" . "export default class ExampleClass extends React.Component<{}> {"
   :exe ":normal o" . "render() {"
+  :exe ":normal o" . "const { item } = this.props"
   :exe ":normal o" . "return ("
   :exe ":normal o" . ")"
   :exe ":normal o" . "}"
@@ -256,5 +261,12 @@ function! TestSuiteEnzyme()
   :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().localName).toEqual('span')"
   :exe ":normal o" . "})"
   :exe ":normal o" . "})"
+endfunction
+
+function! FlowFixMe()
+  :exe "set nopaste"
+  :exe ":normal o" . "// TODO: $FlowFixMe"
+  :exe ":normal o" . "static defaultProps = {}"
+  :exe ":normal o"
 endfunction
 """"""""""""""""""""""""""""""

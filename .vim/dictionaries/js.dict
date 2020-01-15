@@ -1,15 +1,20 @@
+React Component PureComponent Fragment constructor defaultProps dangerouslySetInnerHTML extends static
+
+decorators inject helpers connect
+
+toLowerCase console log
+
+boolean string Object
+
 primary
 secondary
 tertiary
-
 success
 warning
 danger
-
 bodyColor
 headingColor
 subHeadingColor
-
 fontSizeSmallest
 fontSizeSmaller
 fontSizeSmall
@@ -17,9 +22,7 @@ fontSize
 fontSizeLarge
 fontSizeLarger
 fontSizeLargest
-
 fontFamily
-
 greyLightest
 greyLighter
 greyLight
@@ -27,7 +30,6 @@ grey
 greyDark
 greyDarker
 greyDarkest
-
 gutterSmallest
 gutterSmaller
 gutterSmall
@@ -35,12 +37,10 @@ gutter
 gutterLarge
 gutterLarger
 gutterLargest
-
 overlayDarker
 overlayDark
 overlayLight
 overlayLighter
-
 shadowLightest
 shadowLighter
 shadowLight
@@ -48,19 +48,7 @@ shadow
 shadowDark
 shadowDarker
 shadowDarkest
-
 sectionWhiteColor
 sectionBorderColor
 sectionBackgroundColor
 tooltipBackgroundColor
-
-React Component PureComponent Fragment
-defaultProps
-dangerouslySetInnerHTML
-console
-log
-decorators
-extends
-constructor
-toLowerCase
-static
