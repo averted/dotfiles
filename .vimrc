@@ -31,8 +31,6 @@ set splitright
 set backspace=indent,eol,start  " allow backspacing indents
 let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
-let g:acp_behaviorKeywordLength = 1
-set completeopt=menu
 
 """"""""""""""""""""""""""""""
 " Auto CMD
@@ -50,7 +48,6 @@ autocmd BufReadPost *
 autocmd BufWritePre * :retab
 autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""
 " movement key remaps
@@ -102,6 +99,70 @@ nnoremap \ :vimgrep <cword> ./**/* <CR>:cw<CR>
 set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
 """"""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" Filetypes
+"
+au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
+au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
+au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.ino  set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.jsx  set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.ts   set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
+au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
+au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
+au BufNewFile,BufRead *.html set filetype=html          "Treat JET extensions as html
+au BufNewFile,BufRead *.java set filetype=javaOverride
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" NERDtree
+"
+"" Open tree when opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+"" Close tree if it's the only tab
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"" Remove arrows
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+
+""""""""""""""""""""""""""""""
+" Dictionaries
+"
+" JavaScript
+au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
+
+" JSON
+au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
+
+" Makefile
+au FileType make setlocal noexpandtab
+
+" Java
+au FileType javaOverride setlocal tabstop=4
+au FileType javaOverride setlocal softtabstop=4
+au FileType javaOverride setlocal shiftwidth=4
+au FileType javaOverride execute 'setlocal dict+=~/.vim/dictionaries/java.dict'
+
+"let java_highlight_debug=1
+"let java_highlight_functions=1
+let java_highlight_java_lang_ids=1
+let java_space_errors=1
+let java_comment_strings=1
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Status Line
+"
+set statusline=%F\ %h%m%r%w\ %P%=
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
+set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
+set statusline+=%{&fileformat}]                                     " file format
+""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " Plugins
@@ -127,55 +188,11 @@ let g:ctrlp_working_path_mode = 0                                               
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']     "Ignore files in .gitignore
 set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*.so,*.swp,*.zip                    "Skip the following dirs
 set runtimepath^=~/.vim/bundle/vim-ctrlp
+
+" completion
+let g:acp_behaviorKeywordLength = 1
+set completeopt=menu
 """"""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-" Filetypes
-"
-au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
-au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
-au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
-au BufNewFile,BufRead *.ino  set filetype=javascript    "Treat ES6 extensions as javascript
-au BufNewFile,BufRead *.jsx  set filetype=javascript    "Treat ES6 extensions as javascript
-au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
-au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
-au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
-au BufNewFile,BufRead *.java set filetype=javaOverride
-
-" JavaScript
-au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
-
-" JSON
-au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
-
-" Makefile
-au FileType make setlocal noexpandtab
-
-" Java
-au FileType javaOverride setlocal tabstop=4
-au FileType javaOverride setlocal softtabstop=4
-au FileType javaOverride setlocal shiftwidth=4
-au FileType javaOverride execute 'setlocal dict+=~/.vim/dictionaries/java.dict'
-
-"let java_highlight_debug=1
-"let java_highlight_functions=1
-let java_highlight_java_lang_ids=1
-let java_space_errors=1
-let java_comment_strings=1
-""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-" Status Line
-"
-set statusline=%F\ %h%m%r%w\ %P%=
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
-set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
-set statusline+=%{&fileformat}]                                     " file format
-""""""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""
 " Start plugins
@@ -185,7 +202,6 @@ execute pathogen#infect()
 syntax on
 colorscheme averted
 """"""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""
 " Functions
