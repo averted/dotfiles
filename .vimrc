@@ -72,7 +72,6 @@ inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
-map <S-R> :sp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
@@ -85,8 +84,7 @@ map [[ :prev<CR>
 map ]] :next<CR>
 
 "" Buffer movement
-map b :bn<CR>
-map <S-B> :bp<CR>
+map r :bn<CR>
 
 "" Increase / decrease split window width
 map - <C-W>>
