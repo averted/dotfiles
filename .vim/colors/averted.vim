@@ -10,6 +10,11 @@
 
 " Init colors
 
+let s:dark_orange_new = ['#ff9000', 214]
+let s:dark_yellow_new = ['#ffd700', 178]
+let s:dark_bg_new = ['#303030', 236]
+let s:dark_gray_new = ['#808080', 244]
+
 " dark-bg colors
 let s:dark_fg              = "dfdfdf"
 let s:dark_bg              = "303030"
@@ -35,6 +40,8 @@ let s:dark_grey5           = "c4c4c4"
 let s:dark_black           = "1f1f1f"
 let s:dark_unknown         = "bc27f2"  " magenta
 let s:dark_test            = "f6708d"  " magenta
+let s:dark_airline_fg      = "b2b2b2"
+let s:dark_airline_bg      = "303030"
 
 " light-bg colors
 let s:light_fg              = "505050"
@@ -56,9 +63,10 @@ let s:light_grey3           = "888a85"
 let s:light_grey4           = "a6a6a6"
 let s:light_black           = "073642"
 let s:light_unknown         = "FF1493"
+let s:light_airline_fg      = "b2b2b2"
+let s:light_airline_bg      = "303030"
 
 let s:curr_bg = "dark"
-
 let g:colors_name = "averted"
 
 if version > 580
@@ -194,23 +202,23 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   " returns the actual color level for the given color index
   fun <SID>rgb_level(n)
-      if &t_Co == 88
-          if a:n == 0
-              return 0
-          elseif a:n == 1
-              return 139
-          elseif a:n == 2
-              return 205
-          else
-              return 255
-          endif
+    if &t_Co == 88
+      if a:n == 0
+        return 0
+      elseif a:n == 1
+        return 139
+      elseif a:n == 2
+        return 205
       else
-          if a:n == 0
-              return 0
-          else
-              return 55 + (a:n * 40)
-          endif
+        return 255
       endif
+    else
+      if a:n == 0
+        return 0
+      else
+        return 55 + (a:n * 40)
+      endif
+    endif
   endfun
 
   " returns the palette index for the given R/G/B color indices
@@ -289,6 +297,34 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   endfun
   " }}}
 
+  " NERDTree file highlighting
+  fun <SID>NERDTreeHighlightFile(extension, fg, bg, attr)
+   exec 'au FileType nerdtree highlight ' . a:extension . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg) .' guibg=#' . a:bg .' ctermbg=' . <SID>rgb(a:bg)
+   exec 'au FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+
+   if a:attr != ""
+     exec 'au FileType nerdtree highlight ' . a:extension . ' gui=' . a:attr . ' cterm=' . a:attr
+   endif
+  endfun
+
+  call <SID>NERDTreeHighlightFile('sh', s:dark_yellow, s:dark_bg, '')
+  call <SID>NERDTreeHighlightFile('env', s:dark_red, s:dark_bg, '')
+  call <SID>NERDTreeHighlightFile('sample', s:dark_green, s:dark_bg, 'italic')
+  call <SID>NERDTreeHighlightFile('json', s:dark_green, s:dark_bg, 'italic')
+  call <SID>NERDTreeHighlightFile('html', s:dark_yellow, s:dark_bg, '')
+  call <SID>NERDTreeHighlightFile('css', s:dark_yellow, s:dark_bg, '')
+  call <SID>NERDTreeHighlightFile('js', s:dark_orange, s:dark_bg, '')
+  call <SID>X( "NERDTreeDirSlash", [s:dark_bg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
+
+  "" NEW
+  fun <SID>Z(group, fg, bg, attr)
+    exec 'hi ' . a:group . ' guifg=' . a:fg[0]. ' ctermfg=' . a:fg[1] .' guibg=' . a:bg[0] .' ctermbg=' . a:bg[1]
+
+    if a:attr != ''
+      exec 'hi ' . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    endif
+  endfun
+
   " Vim Highlighting
   call <SID>X( "Normal", [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
   call <SID>X( "Cursor", [s:dark_red, s:light_red], [s:dark_cyan, s:light_blue], "")  " the character under the cursor
@@ -298,14 +334,18 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "Search", [s:dark_bg, s:light_bg],  [s:dark_orange, s:light_grey], "")  " Last search pattern highlighting (see 'hlsearch').
   call <SID>X( "IncSearch", [s:dark_orange, s:light_grey], [s:dark_bg, s:light_bg], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
-  call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "none" )  " status line of current window
-  call <SID>X( "StatusLineNC", [s:dark_bg, s:light_blue], [s:dark_grey_comment, s:light_black], "" )  " status lines of not-current windows
+  "call <SID>X( "StatusLine", [s:dark_orange, s:light_bg], [s:dark_airline_bg, s:light_grey1], "none" )  " status line of current window
+  "call <SID>X( "StatusLineNC", [s:dark_airline_bg, s:light_blue], [s:dark_grey_comment, s:light_black], "" )  " status lines of not-current windows
   "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
   "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
+
+  call <SID>Z("StatusLine", s:dark_bg_new, s:dark_yellow_new, "")  " status line of current window
+  call <SID>Z("StatusLineNC", s:dark_bg_new, s:dark_gray_new, "")  " status lines of not-current windows
 
   call <SID>X( "VertSplit", [s:dark_black, s:light_unknown],  [s:dark_orange, s:light_cyan], "" )  " the column separating vertically split windows
 
   call <SID>X( "Visual", [s:dark_black, s:light_white], [s:dark_orange, s:light_blue], "")  " visual mode selection
+  call <SID>X( "VisualNOS", [s:dark_red, s:light_white], [s:dark_red, s:light_blue], "")  " visual mode selection
   call <SID>X( "MatchParen", [s:dark_black, s:light_bg], [s:dark_orange, s:light_blue], "")  " The character under the cursor or just before it, if it is a paired bracket, and its match.
 
   call <SID>X( "Directory", [s:dark_blue, s:light_blue], [], "" )  " directory names (and other special names in listings
@@ -342,7 +382,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "PMenuThumb", [s:dark_grey0, s:light_grey1], [s:dark_grey3, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
 
   "call <SID>X( "TabLine", [s:dark_fg, s:light_grey1], [s:dark_lighterbg2, s:light_grey4], "none" )  " tab pages line, not active tab page label
-  "call <SID>X( "TabLineSel", [s:dark_bg, s:light_bg], [s:dark_lightblue, s:light_lightblue], "none" )  " tab pages line, active tab page label
+  "call <SID>X( "TabLineSel", [s:dark_red, s:light_bg], [s:dark_red, s:light_red], "none" )  " tab pages line, active tab page label
   "call <SID>X( "TabLineFill", [s:dark_lightgrey, s:light_grey2], [s:dark_lighterbg2, s:light_grey4], "none" )  " tab pages line, where there are no labels
 
   endif
@@ -545,7 +585,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   " TODO: Remove after this issue is fixed (https://github.com/pangloss/vim-javascript/issues/955)
   call <SID>X( "jsParensError", [s:dark_orange, s:light_fg], [], "" )
 
-
   "" JSON Highlighting
   call <SID>X( "jsonBraces", [s:dark_yellow, s:light_fg], [], "" )
   call <SID>X( "jsonQuote", [s:dark_yellow, s:light_fg], [], "" )
@@ -569,31 +608,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call <SID>X( "goFormatSpecifier", [s:dark_orange, s:light_fg], [], "" )
   " call <SID>X( "goEscapeC", [s:dark_light_blue, s:light_fg], [], "" )
-
-  "" Java Highlighting
-  call <SID>X( "javaClassDecl", [s:dark_orange, s:light_fg], [], "underline" )
-  call <SID>X( "javaAnnotation", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "javaScopeDecl", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "javaStorageClass", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "javaType", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "javaTypedef", [s:dark_pink, s:light_fg], [], "" )
-  call <SID>X( "javaBraces", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "javaParen", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "javaParen1", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "javaParen2", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "javaFuncDef", [s:dark_red, s:light_fg], [], "" )
-
-  call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
-  call <SID>X( "javaNumber", [s:dark_blue, s:light_fg], [], "" )
-  call <SID>X( "javaCharacter", [s:dark_green, s:light_fg], [], "" )
-
-  call <SID>X( "javaClassName", [s:dark_red, s:light_fg], [], "" )
-  call <SID>X( "javaFuncArgs", [s:dark_yellow, s:light_fg], [], "" )
-
-  call <SID>X( "javaVarDeclaration", [s:dark_light_blue, s:light_fg], [], "" )
-  call <SID>X( "javaTypeDeclaration", [s:dark_magenta, s:light_fg], [], "italic" )
-  call <SID>X( "javaC_JavaLang", [s:dark_magenta, s:light_fg], [], "italic" )
-  call <SID>X( "javaLangClass", [s:dark_violet, s:light_fg], [], "" )
 
   "" JavaScript Highlighting
   call <SID>X( "javaScriptAsync", [s:dark_violet, s:light_fg], [], "" )
@@ -639,20 +653,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "javaScriptMember", [s:dark_darkerfg, s:light_purple], [], "" )
   "call <SID>X( "javaScriptGlobal", [s:dark_darkerfg, s:light_orange], [], "" )
   "call <SID>X( "javaScriptReserver", [s:dark_blue, s:light_blue], [], "" )
-
-  "" CoffeeScript Highlighting
-  call <SID>X( "coffeeObject", [s:dark_red, s:light_black], [s:dark_bg, s:light_bg], "underline" )
-  call <SID>X( "coffeeParen", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeNumber", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeFloat", [s:dark_blue, s:light_fg], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeBracket", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeCurly", [s:dark_yellow, s:light_blue], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeSpecialOp", [s:dark_cyan, s:light_black], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeBoolean", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeGlobal", [s:dark_yellow, s:light_green], [s:dark_bg, s:light_bg], "" )
-  call <SID>X( "coffeeDotAccess", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
-  call <SID>X( "coffeeSpecialOp", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "bold" )
-  "call <SID>X( "coffeeInterpDelim", [s:dark_yellow, s:light_fg], [s:dark_bg, s:light_bg], "" )
 
   "" CSS Highlighting
   call <SID>X( "cssIdentifier", [s:dark_red, s:light_blue], [], "" )
@@ -716,67 +716,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssStringQ", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssStringQQ", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssURL", [s:dark_grey1, s:light_grey1], [], "" )
-
-  "" Stylus Highlighting
-  call <SID>X( "stylusIdChar", [s:dark_orange, s:light_blue], [], "" )
-  call <SID>X( "stylusAmpersand", [s:dark_yellow, s:light_blue], [], "" )
-  call <SID>X( "stylusVariable", [s:dark_grey2, s:light_grey1], [], "" )
-  call <SID>X( "stylusCssAttribute", [s:dark_grey2, s:light_grey1], [], "" )
-  call <SID>X( "stylusClass", [s:dark_red, s:light_blue], [], "" )
-  call <SID>X( "stylusClassChar", [s:dark_red, s:light_blue], [], "" )
-  call <SID>X( "stylusProperty", [s:dark_orange, s:light_blue], [], "" )
-
-  "" PHP Highlighting
-  call <SID>X( "phpRegionDelimiter", [s:dark_blue, s:light_fg], [], "" ) " <?php
-  call <SID>X( "phpIdentifier",  [s:dark_yellow, s:light_fg], [], "" )  " $
-  call <SID>X( "phpVarSelector", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "phpSuperglobal", [s:dark_yellow, s:light_fg], [], "" )
-  call <SID>X( "phpMemberHere", [s:dark_grey1, s:light_fg], [], "" )
-
-  call <SID>X( "phpParent", [s:dark_grey1, s:light_fg], [], "" )
-  call <SID>X( "phpBrace", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "phpBraceFunc", [s:dark_grey1, s:light_fg], [], "" )
-  call <SID>X( "phpBraceClass", [s:dark_blue, s:light_fg], [], "" )
-  call <SID>X( "phpMemberSelector", [s:dark_grey1, s:light_fg], [], "" )
-  call <SID>X( "phpOperator", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "phpBoolean", [s:dark_orange, s:light_fg], [], "" )
-  call <SID>X( "phpRelation", [s:dark_orange, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpAssign", [s:dark_grey1, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpSemicolon", [s:dark_grey1, s:light_fg], [], "" )
-  call <SID>X( "phpControlParent", [s:dark_grey1, s:light_fg], [], "" )
-  call <SID>X( "phpQuoteSingle", [s:dark_green, s:light_fg], [], "" )
-  call <SID>X( "phpQuoteDouble", [s:dark_green, s:light_fg], [], "" )
-
-  call <SID>X( "phpStatement", [s:dark_yellow, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpFunctions", [s:dark_violet, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpSpecialFunction", [s:dark_violet, s:light_fg], [], "" )  " class structure
-
-  call <SID>X( "phpStructure", [s:dark_blue, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpDefineClassName", [s:dark_cyan, s:light_fg], [], "" )
-  call <SID>X( "phpDefineClassImplementsName", [s:dark_cyan, s:light_fg], [], "" )
-
-  call <SID>X( "phpArrayParens", [s:dark_orange, s:light_fg], [], "" )  " class structure
-  call <SID>X( "phpArrayPair", [s:dark_orange, s:light_fg], [], "" )
-
-  call <SID>X( "phpType", [s:dark_orange, s:light_fg], [], "" )
-  "call <SID>X( "phpCoreConstant", [s:dark_orange, s:light_fg], [], "" )
-  "call <SID>X( "phpMagicConstant", [s:dark_orange, s:light_fg], [], "" )
-
-  call <SID>X( "phpStorageClass2", [s:dark_orange, s:light_fg], [], "" )  " public, static
-  call <SID>X( "phpDefineMethod", [s:dark_orange, s:light_fg], [], "" )  " function
-  call <SID>X( "phpDefineMethodName", [s:dark_fg, s:light_fg], [], "" )
-  call <SID>X( "phpDefineFuncProto", [s:dark_cyan, s:light_fg], [], "" )
-  "call <SID>X( "phpDefineImplementsName", [s:dark_blue, s:light_grey1], [], "" )
-
-  call <SID>X( "phpConditional", [s:dark_orange, s:light_grey1], [], "" )
-  call <SID>X( "phpRepeat", [s:dark_orange, s:light_grey1], [], "" )
-  "call <SID>X( "phpSemicolon", [s:dark_blue, s:light_grey1], [], "" )
-
-  "" Go Highlighting
-  "call <SID>X( "goDirective", [s:dark_paleblue, s:light_grey1], [], "" )
-  "call <SID>X( "goGoroutine", [s:dark_red, s:light_lightred], [], "" )
-  "call <SID>X( "goFunction", [s:dark_fg, s:light_fg], [], "" )
-  "call <SID>X( "goConditionalOperator", [s:dark_pink, s:light_purple], [], "" )
 
   "" Markdown Highlighting
   "call <SID>X( "markdownListMarker", [s:dark_cyan, s:light_cyan], [], "" )

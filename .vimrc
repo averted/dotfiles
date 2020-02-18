@@ -1,6 +1,8 @@
 """"""""""""""""""""""""""""""
 " Settings
 "
+set encoding=utf-8
+set fileencoding=utf-8
 set t_Co=256                    " 256 color mode
 set number                      " show line numbers
 set autoindent                  " auto indent
@@ -10,7 +12,7 @@ set smarttab                    " indent start of line based on context
 set history=50                  " keep 50 lines of command line history
 set expandtab                   " replace <TAB> with spaces
 set laststatus=2                " always show statusline
-"set colorcolumn=80              " show column at 80 char limit
+" set colorcolumn=100           " show column at char limit
 
 set nobackup
 set noswapfile
@@ -35,22 +37,22 @@ let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
 " Auto CMD
 "
-" copy selected to buffer
+"" Copy selected to buffer
 command! -range W :<line1>,<line2>w !pbcopy
 
-" return to last edit position when opening files
+"" Return to last edit position when opening files
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
 
-" remove all trailing whitespace on file write
+"" Remove all trailing whitespace on file write
 autocmd BufWritePre * :retab
 autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" movement key remaps
+" Movement Remaps
 "
 map h <Up>
 map l <Down>
@@ -70,7 +72,6 @@ inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
-" Shift+R is REPLACE (unused)
 map <S-R> :sp<CR>
 noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>r :call ReactClass()<CR>
@@ -78,23 +79,20 @@ noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
 noremap <Leader>e :call TestSuiteEnzyme()<CR>
 noremap <Leader>f :call FlowFixMe()<CR>
-" inoremap jj <Esc>
 
-" Show current colorscheme colors
-:nmap <F8> <nop>
-:imap <F8> <nop>
-inoremap <F8> <nop>
-map <F8> :so $VIMRUNTIME/syntax/hitest.vim<CR>
-
-" Buffer movement
+"" File movement
 map [[ :prev<CR>
 map ]] :next<CR>
 
-" Increase / decrease split window width
+"" Buffer movement
+map b :bn<CR>
+map <S-B> :bp<CR>
+
+"" Increase / decrease split window width
 map - <C-W>>
 map = <C-W><
 
-" Easy Vim Grep remaps
+"" Easy Vim Grep remaps (deprecate?)
 nnoremap \ :vimgrep <cword> ./**/* <CR>:cw<CR>
 set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
 """"""""""""""""""""""""""""""
@@ -116,86 +114,151 @@ au BufNewFile,BufRead *.java set filetype=javaOverride
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" Dictionaries
+"
+"" js
+au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
+
+"" JSON
+au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
+
+"" Makefile
+au FileType make setlocal noexpandtab
+
+"" Java (unused)
+" au FileType javaOverride setlocal tabstop=4
+" au FileType javaOverride setlocal softtabstop=4
+" au FileType javaOverride setlocal shiftwidth=4
+" au FileType javaOverride execute 'setlocal dict+=~/.vim/dictionaries/java.dict'
+
+" let java_highlight_debug=1
+" let java_highlight_functions=1
+" let java_highlight_java_lang_ids=1
+" let java_space_errors=1
+" let java_comment_strings=1
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
 " NERDtree
 "
+"" Always open tree on startup
+" autocmd vimenter * NERDTree
+
 "" Open tree when opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-"" Close tree if it's the only tab
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "" Remove arrows
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
+"" Close tree if it's the only tab
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"" Toggle tree shotcut
+map <Leader>x :NERDTreeToggle<CR>
+
+"" Custom key re-maps
+let NERDTreeMapOpenExpl = '\e'
+let NERDTreeMapOpenVSplit = 'e'
+let NERDTreeMapPreviewVSplit = 'ge'
 """"""""""""""""""""""""""""""
-" Dictionaries
+
+""""""""""""""""""""""""""""""
+" Airline
 "
-" JavaScript
-au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
+"" Enable / disable
+" let g:airline_disable_statusline = 1
 
-" JSON
-au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
+"" Disable default --INSERT-- text
+set noshowmode
 
-" Makefile
-au FileType make setlocal noexpandtab
+"" Custom sections
+" let g:airline_section_b = '%-0.20{getcwd()}'
+let g:airline_section_x = ''
+let g:airline_section_y = ''
 
-" Java
-au FileType javaOverride setlocal tabstop=4
-au FileType javaOverride setlocal softtabstop=4
-au FileType javaOverride setlocal shiftwidth=4
-au FileType javaOverride execute 'setlocal dict+=~/.vim/dictionaries/java.dict'
+"" Render powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_highlighting_cache = 1
+let g:airline_theme='averted'
 
-"let java_highlight_debug=1
-"let java_highlight_functions=1
-let java_highlight_java_lang_ids=1
-let java_space_errors=1
-let java_comment_strings=1
+"" Disable all airline extensions (more perf)
+let g:airline_extensions = ['bufferline']
+
+"" Render tabs / buffers on top
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+let g:airline#extensions#bufferline#overwrite_variables = 0
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Bufferline
+"
+let g:bufferline_echo = 0
+let g:bufferline_modified = ' +'
+let g:bufferline_fname_mod = ':p:.'
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " Status Line
 "
-set statusline=%F\ %h%m%r%w\ %P%=
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
-set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
-set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
-set statusline+=%{&fileformat}]                                     " file format
+" set statusline=%F\ %h%m%r%w\ %P%=
+" set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\   " highlight
+" set statusline+=[%{strlen(&ft)?&ft:'none'},                         " filetype
+" set statusline+=%{strlen(&fenc)?&fenc:&enc},                        " encoding
+" set statusline+=%{&fileformat}]                                     " file format
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" Plugins
+" CTRL-p
 "
-" vim-flow
-let g:flow#enable = 0
-let g:flow#autoclose = 1
-let g:flow#timeout = 10
-
-" vim-go
-let g:go_version_warning = 0
-
-" vim-javascript
-let g:javascript_enable_domhtmlcss = 1
-let g:javascript_plugin_flow = 1
-
-" vim-json
-let g:vim_json_syntax_conceal = 0
-
-" ctrl-p
 map <Space> :CtrlP<CR>
 let g:ctrlp_working_path_mode = 0                                                       "CtrlP working path fix
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']     "Ignore files in .gitignore
 set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*.so,*.swp,*.zip                    "Skip the following dirs
 set runtimepath^=~/.vim/bundle/vim-ctrlp
+""""""""""""""""""""""""""""""
 
-" completion
+""""""""""""""""""""""""""""""
+" ACP Completion
+"
 let g:acp_behaviorKeywordLength = 1
 set completeopt=menu
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" Start plugins
+" Vim-flow
+"
+let g:flow#enable = 0
+let g:flow#autoclose = 1
+let g:flow#timeout = 10
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Vim-go
+"
+let g:go_version_warning = 0
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Vim-javascript
+"
+let g:javascript_enable_domhtmlcss = 1
+let g:javascript_plugin_flow = 1
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Vim-json
+"
+let g:vim_json_syntax_conceal = 0
+""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+" Init
 "
 execute pathogen#infect()
 
