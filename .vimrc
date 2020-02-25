@@ -229,20 +229,8 @@ set runtimepath^=~/.vim/bundle/vim-ctrlp
 "
 let g:acp_behaviorKeywordLength = 1
 set completeopt=menu
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" Vim-flow
-"
-let g:flow#enable = 0
-let g:flow#autoclose = 1
-let g:flow#timeout = 10
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" Vim-go
-"
-let g:go_version_warning = 0
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -257,7 +245,6 @@ let g:javascript_plugin_flow = 1
 "
 let g:vim_json_syntax_conceal = 0
 """"""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""
 " Init

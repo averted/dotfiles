@@ -10,10 +10,12 @@
 
 " Init colors
 
-let s:dark_orange_new = ['#ff9000', 214]
+let s:dark_orange_new = ['#ff9000', 208]
 let s:dark_yellow_new = ['#ffd700', 178]
 let s:dark_bg_new = ['#303030', 236]
 let s:dark_gray_new = ['#808080', 244]
+let s:dark_blue_new = ['#00afff', 39]
+let s:dark_light_blue_new = ['#00d7ff', 45]
 
 " dark-bg colors
 let s:dark_fg              = "dfdfdf"
@@ -297,6 +299,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   endfun
   " }}}
 
+  "" NEW
+  fun <SID>Z(group, fg, bg, attr)
+    exec 'hi ' . a:group . ' guifg=' . a:fg[0]. ' ctermfg=' . a:fg[1] .' guibg=' . a:bg[0] .' ctermbg=' . a:bg[1]
+
+    if a:attr != ''
+      exec 'hi ' . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    endif
+  endfun
+
   " NERDTree file highlighting
   fun <SID>NERDTreeHighlightFile(extension, fg, bg, attr)
    exec 'au FileType nerdtree highlight ' . a:extension . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg) .' guibg=#' . a:bg .' ctermbg=' . <SID>rgb(a:bg)
@@ -312,18 +323,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>NERDTreeHighlightFile('sample', s:dark_green, s:dark_bg, 'italic')
   call <SID>NERDTreeHighlightFile('json', s:dark_green, s:dark_bg, 'italic')
   call <SID>NERDTreeHighlightFile('html', s:dark_yellow, s:dark_bg, '')
-  call <SID>NERDTreeHighlightFile('css', s:dark_yellow, s:dark_bg, '')
+  call <SID>NERDTreeHighlightFile('css', s:dark_pink, s:dark_bg, '')
   call <SID>NERDTreeHighlightFile('js', s:dark_orange, s:dark_bg, '')
-  call <SID>X( "NERDTreeDirSlash", [s:dark_bg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
-
-  "" NEW
-  fun <SID>Z(group, fg, bg, attr)
-    exec 'hi ' . a:group . ' guifg=' . a:fg[0]. ' ctermfg=' . a:fg[1] .' guibg=' . a:bg[0] .' ctermbg=' . a:bg[1]
-
-    if a:attr != ''
-      exec 'hi ' . a:group . " gui=" . a:attr . " cterm=" . a:attr
-    endif
-  endfun
+  call <SID>NERDTreeHighlightFile('ico', s:dark_grey2, s:dark_bg, '')
+  call <SID>X("NERDTreeDirSlash", [s:dark_bg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
+  call <SID>X("NERDTreeFile", [s:dark_orange, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
 
   " Vim Highlighting
   call <SID>X( "Normal", [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg], "")  " normal text
@@ -339,7 +343,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call <SID>X( "StatusLineErr", [s:dark_red, s:light_lightred], [s:dark_lighterbg1, s:light_grey4], "" )  " custom
   "call <SID>X( "StatusLineBold", [s:dark_blue, s:light_blue], [s:dark_lighterbg1, s:light_grey4], "bold" )  " custom
 
-  call <SID>Z("StatusLine", s:dark_bg_new, s:dark_yellow_new, "")  " status line of current window
+  call <SID>Z("StatusLine", s:dark_bg_new, s:dark_orange_new, "")  " status line of current window
   call <SID>Z("StatusLineNC", s:dark_bg_new, s:dark_gray_new, "")  " status lines of not-current windows
 
   call <SID>X( "VertSplit", [s:dark_black, s:light_unknown],  [s:dark_orange, s:light_cyan], "" )  " the column separating vertically split windows
@@ -348,7 +352,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "VisualNOS", [s:dark_red, s:light_white], [s:dark_red, s:light_blue], "")  " visual mode selection
   call <SID>X( "MatchParen", [s:dark_black, s:light_bg], [s:dark_orange, s:light_blue], "")  " The character under the cursor or just before it, if it is a paired bracket, and its match.
 
-  call <SID>X( "Directory", [s:dark_blue, s:light_blue], [], "" )  " directory names (and other special names in listings
+  call <SID>Z("Directory", s:dark_blue_new, s:dark_bg_new, "" )  " directory names (and other special names in listings
 
   call <SID>X( "Folded", [s:dark_orange, s:light_bg], [s:dark_black, s:light_grey1], "")  " line used for closed folds
   call <SID>X( "FoldColumn", [s:dark_orange, s:light_unknown], [s:dark_bg, s:light_grey1], "")  " see 'foldcolumn'
