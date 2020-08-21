@@ -671,7 +671,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssParens", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "cssBraces", [s:dark_yellow, s:light_grey1], [], "" )
   call <SID>X( "cssBrackets", [s:dark_yellow, s:light_grey1], [], "" )
-  call <SID>X( "cssParentSelector", [s:dark_red, s:light_grey1], [], "" )
+  call <SID>X( "cssParentSelector", [s:dark_orange, s:light_grey1], [], "" )
 
   call <SID>X( "cssBoxProp", [s:dark_orange, s:light_black], [], "" )
   call <SID>X( "cssFontProp", [s:dark_orange, s:light_black], [], "" )
@@ -698,6 +698,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssListVal", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssCommonVal", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssRenderVal", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "cssRuleProp", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "cssPseudo", [s:dark_grey1, s:light_grey1], [], "" )
 
   call <SID>X( "cssBoxAttr", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssFontAttr", [s:dark_grey1, s:light_grey1], [], "" )
@@ -720,6 +722,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X( "cssStringQ", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssStringQQ", [s:dark_grey1, s:light_grey1], [], "" )
   call <SID>X( "cssURL", [s:dark_grey1, s:light_grey1], [], "" )
+
+  call <SID>X( "stylusCssAttribute", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "stylusControl", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "stylusInterpolation", [s:dark_grey1, s:light_grey1], [], "" )
+  call <SID>X( "stylusAmpersand", [s:dark_red, s:light_grey1], [], "" )
+  call <SID>X( "stylusClass", [s:dark_red, s:light_grey1], [], "" )
+  call <SID>X( "stylusClassChar", [s:dark_red, s:light_grey1], [], "" )
+  call <SID>X( "stylusIdChar", [s:dark_orange, s:light_grey1], [], "" )
 
   "" Markdown Highlighting
   "call <SID>X( "markdownListMarker", [s:dark_cyan, s:light_cyan], [], "" )

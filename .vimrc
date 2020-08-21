@@ -85,6 +85,7 @@ map ]] :next<CR>
 
 "" Buffer movement
 map r :bn<CR>
+map <BS> :bd<CR>
 
 "" Increase / decrease split window width
 map - <C-W>>

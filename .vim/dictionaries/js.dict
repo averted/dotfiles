@@ -1,4 +1,5 @@
-React Component PureComponent Fragment constructor defaultProps dangerouslySetInnerHTML extends static componentDidMount componentDidUpdate
+React Component PureComponent Fragment constructor defaultProps dangerouslySetInnerHTML extends static
+componentDidMount componentDidUpdate componentWillUnmount
 
 decorators inject helpers connect
 
