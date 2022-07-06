@@ -9,7 +9,7 @@ set autoindent                  " auto indent
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab                    " indent start of line based on context
-set history=50                  " keep 50 lines of command line history
+set history=100                 " keep 100 lines of command line history
 set expandtab                   " replace <TAB> with spaces
 set laststatus=2                " always show statusline
 " set colorcolumn=100           " show column at char limit
@@ -31,6 +31,9 @@ set hidden                      " no need to save buffers manually
 
 set splitright
 set backspace=indent,eol,start  " allow backspacing indents
+
+set wildmode=full
+
 let mapleader = ","             " remap Leader
 """"""""""""""""""""""""""""""
 
@@ -65,7 +68,6 @@ noremap <F1> <nop>
 inoremap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
-map <F3> :call Retab()<CR>
 map <Tab> <C-W><C-W>
 inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>Tab>"<CR>
 inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
@@ -104,7 +106,8 @@ au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.ino  set filetype=javascript    "Treat ES6 extensions as javascript
 au BufNewFile,BufRead *.jsx  set filetype=javascript    "Treat ES6 extensions as javascript
-au BufNewFile,BufRead *.ts   set filetype=javascript    "Treat ES6 extensions as javascript
+au BufNewFile,BufRead *.tsx  set filetype=javascript    "Treat TSX extensions as javascript
+au BufNewFile,BufRead *.ts   set filetype=javascript    "Treat TS extensions as javascript
 au BufNewFile,BufRead *.hbs  set filetype=html          "Treat HBS extensions as html
 au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as html
 au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
@@ -117,6 +120,7 @@ au BufNewFile,BufRead *.java set filetype=javaOverride
 "
 "" js
 au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
+au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/ts.dict'
 
 "" JSON
 au FileType json execute 'setlocal dict+=~/.vim/dictionaries/json.dict'
@@ -272,8 +276,7 @@ function! Retab()
 endfunction
 
 function! ConsoleLog()
-  :exe ":normal o" . "console.log('-- "
-  :exe ":startinsert"
+  :exe ":normal o" . "console.log('-- ', )"
 endfunction
 
 function! CommentBlock()
@@ -284,15 +287,14 @@ endfunction
 
 function! ReactClass()
   :exe "set nopaste"
-  :exe ":normal o" . "// @flow"
   :exe ":normal o" . "import React from 'react'"
   :exe ":normal o" . ""
-  :exe ":normal o" . "export default class ExampleClass extends React.Component<{}> {"
-  :exe ":normal o" . "render() {"
-  :exe ":normal o" . "const { item } = this.props"
-  :exe ":normal o" . "return ("
-  :exe ":normal o" . ")"
+  :exe ":normal o" . "type Props = {"
+  :exe ":normal o" . "test: string"
   :exe ":normal o" . "}"
+  :exe ":normal o" . ""
+  :exe ":normal o" . "export default (props: Props) => {"
+  :exe ":normal o" . "return ()"
   :exe ":normal o" . "}"
 endfunction
 
@@ -303,7 +305,7 @@ function! TestSuite()
   :exe ":normal o" . "// before each"
   :exe ":normal o" . "})"
   :exe ":normal o"
-  :exe ":normal o" . "  test('works correctly', () => {"
+  :exe ":normal o" . "  it('works correctly', () => {"
   :exe ":normal o" . "expect(someVar).not.toBeNull()"
   :exe ":normal o" . "expect(someVar).toHaveLength(1)"
   :exe ":normal o" . "expect(someVar[0].anotherVar).toEqual('test')"

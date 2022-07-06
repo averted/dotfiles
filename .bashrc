@@ -1,3 +1,6 @@
+# suppress Catalina default zsh warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # PATH
 export PATH="$PATH:$HOME/scripts/bin"
 #export PATH="$PATH:/usr/local/go/bin"
@@ -6,10 +9,6 @@ export PATH="$PATH:$HOME/scripts/bin"
 # GOPATH
 #export GOPATH="$HOME/gocode"
 
-# JAVA
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$PATH:$HOME/java/maven/bin"
-
 # MySQL
 export PATH="$PATH:/usr/local/mysql/bin"
 
@@ -17,6 +16,7 @@ export PATH="$PATH:/usr/local/mysql/bin"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias xa='xargs'
 alias ls='ls -lahG'
 alias c='clear'
 alias cl='clear'
@@ -27,6 +27,7 @@ alias cealr='clear'
 alias scripts="cd $HOME/scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
+alias notes="cd $HOME/git/averted.github.io/_notes/content"
 
 # Grep
 export GREP_COLOR="91"
@@ -50,28 +51,6 @@ function dc() {
   container=$@
   command docker exec -it $container /bin/bash
 }
-
-# Pay aliases
-alias map="cd $HOME/paytm/map-ui/src/app"
-alias cma="cd $HOME/java/code/map-cma/src/main/java/com/paytm/midgar/mapcma"
-alias cmam="cd $HOME/java/code/map-cma"
-alias paytm="cd $HOME/git/paytm/client/src"
-
-# Pressly aliases
-alias embed="cd $HOME/press/embeds/src"
-alias blue="cd $HOME/press/blue-suede/src"
-alias bs="cd $HOME/press/blue-suede/src"
-alias moo="cd $HOME/press/mb/applications/web/src"
-alias moom="cd $HOME/press/mb"
-alias moop="cd $HOME/press/mb/packages"
-alias little="cd $HOME/press/mobx-little-router/packages/mobx-little-router/src"
-alias littlec="cd $HOME/press/mobx-little-router/examples/react-client"
-alias ext="cd $HOME/press/chrome-extension/src"
-alias extent="cd $HOME/press/chrome-extension/src"
-alias extension="cd $HOME/press/chrome-extension/src"
-alias extensions="cd $HOME/press/chrome-extension/src"
-alias pocket="cd $HOME/git/pocket-router"
-alias pocketc="cd $HOME/git/pocket-router/examples/client/src"
 
 # Thunderbox aliases
 alias thunder="cd $HOME/git/thunderbox-client"
@@ -158,7 +137,15 @@ function ls() {
 function cd() {
   string=$@
 
-  if [[ ${string: -3} == ".js" || ${string: -4} == ".jsx" || ${string: -4} == ".css" || ${string: -5} == ".html" || ${string: -5} == ".styl" || ${string: -7} == ".coffee" || ${string: -5} == ".java" ]]; then
+  if [[
+    ${string: -3} == ".js" ||
+    ${string: -3} == ".ts" ||
+    ${string: -4} == ".jsx" ||
+    ${string: -4} == ".tsx" ||
+    ${string: -4} == ".css" ||
+    ${string: -5} == ".styl" ||
+    ${string: -5} == ".html"
+  ]]; then
     command cd "$(dirname $string)"
   else
     command cd "$@"
@@ -238,3 +225,8 @@ export GIT_PS1_SHOWCOLORHINTS=1
 
 # Disable autocompletion
 complete -r
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
