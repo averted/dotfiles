@@ -1,0 +1,11 @@
+
+--glob=!git/*
+--glob=!node_modules/*
+--glob=!.build/*
+--glob=!.jest-cache/*
+
+--colors=path:fg:yellow
+
+--colors=line:fg:blue
+
+--colors=match:fg:magenta

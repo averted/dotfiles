@@ -9,7 +9,7 @@ set autoindent                  " auto indent
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab                    " indent start of line based on context
-set history=100                 " keep 100 lines of command line history
+set history=100                 " increase command line history limit
 set expandtab                   " replace <TAB> with spaces
 set laststatus=2                " always show statusline
 " set colorcolumn=100           " show column at char limit
@@ -33,8 +33,11 @@ set splitright
 set backspace=indent,eol,start  " allow backspacing indents
 
 set wildmode=full
+set showtabline=0
 
 let mapleader = ","             " remap Leader
+syntax enable
+filetype plugin indent on
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -80,6 +83,7 @@ noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
 noremap <Leader>e :call TestSuiteEnzyme()<CR>
 noremap <Leader>f :call FlowFixMe()<CR>
+noremap <Leader>b :ls<CR>:b<Space>
 
 "" File movement
 map [[ :prev<CR>
@@ -161,10 +165,10 @@ au FileType make setlocal noexpandtab
 "
 """ Close tree if it's the only tab
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"
-""" Toggle tree shotcut
-"map <Leader>x :NERDTreeToggle<CR>
-"
+
+"" Toggle tree shotcut
+map <Leader>x :NERDTreeToggle<CR>
+
 """ Custom key re-maps
 "let NERDTreeMapOpenExpl = '\e'
 "let NERDTreeMapOpenVSplit = 'e'
@@ -223,6 +227,7 @@ let g:bufferline_fname_mod = ':p:.'
 " CTRL-p
 "
 map <Space> :CtrlP<CR>
+let g:ctrlp_open_multiple_files = 't'                                                     "CtrlP working path fix
 let g:ctrlp_working_path_mode = 0                                                       "CtrlP working path fix
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']     "Ignore files in .gitignore
 set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*.so,*.swp,*.zip                    "Skip the following dirs
@@ -252,11 +257,16 @@ let g:vim_json_syntax_conceal = 0
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" Vim-rust
+"
+let g:rustfmt_autosave = 1
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
 " Init
 "
 execute pathogen#infect()
 
-syntax on
 colorscheme averted
 """"""""""""""""""""""""""""""
 

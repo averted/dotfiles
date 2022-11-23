@@ -10,7 +10,7 @@ export PATH="$PATH:$HOME/scripts/bin"
 #export GOPATH="$HOME/gocode"
 
 # MySQL
-export PATH="$PATH:/usr/local/mysql/bin"
+# export PATH="$PATH:/usr/local/mysql/bin"
 
 # General alias
 alias ..='cd ..'
@@ -32,6 +32,9 @@ alias notes="cd $HOME/git/averted.github.io/_notes/content"
 # Grep
 export GREP_COLOR="91"
 alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build}'
+
+# RipGrep
+export RIPGREP_CONFIG_PATH=~/git/dotfiles/.ripgreprc
 
 # Git
 alias gs="git status"
@@ -230,3 +233,4 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+. "$HOME/.cargo/env"

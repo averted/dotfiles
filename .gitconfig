@@ -25,6 +25,7 @@
   find = grep --break
   s = status
   d = diff
+  r = reset
   co = checkout
   ck = checkout
   out = checkout
@@ -43,3 +44,5 @@
   iy = log --color --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold green)%d%Creset %s %C(bold blue)(%cr)%Creset %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative --stat --since=yesterday
   # info logs from this morning
   it = log --color --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold green)%d%Creset %s %C(bold blue)(%cr)%Creset %C(bold yellow)<%an>%Creset' --abbrev-commit --date=relative --stat --since=6am
+[credential]
+  username = averted
