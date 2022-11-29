@@ -105,6 +105,7 @@ set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
 """"""""""""""""""""""""""""""
 " Filetypes
 "
+au BufNewFile,BufRead *.rs   set filetype=rust          "Color-coding for rust
 au BufNewFile,BufRead *.css  set filetype=stylus        "Color-coding for css / stylus
 au BufNewFile,BufRead *.less set filetype=less          "Color-coding for less
 au BufNewFile,BufRead *.es6  set filetype=javascript    "Treat ES6 extensions as javascript
@@ -122,6 +123,9 @@ au BufNewFile,BufRead *.java set filetype=javaOverride
 """"""""""""""""""""""""""""""
 " Dictionaries
 "
+"" Rust
+au FileType rust execute 'setlocal dict+=~/.vim/dictionaries/rust.dict'
+
 "" js
 au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/js.dict'
 au FileType javascript execute 'setlocal dict+=~/.vim/dictionaries/ts.dict'
