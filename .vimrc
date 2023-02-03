@@ -81,8 +81,7 @@ noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
-noremap <Leader>e :call TestSuiteEnzyme()<CR>
-noremap <Leader>f :call FlowFixMe()<CR>
+noremap <Leader>p :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 
 "" File movement
@@ -118,6 +117,7 @@ au BufNewFile,BufRead *.ejs  set filetype=html          "Treat EJS extensions as
 au BufNewFile,BufRead *.jet  set filetype=html          "Treat JET extensions as html
 au BufNewFile,BufRead *.html set filetype=html          "Treat JET extensions as html
 au BufNewFile,BufRead *.java set filetype=javaOverride
+au BufNewFile,BufRead * setlocal formatoptions-=cro     " disables continuation of comments on the next line
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -299,6 +299,10 @@ function! CommentBlock()
   :exe ":normal o" . "*/"
 endfunction
 
+function! RustPrintMarco()
+  :exe ":normal o" . "println!(\"test: {}\", test);"
+endfunction
+
 function! ReactClass()
   :exe "set nopaste"
   :exe ":normal o" . "import React from 'react'"
@@ -346,12 +350,5 @@ function! TestSuiteEnzyme()
   :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().localName).toEqual('span')"
   :exe ":normal o" . "})"
   :exe ":normal o" . "})"
-endfunction
-
-function! FlowFixMe()
-  :exe "set nopaste"
-  :exe ":normal o" . "// TODO: $FlowFixMe"
-  :exe ":normal o" . "static defaultProps = {}"
-  :exe ":normal o"
 endfunction
 """"""""""""""""""""""""""""""
