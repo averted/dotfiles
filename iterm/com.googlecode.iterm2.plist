@@ -240,7 +240,7 @@
 	<key>MaximumBytesToProvideToServices</key>
 	<integer>10000</integer>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents</string>
+	<string>~/git/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -285,11 +285,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 130 224 275 0 0 1440 877 </string>
+	<string>0 131 224 275 0 0 1440 877 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>320 333 799 448 0 0 1440 877 </string>
+	<string>481 142 799 448 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-2560 -180 2560 1080 -2560 -180 2560 1080 </string>
+	<string>0 48 1440 829 0 0 1440 877 </string>
 	<key>NeverWarnAboutOverrides</key>
 	<true/>
 	<key>NeverWarnAboutOverrides_selection</key>
@@ -374,13 +374,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.060253970324993134</real>
+				<real>0.836883544921875</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.66646546125411987</real>
+				<real>0.83210984311696434</real>
 				<key>Red Component</key>
-				<real>0.74320822954177856</real>
+				<real>0.011033132672309875</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -3559,6 +3559,13 @@
 	<array>
 		<string>3.3.12</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1440, 900}}</string>
+		<key>topLeft</key>
+		<string>{417, 806}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -3569,7 +3576,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>26F06FA2-375D-479B-997E-A0B78E230DA7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>478</integer>
+	<integer>924</integer>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4350,7 +4359,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/av/git/dotfiles</string>
+	<string>/Users/av/git/dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>

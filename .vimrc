@@ -81,7 +81,7 @@ noremap <Leader><Leader> :call ConsoleLog()<CR>
 noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
 noremap <Leader>t :call TestSuite()<CR>
-noremap <Leader>p :call RustPrintMarco()<CR>
+noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 
 "" File movement

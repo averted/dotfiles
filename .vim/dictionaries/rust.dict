@@ -1,6 +1,24 @@
-i32
-u32
+i8 u8
+i16 u16
+i32 u32
+i64 u64
+i128 u128
+isize usize
+
 impl
 struct
 println!
 #[derive(Debug)]
+
+Option
+Result
+
+std::fmt
+PartialEq
+PartialOrd
+Display
+
+assert_eq!
+assert_ne!
+
+contains
