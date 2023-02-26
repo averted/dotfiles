@@ -2,6 +2,14 @@
 VIM_DIR=$HOME/.vim
 BUNDLE_DIR=$HOME/.vim/bundle
 
+# rust.vim
+rm -rf $BUNDLE_DIR/rust.vim
+git clone --depth=1 https://github.com/rust-lang/rust.vim.git $BUNDLE_DIR/rust.vim
+
+# auto-pairs
+rm -rf $BUNDLE_DIR/auto-pairs
+git clone https://github.com/jiangmiao/auto-pairs $BUNDLE_DIR/auto-pairs
+
 # NERDtree
 rm -rf $BUNDLE_DIR/nerdtree
 git clone https://github.com/preservim/nerdtree $BUNDLE_DIR/nerdtree
