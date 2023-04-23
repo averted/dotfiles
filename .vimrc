@@ -77,10 +77,10 @@ inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
-noremap <Leader><Leader> :call ConsoleLog()<CR>
+noremap <Leader><Leader> :call RustDeriveBlock()<CR>
 noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
-noremap <Leader>t :call TestSuite()<CR>
+noremap <Leader>t :call TestSuiteRust()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 
@@ -266,6 +266,32 @@ let g:vim_json_syntax_conceal = 0
 let g:rustfmt_autosave = 1
 """"""""""""""""""""""""""""""
 
+
+""""""""""""""""""""""""""""""
+" Vim-minimap
+"
+let g:minimap_width = 20
+let g:minimap_auto_start = 0
+let g:minimap_auto_start_win_enter = 0
+let g:minimap_base_highlight="Comment"
+let g:minimap_highlight_search=1
+
+"" Toggle minimap shotcut
+map <Leader>d :MinimapToggle<CR>
+""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""
+" Auto pairs
+"
+let g:AutoPairsMapCR = 1
+let g:AutoPairsCenterLine = 0
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsMapSpace = 0
+let g:AutoPairsMultilineClose = 0
+let g:AutoPairsShortcutFastWrap = '<C-n>'
+" let g:AutoPairsShortcutJump = '<C-w>'
+au Filetype javascript let g:AutoPairsMapCR = 0
+
 """"""""""""""""""""""""""""""
 " Init
 "
@@ -297,6 +323,10 @@ function! CommentBlock()
   :exe ":normal o" . "/**"
   :exe ":normal o" . " * Comment"
   :exe ":normal o" . "*/"
+endfunction
+
+function! Sum()
+  :exe ":%!awk '{print; total+=$1}END{print total}'"
 endfunction
 
 function! RustPrintMarco()
@@ -335,20 +365,18 @@ function! TestSuite()
   :exe ":normal o" . "})"
 endfunction
 
-function! TestSuiteEnzyme()
+function! TestSuiteRust()
   :exe "set nopaste"
-  :exe ":normal o" . "import React from 'react'"
-  :exe ":normal o" . "import { mount } from 'enzyme'"
-  :exe ":normal o" . "import Logo from '../'"
+  :exe ":normal o" . "#[cfg(test)]"
+  :exe ":normal o" . "mod tests {\<CR>use super::*;"
   :exe ":normal o"
-  :exe ":normal o" . "describe('Logo', () => {"
-  :exe ":normal o" . "it('renders', () => {"
-  :exe ":normal o" . "const wrapper = mount(<Logo name=\"logo example name\" />)"
-  :exe ":normal o" . "expect(wrapper.text()).toMatch(/logo example name/)"
-  :exe ":normal o" . "expect(wrapper.find('Logo')).toHaveLength(1)"
-  :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().tagName).toEqual('SPAN')"
-  :exe ":normal o" . "expect(wrapper.find('Logo').getDOMNode().localName).toEqual('span')"
-  :exe ":normal o" . "})"
-  :exe ":normal o" . "})"
+  :exe ":normal o" . "#[test]"
+  :exe ":normal o" . "fn some_test() {\<CR>assert_eq!(true, true);"
 endfunction
+
+function! RustDeriveBlock()
+  :exe "set nopaste"
+  :exe ":normal O" . "#[derive(Debug)]"
+endfunction
+
 """"""""""""""""""""""""""""""

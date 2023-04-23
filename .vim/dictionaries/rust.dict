@@ -6,19 +6,33 @@ i128 u128
 isize usize
 
 impl
+trait
 struct
 println!
-#[derive(Debug)]
+#[derive()]
 
+String
 Option
 Result
+Err
+Ok
 
-std::fmt
+std::io
+std::rc::{Arc, Rc}
+std::fmt::{Display, Formatter, Result}
+std::cell::RefCell
+std::time
+
+Copy
+Clone
+Deref
+Debug
+Display
 PartialEq
 PartialOrd
-Display
 
 assert_eq!
 assert_ne!
 
 contains
+unwrap
