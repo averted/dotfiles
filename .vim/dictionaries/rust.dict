@@ -11,7 +11,7 @@ struct
 println!
 #[derive()]
 
-String
+String::from
 Option
 Result
 Err
@@ -22,6 +22,8 @@ std::rc::{Arc, Rc}
 std::fmt::{Display, Formatter, Result}
 std::cell::RefCell
 std::time
+std::process
+std::thread
 
 Copy
 Clone
@@ -36,3 +38,4 @@ assert_ne!
 
 contains
 unwrap
+to_string

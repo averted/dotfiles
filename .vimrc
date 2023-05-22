@@ -80,9 +80,10 @@ map <S-E> :vsp<CR>
 noremap <Leader><Leader> :call RustDeriveBlock()<CR>
 noremap <Leader>r :call ReactClass()<CR>
 noremap <Leader>c :call CommentBlock()<CR>
-noremap <Leader>t :call TestSuiteRust()<CR>
+noremap <Leader>t :call RustTestSuite()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
+noremap <Leader>s :call RustDocsSearch()<CR><CR>
 
 "" File movement
 map [[ :prev<CR>
@@ -210,7 +211,7 @@ let g:airline#extensions#bufferline#overwrite_variables = 0
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" Bufferline
+" Vim-bufferline
 "
 let g:bufferline_echo = 0
 let g:bufferline_modified = ' +'
@@ -231,10 +232,13 @@ let g:bufferline_fname_mod = ':p:.'
 " CTRL-p
 "
 map <Space> :CtrlP<CR>
-let g:ctrlp_open_multiple_files = 't'                                                     "CtrlP working path fix
-let g:ctrlp_working_path_mode = 0                                                       "CtrlP working path fix
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']     "Ignore files in .gitignore
-set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*.so,*.swp,*.zip                    "Skip the following dirs
+let g:ctrlp_open_multiple_files = 't'                                                       "CtrlP working path fix
+let g:ctrlp_working_path_mode = 0                                                           "CtrlP working path fix
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|target|dist)$',
+  \ 'file': '\v\.(exe|so|dll)|(package-lock.json|yarn.lock)$',
+  \ }
+"set wildignore+=*/node_modules/*,*/tmp/*,*/vendor/*,*/target/*,*/dist/*,*.so,*.swp,*.zip         "Skip the following dirs
 set runtimepath^=~/.vim/bundle/vim-ctrlp
 """"""""""""""""""""""""""""""
 
@@ -291,6 +295,17 @@ let g:AutoPairsMultilineClose = 0
 let g:AutoPairsShortcutFastWrap = '<C-n>'
 " let g:AutoPairsShortcutJump = '<C-w>'
 au Filetype javascript let g:AutoPairsMapCR = 0
+
+""""""""""""""""""""""""""""""
+" Ale
+"
+let g:ale_set_signs = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_delay = 200
+let g:ale_fix_on_save = 0
+let g:ale_set_balloons = 0
+let g:ale_set_highlights = 1
+au FileType javascript let g:ale_enabled = 0
 
 """"""""""""""""""""""""""""""
 " Init
@@ -365,7 +380,7 @@ function! TestSuite()
   :exe ":normal o" . "})"
 endfunction
 
-function! TestSuiteRust()
+function! RustTestSuite()
   :exe "set nopaste"
   :exe ":normal o" . "#[cfg(test)]"
   :exe ":normal o" . "mod tests {\<CR>use super::*;"
@@ -377,6 +392,10 @@ endfunction
 function! RustDeriveBlock()
   :exe "set nopaste"
   :exe ":normal O" . "#[derive(Debug)]"
+endfunction
+
+function! RustDocsSearch()
+  :exe "!/Applications/Firefox.app/Contents/MacOS/firefox https://doc.rust-lang.org/stable/std/index.html?search=" . expand("<cword>")
 endfunction
 
 """"""""""""""""""""""""""""""

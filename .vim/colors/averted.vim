@@ -461,6 +461,15 @@ call <SID>NERDTreeHighlightFile('js', s:dark_orange, s:dark_bg, '')
 call <SID>NERDTreeHighlightFile('ico', s:dark_grey2, s:dark_bg, '')
 
 "
+" ALE
+"
+call <SID>HI("ALEError", s:dark_black, s:dark_red, "italic" )
+call <SID>HI("ALEStyleError", s:dark_red, s:dark_black, "" )
+call <SID>HI("ALEStyleWarning", s:dark_black, s:dark_green, "" )
+call <SID>HI("ALEWarning", s:dark_black, s:dark_green, "italic" )
+call <SID>HI("ALEInfo", s:dark_green, s:dark_black, "" )
+
+"
 " Cleanup
 "
 delf <SID>HI

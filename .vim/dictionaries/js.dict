@@ -64,4 +64,6 @@ sectionBorderColor
 sectionBackgroundColor
 tooltipBackgroundColor
 
-themeVar
+display: flex
+align-items: center
+transform: translate
