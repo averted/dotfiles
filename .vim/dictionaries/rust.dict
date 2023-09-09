@@ -10,6 +10,7 @@ trait
 struct
 println!
 #[derive()]
+should_panic
 
 String::from
 Option
@@ -18,12 +19,12 @@ Err
 Ok
 
 std::io
+std::cmp::{max, min};
 std::rc::{Arc, Rc}
 std::fmt::{Display, Formatter, Result}
 std::cell::RefCell
 std::time
-std::process
-std::thread
+std::collections::HashMap;
 
 Copy
 Clone
@@ -37,5 +38,7 @@ assert_eq!
 assert_ne!
 
 contains
+contains_key
 unwrap
 to_string
+as_bytes

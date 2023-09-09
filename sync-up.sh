@@ -5,6 +5,7 @@ DOTFILES=$HOME/git/dotfiles
 cp -R $HOME/.vim/* $DOTFILES/.vim/
 
 ls -la $HOME/.vim/bundle >> .vim.bundle
+cat $HOME/.config/coc/extensions/package.json >> .coc.extensions
 
 # dotfiles
 cp $HOME/.bash_profile $DOTFILES

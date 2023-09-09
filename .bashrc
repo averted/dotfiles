@@ -31,7 +31,7 @@ alias notes="cd $HOME/git/averted.github.io/_notes/content"
 
 # Grep
 export GREP_COLOR="91"
-alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build}'
+alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build,target}'
 
 # RipGrep
 export RIPGREP_CONFIG_PATH=~/git/dotfiles/.ripgreprc

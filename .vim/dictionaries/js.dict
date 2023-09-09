@@ -1,20 +1,21 @@
 React Component PureComponent Fragment constructor defaultProps dangerouslySetInnerHTML extends static
-componentDidMount componentDidUpdate componentWillUnmount useEffect useState createRef ChangeEvent KeyboardEvent
+componentDidMount componentDidUpdate componentWillUnmount useRef useEffect useState createRef ChangeEvent KeyboardEvent
+RefObject
 
-material
+import { useTranslation } from 'react-i18next'
 
 window
 document
+undefined
 addEventListener
 removeEventListener
 HTMLInputElement
 HTMLButtonElement
 HTMLElement
 
+material
 decorators inject helpers connect constants
-
 toLowerCase console log
-
 boolean string Object
 
 primary
@@ -23,9 +24,6 @@ tertiary
 success
 warning
 danger
-bodyColor
-headingColor
-subHeadingColor
 fontSizeSmallest
 fontSizeSmaller
 fontSizeSmall
@@ -34,36 +32,11 @@ fontSizeLarge
 fontSizeLarger
 fontSizeLargest
 fontFamily
-greyLightest
-greyLighter
-greyLight
-grey
-greyDark
-greyDarker
-greyDarkest
-gutterSmallest
-gutterSmaller
-gutterSmall
-gutter
-gutterLarge
-gutterLarger
-gutterLargest
-overlayDarker
-overlayDark
-overlayLight
-overlayLighter
-shadowLightest
-shadowLighter
-shadowLight
-shadow
-shadowDark
-shadowDarker
-shadowDarkest
-sectionWhiteColor
-sectionBorderColor
-sectionBackgroundColor
-tooltipBackgroundColor
 
 display: flex
 align-items: center
-transform: translate
+flex-shrink: 0
+transform: translate rotate
+white-space: nowrap
+justify-content: space-between
+opacity: 1

@@ -15,6 +15,7 @@ set laststatus=2                " always show statusline
 " set colorcolumn=100           " show column at char limit
 
 set nobackup
+set nowritebackup
 set noswapfile
 set showcmd                     " show incomplete commands
 
@@ -36,6 +37,11 @@ set wildmode=full
 set showtabline=0
 
 let mapleader = ","             " remap Leader
+
+" coc specific global settings
+set updatetime=300
+set signcolumn=yes
+
 syntax enable
 filetype plugin indent on
 """"""""""""""""""""""""""""""
@@ -58,7 +64,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" Movement Remaps
+" Overrides
 "
 map h <Up>
 map l <Down>
@@ -72,8 +78,6 @@ inoremap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 map <Tab> <C-W><C-W>
-inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>Tab>"<CR>
-inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
@@ -84,6 +88,7 @@ noremap <Leader>t :call RustTestSuite()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 noremap <Leader>s :call RustDocsSearch()<CR><CR>
+noremap <Leader>g :call HighlightGroup()<CR><CR>
 
 "" File movement
 map [[ :prev<CR>
@@ -100,6 +105,10 @@ map = <C-W><
 "" Easy Vim Grep remaps (deprecate?)
 nnoremap \ :vimgrep <cword> ./**/* <CR>:cw<CR>
 set wildignore+=**/node_modules/**,**.jest-cache/**,**.build/**
+
+"" Remaps :e to :arga to buffer multiple files
+"cnoreabbrev <expr> e getcmdtype() == ":" && getcmdline() == 'e' ? 'argadd' : 'e'
+
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -245,10 +254,12 @@ set runtimepath^=~/.vim/bundle/vim-ctrlp
 """"""""""""""""""""""""""""""
 " ACP Completion
 "
-let g:acp_behaviorKeywordLength = 1
-set completeopt=menu
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+" let g:acp_behaviorKeywordLength = 1
+" set completeopt=menu
+" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags noci
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags noci
+" inoremap <Tab> <C-R>=pumvisible() ? "\<lt>C-Y>" : "\<lt>Tab>"<CR>
+" inoremap <CR> <C-R>=pumvisible() ? "\<lt>C-E>\<lt>CR>" : "\<lt>CR>"<CR>
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
@@ -270,6 +281,12 @@ let g:vim_json_syntax_conceal = 0
 let g:rustfmt_autosave = 1
 """"""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" Vim-rooter
+"
+let g:rooter_patterns = ['src', '!=www']
+let g:rooter_silent_chdir = 1
+""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " Vim-minimap
@@ -299,13 +316,23 @@ au Filetype javascript let g:AutoPairsMapCR = 0
 """"""""""""""""""""""""""""""
 " Ale
 "
-let g:ale_set_signs = 0
-let g:ale_lint_on_enter = 0
-let g:ale_lint_delay = 200
-let g:ale_fix_on_save = 0
-let g:ale_set_balloons = 0
-let g:ale_set_highlights = 1
-au FileType javascript let g:ale_enabled = 0
+" let g:ale_set_signs = 0
+" let g:ale_lint_on_enter = 0
+" let g:ale_lint_delay = 200
+" let g:ale_fix_on_save = 0
+" let g:ale_set_balloons = 0
+" let g:ale_set_highlights = 1
+" let g:ale_virtualtext_cursor = 'disabled'     " Removes E: inline errors
+" au FileType javascript let g:ale_enabled = 0
+"
+
+""""""""""""""""
+" CoC
+"
+inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 """"""""""""""""""""""""""""""
 " Init
@@ -350,15 +377,11 @@ endfunction
 
 function! ReactClass()
   :exe "set nopaste"
-  :exe ":normal o" . "import React from 'react'"
+  :exe ":normal i" . "import React from 'react'"
   :exe ":normal o" . ""
-  :exe ":normal o" . "type Props = {"
-  :exe ":normal o" . "test: string"
-  :exe ":normal o" . "}"
+  :exe ":normal o" . "type Props = {\<CR>test: string\<CR>\<BS>"
   :exe ":normal o" . ""
-  :exe ":normal o" . "export default (props: Props) => {"
-  :exe ":normal o" . "return ()"
-  :exe ":normal o" . "}"
+  :exe ":normal o" . "export default ({ test }: Props) => {\<CR>return ()\<CR>\<BS>"
 endfunction
 
 function! TestSuite()
@@ -397,5 +420,12 @@ endfunction
 function! RustDocsSearch()
   :exe "!/Applications/Firefox.app/Contents/MacOS/firefox https://doc.rust-lang.org/stable/std/index.html?search=" . expand("<cword>")
 endfunction
+
+function! HighlightGroup()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 """"""""""""""""""""""""""""""

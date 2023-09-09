@@ -103,7 +103,7 @@ call <SID>HI("ModeMsg", s:dark_orange, [], "none")  " 'showmode' message (e.g., 
 call <SID>HI("MoreMsg", s:dark_orange, [], "")  " more-prompt
 call <SID>HI("Question", s:dark_red,  [], "")  " hit-enter prompt and yes/no questions
 call <SID>HI("WildMenu", s:dark_red, s:dark_bg, "" )  " current match in 'wildmenu' completion
-call <SID>HI("SignColumn", [], s:dark_red, "" )  " column where signs are displayed
+call <SID>HI("SignColumn", s:dark_orange, s:dark_bg, "" )  " column where signs are displayed
 call <SID>HI("Linenr", s:dark_orange, [], "" )  " line number for ':number' and ':#' commands
 call <SID>HI("DiffAdd", s:dark_bg, s:dark_green, "")  " diff mode: Added line
 call <SID>HI("DiffDelete", s:dark_bg, s:dark_red, "" )  " diff mode: Deleted line
@@ -440,6 +440,47 @@ call <SID>HI("markdownHeadingDelimiter", s:dark_red, [], "" )
 "call <SID>HI("markdownBlockquote", s:dark_darkerfg, [], "" )
 
 "
+" ALE
+"
+" call <SID>HI("ALEError", s:dark_black, s:dark_red, "italic" )
+" call <SID>HI("ALEStyleError", s:dark_red, s:dark_black, "" )
+" call <SID>HI("ALEStyleWarning", s:dark_black, s:dark_green, "" )
+" call <SID>HI("ALEWarning", s:dark_black, s:dark_green, "italic" )
+" call <SID>HI("ALEInfo", s:dark_green, s:dark_black, "" )
+
+"
+" Rust
+"
+call <SID>HI("rustFuncName", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustFuncCall", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustType", s:dark_magenta, s:dark_bg, "italic" )
+call <SID>HI("rustTrait", s:dark_magenta, s:dark_bg, "italic" )
+call <SID>HI("rustPubScope", s:dark_red, s:dark_bg, "underline" )
+call <SID>HI("rustGenericRegion", s:dark_red, s:dark_bg, "underline" )
+call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_bg, "" )
+call <SID>HI("rustLifetime", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustSigil", s:dark_magenta, s:dark_bg, "" )
+call <SID>HI("rustSelf", s:dark_magenta, s:dark_bg, "" )
+call <SID>HI("rustStorage", s:dark_magenta, s:dark_bg, "" )
+call <SID>HI("rustModPathSep", s:dark_orange, s:dark_bg, "" )
+call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_black, "" )
+
+"
+" CoC
+"
+call <SID>HI("CocInlayHint", s:dark_bg, s:dark_green, "italic" )
+call <SID>HI("CocHintSign", s:dark_orange, s:dark_bg, "italic" )
+" call <SID>HI("CocFloatActive", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocSearch", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocMarkdownLink", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocListSearch", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocPumSearch", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocVirtualText", s:dark_unknown, s:dark_unknown, "" )
+"
+" call <SID>HI("CocSearch", s:dark_unknown, s:dark_unknown, "" )
+" call <SID>HI("CocSearch", s:dark_unknown, s:dark_unknown, "" )
+
+"
 " NERDTree
 "
 fun <SID>NERDTreeHighlightFile(extension, fg, bg, attr)
@@ -460,14 +501,6 @@ call <SID>NERDTreeHighlightFile('css', s:dark_pink, s:dark_bg, '')
 call <SID>NERDTreeHighlightFile('js', s:dark_orange, s:dark_bg, '')
 call <SID>NERDTreeHighlightFile('ico', s:dark_grey2, s:dark_bg, '')
 
-"
-" ALE
-"
-call <SID>HI("ALEError", s:dark_black, s:dark_red, "italic" )
-call <SID>HI("ALEStyleError", s:dark_red, s:dark_black, "" )
-call <SID>HI("ALEStyleWarning", s:dark_black, s:dark_green, "" )
-call <SID>HI("ALEWarning", s:dark_black, s:dark_green, "italic" )
-call <SID>HI("ALEInfo", s:dark_green, s:dark_black, "" )
 
 "
 " Cleanup
