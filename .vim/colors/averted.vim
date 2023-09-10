@@ -468,7 +468,7 @@ call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_black, "" )
 "
 " CoC
 "
-call <SID>HI("CocInlayHint", s:dark_bg, s:dark_green, "italic" )
+call <SID>HI("CocInlayHint", s:dark_grey2, s:dark_black, "italic" )
 call <SID>HI("CocHintSign", s:dark_orange, s:dark_bg, "italic" )
 " call <SID>HI("CocFloatActive", s:dark_unknown, s:dark_unknown, "" )
 " call <SID>HI("CocSearch", s:dark_unknown, s:dark_unknown, "" )
