@@ -5,7 +5,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 set t_Co=256                    " 256 color mode
 set number                      " show line numbers
-set autoindent                  " auto indent
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab                    " indent start of line based on context
@@ -21,10 +20,12 @@ set showcmd                     " show incomplete commands
 
 set foldmethod=indent           " sets default fold method to indent
 set foldlevelstart=20
-set smartindent
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+
+set autoindent                  " auto indent
+"set smartindent
 
 set incsearch                   " auto-move to first found search member
 set hlsearch                    " highlight all search matches
@@ -333,6 +334,9 @@ inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<T
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
 
 """"""""""""""""""""""""""""""
 " Init

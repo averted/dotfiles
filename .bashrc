@@ -29,7 +29,7 @@ alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip 
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
 alias notes="cd $HOME/git/averted.github.io/_notes/content"
 
-# Grep
+# Grep (OBSOLETE)
 export GREP_COLOR="91"
 alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build,target}'
 
@@ -53,48 +53,6 @@ alias d="docker"
 function dc() {
   container=$@
   command docker exec -it $container /bin/bash
-}
-
-# Thunderbox aliases
-alias thunder="cd $HOME/git/thunderbox-client"
-alias thunderserver="cd $HOME/git/thunderbox-server"
-
-# Climbee aliases
-alias cs="cd $HOME/git/climbee/server"
-alias cc="cd $HOME/git/climbee/client/src"
-
-# Sportling aliases
-function sc() {
-  CLIENT_DIR="$HOME/sportling/client/src"
-  CLIENT_GIT_DIR="$HOME/git/sportling/client/src"
-
-  if [[ -d $CLIENT_DIR ]]; then
-    cd $CLIENT_DIR
-  else
-    cd $CLIENT_GIT_DIR
-  fi
-}
-
-function ss() {
-  SERVER_DIR="$HOME/sportling/server"
-  SERVER_GIT_DIR="$HOME/git/sportling/server"
-
-  if [[ -d $SERVER_DIR ]]; then
-    cd $SERVER_DIR
-  else
-    cd $SERVER_GIT_DIR
-  fi
-}
-
-function sx() {
-  AWS_DIR="$HOME/sportling/aws"
-  AWS_GIT_DIR="$HOME/git/sportling/aws"
-
-  if [[ -d $AWS_DIR ]]; then
-    cd $AWS_DIR
-  else
-    cd $AWS_GIT_DIR
-  fi
 }
 
 # NPM
@@ -141,6 +99,7 @@ function cd() {
   string=$@
 
   if [[
+    ${string: -3} == ".rs" ||
     ${string: -3} == ".js" ||
     ${string: -3} == ".ts" ||
     ${string: -4} == ".jsx" ||

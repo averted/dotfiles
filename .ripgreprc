@@ -4,6 +4,8 @@
 --glob=!.build/*
 --glob=!.jest-cache/*
 
+--no-heading
+
 --colors=path:fg:yellow
 
 --colors=line:fg:blue
