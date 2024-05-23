@@ -74,12 +74,12 @@ call <SID>HI("PMenuThumb", s:dark_grey0, s:dark_grey3, "none" )  " popup menu: T
 "
 " Status Line
 "
-call <SID>HI("StatusLine", s:dark_bg_other, s:dark_orange_other, "")  " status line of current window
+call <SID>HI("StatusLine", s:dark_orange_other, s:dark_bg_other, "none")  " status line of current window
 call <SID>HI("StatusLineNC", s:dark_bg_other, s:dark_grey, "")  " status lines of not-current windows
 "call <SID>HI("StatusLine", s:dark_orange, s:dark_airline_bg, "none" )  " status line of current window
 "call <SID>HI("StatusLineNC", s:dark_airline_bg, s:dark_grey_comment, "" )  " status lines of not-current windows
 "call <SID>HI("StatusLineErr", s:dark_red, s:dark_lighterbg1, "" )  " custom
-"call <SID>HI("StatusLineBold", s:dark_blue, s:dark_lighterbg1, "bold" )  " custom
+"call <SID>HI("StatusLineBold", s:dark_blue, s:dark_red, "" )  " custom
 
 "
 " Regular
@@ -126,7 +126,7 @@ call <SID>HI("PreProc", s:dark_orange, [], "" )  " generic Preprocessor
 call <SID>HI("Type", s:dark_unknown, [], "none" )  " int, long, char, etc.
 call <SID>HI("Special", s:dark_unknown, [], "")  " any special symbol
 call <SID>HI("Underlined", s:dark_unknown, [], "underline" )  " text that stands out, HTML links
-call <SID>HI("Title", s:dark_orange, [], "bold" )
+call <SID>HI("Title", s:dark_orange, [], "" )
 call <SID>HI("Error", s:dark_black, s:dark_red_bright, "none" )  " any erroneous construct
 call <SID>HI("Todo", s:dark_black, s:dark_grey_comment, "")  " keywords TODO FIXME and XXX
 "call <SID>HI("Character", s:dark_plum, [], "" )  " a character constant: 'c', '\n'

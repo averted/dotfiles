@@ -10,3 +10,6 @@ cp $DOTFILES/.vimrc $HOME
 cp $DOTFILES/.bash_profile $HOME
 cp $DOTFILES/.bashrc $HOME
 cp $DOTFILES/.gitconfig $HOME
+
+# kitty config
+cp $DOTFILES/.kitty/* $HOME/.config/kitty

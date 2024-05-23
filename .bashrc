@@ -2,6 +2,7 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # PATH
+export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:$HOME/scripts/bin"
 #export PATH="$PATH:/usr/local/go/bin"
 #export PATH="$PATH:$HOME/gocode/bin"
@@ -17,7 +18,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias xa='xargs'
-alias ls='ls -lahG'
+alias ls='ls -lahG --hyperlink=auto --color'
 alias c='clear'
 alias cl='clear'
 alias claer='clear'
@@ -28,6 +29,9 @@ alias scripts="cd $HOME/scripts"
 alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
 alias notes="cd $HOME/git/averted.github.io/_notes/content"
+alias tark="cd $HOME/git/tarkov/src"
+alias ts="cd $HOME/git/tarkov-server"
+alias rust="cd $HOME/git/rust"
 
 # Grep (OBSOLETE)
 export GREP_COLOR="91"
@@ -77,7 +81,7 @@ alias off="pmset sleepnow"
 # LS alias
 function l() {
   if [[ $@ == "s-la" || $@ == "s-al" || $@ == "s-l" ]]; then
-    command ls -lahG
+    command ls -lahG --hyperlink=auto --color
   else
     command ls "$@"
   fi
@@ -85,7 +89,7 @@ function l() {
 
 function ls() {
   if [[ $@ == "-lahG a-l" ]]; then
-    command ls -lahG
+    command ls -lahG --hyperlink=auto --color
   else
     command ls "$@"
   fi

@@ -328,7 +328,7 @@ au Filetype javascript let g:AutoPairsMapCR = 0
 "
 
 """"""""""""""""
-" CoC
+" Rust - CoC
 "
 inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
 inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
@@ -336,7 +336,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Remap keys for applying code actions at the cursor position
-nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+nmap <leader>a  <Plug>(coc-codeaction-cursor)
 
 """"""""""""""""""""""""""""""
 " Init
