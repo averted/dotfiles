@@ -13,12 +13,15 @@ export PATH="$PATH:$HOME/scripts/bin"
 # MySQL
 # export PATH="$PATH:/usr/local/mysql/bin"
 
+# VARS
+LS_DEFAULT_ARGS="-lahG --hyperlink=auto --color"
+
 # General alias
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias xa='xargs'
-alias ls='ls -lahG --hyperlink=auto --color'
+alias ls='ls $LS_DEFAULT_ARGS'
 alias c='clear'
 alias cl='clear'
 alias claer='clear'
@@ -81,15 +84,15 @@ alias off="pmset sleepnow"
 # LS alias
 function l() {
   if [[ $@ == "s-la" || $@ == "s-al" || $@ == "s-l" ]]; then
-    command ls -lahG --hyperlink=auto --color
+    command ls $LS_DEFAULT_ARGS
   else
     command ls "$@"
   fi
 }
 
 function ls() {
-  if [[ $@ == "-lahG a-l" ]]; then
-    command ls -lahG --hyperlink=auto --color
+  if [[ $@ == "$LS_DEFAULT_ARGS a-l" ]]; then
+    command ls $LS_DEFAULT_ARGS
   else
     command ls "$@"
   fi
