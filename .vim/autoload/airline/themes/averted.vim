@@ -14,7 +14,7 @@ let s:cterm_blue = 117
 let s:gui_purple = '#afafd7'
 let s:cterm_purple = 146
 let s:gui_orange = '#d7af5f'
-let s:cterm_orange = 208
+let s:cterm_orange = 179
 let s:gui_pink = '#d7afd7'
 let s:cterm_pink = 182
 
@@ -22,14 +22,14 @@ let s:cterm_pink = 182
 let s:gui_yellow = '#c3b622'
 let s:cterm_yellow = 220
 let s:gui_black = '#000'
-let s:cterm_black = 16
+let s:cterm_black = 0
 let s:gui_red = '#e2366d'
 let s:cterm_red = 196
 
 let g:airline#themes#averted#palette = {}
 
 " Normal mode
-let s:N1 = [s:gui_dark_gray, s:gui_orange, s:cterm_dark_gray, s:cterm_orange]
+let s:N1 = [s:gui_dark_gray, s:gui_yellow, s:cterm_dark_gray, s:cterm_yellow]
 let s:N2 = [s:gui_light_gray, s:gui_med_gray_lo, s:cterm_light_gray, s:cterm_med_gray_lo]
 let s:N3 = [s:gui_yellow, s:gui_dark_gray, s:cterm_light_gray, s:cterm_dark_gray]
 let g:airline#themes#averted#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
