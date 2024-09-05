@@ -13,4 +13,4 @@ cp $HOME/.bashrc $DOTFILES
 cp $HOME/.vimrc $DOTFILES
 cp $HOME/.gitconfig $DOTFILES
 cp $HOME/.alacritty.yml $DOTFILES
-cp $HOME/.config/kitty/* $DOTFILES/.kitty/
+cp -R $HOME/.config/wezterm $DOTFILES/.config/
