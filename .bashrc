@@ -4,11 +4,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # PATH
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:$HOME/scripts/bin"
-#export PATH="$PATH:/usr/local/go/bin"
-#export PATH="$PATH:$HOME/gocode/bin"
-
-# GOPATH
-#export GOPATH="$HOME/gocode"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # MySQL
 # export PATH="$PATH:/usr/local/mysql/bin"
@@ -196,7 +192,3 @@ export GIT_PS1_SHOWCOLORHINTS=1
 complete -r
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-. "$HOME/.cargo/env"

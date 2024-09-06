@@ -299,7 +299,7 @@ let g:minimap_base_highlight="Comment"
 let g:minimap_highlight_search=1
 
 "" Toggle minimap shotcut
-map <Leader>d :MinimapToggle<CR>
+map <Leader>m :MinimapToggle<CR>
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
