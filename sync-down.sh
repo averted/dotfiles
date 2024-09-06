@@ -4,19 +4,22 @@ DOTFILES=$HOME/git/dotfiles
 
 # vim
 cp $DOTFILES/.vimrc $HOME
-cp $DOTFILES/.vim/themes/* $VIM_DIR/autoload/airline/themes
 
-# vim bundle
-cp -R $DOTFILES/.vim/bundle/auto-pairs $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/coc.nvim $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/ctrlp.vim $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/rust.vim $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/vim-airline $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/vim-bufferline $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/vim-javascript $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/vim-json $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/vim-rooter $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/nerdtree $VIM_DIR/bundle
+# vim autoload
+mkdir -p $VIM_DIR/autoload
+cp -R $DOTFILES/.vim/autoload/* $VIM_DIR/autoload
+
+mkdir -p $VIM_DIR/colors
+cp -R $DOTFILES/.vim/colors/* $VIM_DIR/colors
+
+mkdir -p $VIM_DIR/dictionaries
+cp -R $DOTFILES/.vim/dictionaries/* $VIM_DIR/dictionaries
+
+mkdir -p $VIM_DIR/plugin
+cp -R $DOTFILES/.vim/plugin/* $VIM_DIR/plugin
+
+mkdir -p $VIM_DIR/bundle
+cp -R $DOTFILES/.vim/bundle/* $VIM_DIR/bundle
 
 # dotfiles
 cp $DOTFILES/.bash_profile $HOME
