@@ -14,7 +14,7 @@ export PATH="$PATH:$HOME/scripts/bin"
 # export PATH="$PATH:/usr/local/mysql/bin"
 
 # VARS
-LS_DEFAULT_ARGS="-lahG --hyperlink=auto --color"
+LS_DEFAULT_ARGS="-lahG --color"
 
 # General alias
 alias ..='cd ..'
