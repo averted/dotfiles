@@ -335,6 +335,29 @@ inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+""""""""""""""""
+" Github Copilot
+"
+let g:copilot_enabled = 1
+let g:copilot_filetypes = {
+  \ '*': v:false,
+  \ 'javascript': v:true,
+  \ 'typescript': v:true,
+  \ 'typescriptreact': v:true,
+  \ 'javascriptreact': v:true,
+  \ 'html': v:true,
+  \ 'css': v:true,
+  \ 'scss': v:true,
+  \ 'less': v:true,
+  \ 'json': v:true,
+  \ 'yaml': v:true,
+  \ 'markdown': v:true,
+  \ 'rust': v:true,
+  \ 'bash': v:true,
+  \ 'lua': v:true,
+  \ 'react': v:true
+  \ }
+
 " Remap keys for applying code actions at the cursor position
 nmap <leader>a  <Plug>(coc-codeaction-cursor)
 
