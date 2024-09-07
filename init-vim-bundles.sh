@@ -48,11 +48,17 @@ git clone https://github.com/wfxr/minimap.vim
 cargo install --locked code-minimap
 
 # codeium
-rm -rf $BUNDLE_DIR/codeium.vim
-git clone https://github.com/Exafunction/codeium.vim
-# ^^ Run [:Codeium Auth] to get token
+# rm -rf $BUNDLE_DIR/codeium.vim
+# git clone https://github.com/Exafunction/codeium.vim
+# Open vim and run [:Codeium Auth] to get token
+
+# github-copilot
+rm -rf $BUNDLE_DIR/copilot.vim
+git clone https://github.com/github/copilot.vim
+# Open vim and run [:Copilot setup] to get token
 
 # rust.vim
 rm -rf $BUNDLE_DIR/rust.vim
 git clone --depth=1 https://github.com/rust-lang/rust.vim.git
 rustup component add rust-src
+# Open vim and run [:CocInstall coc-rust-analyzer]
