@@ -31,6 +31,7 @@ let s:dark_gold             = [178, "#c3a922"]
 let s:dark_violet           = [63, "#5353fe"]
 let s:dark_magenta          = [163, "#d90da9"]
 let s:dark_grey             = [244, '#808080']
+let s:dark_grey_hint        = [240, "#5a5a5a"]
 let s:dark_grey_comment     = [243, "#808080"] " 68615e
 let s:dark_grey0            = [243, "#848484"]
 let s:dark_grey1            = [245, "#919191"]
@@ -124,7 +125,6 @@ call <SID>HI("Conditional",s:dark_orange, [], "" )  " if, then, else, endif, swi
 call <SID>HI("Comment", s:dark_grey_comment, [], "italic")  " any comment
 call <SID>HI("PreProc", s:dark_orange, [], "" )  " generic Preprocessor
 call <SID>HI("Type", s:dark_unknown, [], "none" )  " int, long, char, etc.
-call <SID>HI("Special", s:dark_unknown, [], "")  " any special symbol
 call <SID>HI("Underlined", s:dark_unknown, [], "underline" )  " text that stands out, HTML links
 call <SID>HI("Title", s:dark_orange, [], "" )
 call <SID>HI("Error", s:dark_black, s:dark_red_bright, "none" )  " any erroneous construct
@@ -451,6 +451,7 @@ call <SID>HI("markdownHeadingDelimiter", s:dark_red, [], "" )
 "
 " Rust
 "
+call <SID>HI("Special", s:dark_violet, [], "italic")  " Rust docs commentl
 call <SID>HI("rustFuncName", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustFuncCall", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustType", s:dark_magenta, s:dark_bg, "italic" )
@@ -468,7 +469,7 @@ call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_black, "" )
 "
 " CoC
 "
-call <SID>HI("CocInlayHint", s:dark_grey2, s:dark_bg, "italic" )
+call <SID>HI("CocInlayHint", s:dark_grey_hint, s:dark_bg, "italic" )
 call <SID>HI("CocHintSign", s:dark_orange, s:dark_bg, "italic" )
 " call <SID>HI("CocFloatActive", s:dark_unknown, s:dark_unknown, "" )
 " call <SID>HI("CocSearch", s:dark_unknown, s:dark_unknown, "" )
