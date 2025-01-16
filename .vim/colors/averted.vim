@@ -17,18 +17,22 @@ let s:dark_bg_other         = [236, '#303030']
 let s:dark_red              = [161, "#e2366d"] " f22c40 bright red
 let s:dark_red_bright       = [160, "#d70000"]
 let s:dark_pink             = [206, "#f66fd6"]
+let s:dark_cyan             = [37, "#00aea3"] " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
 let s:dark_blue             = [32, "#407ee7"]  " 407ee7 a bit lighter blue / 4271ae default
 let s:dark_blue_other       = [39, '#00afff']
-let s:dark_cyan             = [37, "#00aea3"] " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
-let s:dark_light_blue       = [38, "#00b3c8"]
-let s:dark_light_blue_other = [45, '#00d7ff']
+let s:dark_blue_light       = [38, "#00b3c8"]
+let s:dark_blue_lighter     = [45, '#00d7ff']
 let s:dark_orange           = [208, "#ff9000"]  " ff9000 - orange (dark)
 let s:dark_orange_other     = [208, '#ff9000']
 let s:dark_green            = [70, "#4bbf23"]  " 4bbf23 | 53d527
+let s:dark_green_light      = [37, "#00aea3"] " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
+let s:dark_green_lighter    = [112, "#80ff00"] " 118 - 154
 let s:dark_yellow           = [178, "#c3b622"]
 let s:dark_yellow_other     = [178, '#ffd700']
 let s:dark_gold             = [178, "#c3a922"]
 let s:dark_violet           = [63, "#5353fe"]
+let s:dark_violet_light     = [135, "#5353fe"]
+let s:dark_violet_lighter   = [63, "#5353fe"]
 let s:dark_magenta          = [163, "#d90da9"]
 let s:dark_grey             = [244, '#808080']
 let s:dark_grey_hint        = [240, "#5a5a5a"]
@@ -198,7 +202,7 @@ call <SID>HI("jsBuiltins", s:dark_magenta, [], "" )
 call <SID>HI("jsNoise", s:dark_yellow, [], "" )
 call <SID>HI("jsDotNotation", s:dark_yellow, [], "" )
 call <SID>HI("jsObject", s:dark_yellow, [], "" )
-call <SID>HI("jsObjectKey", s:dark_light_blue, [], "" )
+call <SID>HI("jsObjectKey", s:dark_blue_light, [], "" )
 call <SID>HI("jsObjectProp", s:dark_fg, [], "" )
 call <SID>HI("jsObjectSeparator", s:dark_yellow, [], "" )
 call <SID>HI("jsObjectFuncName", s:dark_red, [], "" )
@@ -351,7 +355,7 @@ call <SID>HI("goUnsignedInts", s:dark_red, [], "" )
 call <SID>HI("goComplexes", s:dark_red, [], "" )
 call <SID>HI("goDecimalInt", s:dark_blue, [], "" )
 call <SID>HI("goFloats", s:dark_red, [], "" )
-call <SID>HI("goImaginary", s:dark_light_blue, [], "" )
+call <SID>HI("goImaginary", s:dark_blue_light, [], "" )
 call <SID>HI("goFormatSpecifier", s:dark_orange, [], "" )
 
 "
@@ -452,19 +456,45 @@ call <SID>HI("markdownHeadingDelimiter", s:dark_red, [], "" )
 " Rust
 "
 call <SID>HI("Special", s:dark_violet, [], "italic")  " Rust docs commentl
-call <SID>HI("rustFuncName", s:dark_red, s:dark_bg, "" )
-call <SID>HI("rustFuncCall", s:dark_red, s:dark_bg, "" )
-call <SID>HI("rustType", s:dark_magenta, s:dark_bg, "italic" )
-call <SID>HI("rustTrait", s:dark_magenta, s:dark_bg, "italic" )
+call <SID>HI("rustStructure", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustKeyword", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustTypedef", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustPubScope", s:dark_red, s:dark_bg, "underline" )
 call <SID>HI("rustGenericRegion", s:dark_red, s:dark_bg, "underline" )
-call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_bg, "" )
-call <SID>HI("rustLifetime", s:dark_red, s:dark_bg, "" )
-call <SID>HI("rustSigil", s:dark_magenta, s:dark_bg, "" )
-call <SID>HI("rustSelf", s:dark_magenta, s:dark_bg, "" )
-call <SID>HI("rustStorage", s:dark_magenta, s:dark_bg, "" )
-call <SID>HI("rustModPathSep", s:dark_orange, s:dark_bg, "" )
+call <SID>HI("rustModPathSep", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustArrowCharacter", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustSelf", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustOperator", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustQuestionMark", s:dark_red, s:dark_bg, "" )
+
+call <SID>HI("rustType", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustTrait", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustEnum", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustEnumVariant", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustLabel", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustLifetime", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustDynKeyword", s:dark_violet_light, s:dark_bg, "italic" )
+
+call <SID>HI("rustDerive", s:dark_green_lighter, s:dark_bg, "italic" )
+call <SID>HI("rustDeriveTrait", s:dark_green_lighter, s:dark_bg, "italic" )
+call <SID>HI("rustFuncName", s:dark_green_lighter, s:dark_bg, "" )
+call <SID>HI("rustFuncCall", s:dark_green_lighter, s:dark_bg, "" )
+
 call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_black, "" )
+
+call <SID>HI("rustAttribute", s:dark_blue_light, s:dark_bg, "" )
+call <SID>HI("rustSigil", s:dark_blue_light, s:dark_bg, "" )
+call <SID>HI("rustStorage", s:dark_blue_light, s:dark_bg, "" )
+
+call <SID>HI("rustBoolean", s:dark_blue, s:dark_bg, "" )
+call <SID>HI("rustDecNumber", s:dark_blue, s:dark_bg, "" )
+
+call <SID>HI("rustIdentifier", s:dark_orange, s:dark_bg, "" )
+
+call <SID>HI("rustString", s:dark_yellow, s:dark_bg, "" )
+call <SID>HI("rustStringDelimiter", s:dark_yellow, s:dark_bg, "" )
+call <SID>HI("rustCharacter", s:dark_yellow, s:dark_bg, "" )
+
 
 "
 " CoC

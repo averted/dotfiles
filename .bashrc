@@ -25,8 +25,6 @@ alias celar='clear'
 alias cealr='clear'
 alias cealr='clear'
 alias scripts="cd $HOME/scripts"
-alias speedtest="curl http://speedtest.wdc01.softlayer.com/downloads/test10.zip > /dev/null"
-alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito"
 alias tark="cd $HOME/git/tarkov/src"
 alias ts="cd $HOME/git/tarkov-server"
 alias notes="soup-rs"
@@ -36,7 +34,11 @@ alias rust="cd $HOME/git/rust"
 
 cargo() {
     if [ "$1" = "doc" ]; then
+      if [ -z "$2" ]; then
         command cargo doc --no-deps --open
+      else
+        command cargo "$@"
+      fi
     else
         command cargo "$@"
     fi

@@ -89,7 +89,7 @@ noremap <Leader>t :call RustTestSuite()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 noremap <Leader>s :call RustDocsSearch()<CR><CR>
-noremap <Leader>g :call HighlightGroup()<CR><CR>
+noremap <Leader>h :call HighlightGroup()<CR><CR>
 
 "" File movement
 map [[ :prev<CR>
