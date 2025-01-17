@@ -89,7 +89,7 @@ noremap <Leader>t :call RustTestSuite()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
 noremap <Leader>s :call RustDocsSearch()<CR><CR>
-noremap <Leader>h :call HighlightGroup()<CR><CR>
+noremap <Leader>h :call HighlightGroup()<CR>
 
 "" File movement
 map [[ :prev<CR>
@@ -359,7 +359,7 @@ let g:copilot_filetypes = {
   \ }
 
 " Remap keys for applying code actions at the cursor position
-nmap <leader>a  <Plug>(coc-codeaction-cursor)
+nmap <Leader>a  <Plug>(coc-codeaction-cursor)
 
 """"""""""""""""""""""""""""""
 " Init

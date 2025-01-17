@@ -11,38 +11,35 @@
 "
 " Init colors
 "
-let s:dark_fg               = [253, "#dfdfdf"]
+let s:dark_fg               = [188, "#dfdfdf"]
+let s:dark_fg_darker        = [187, "#dfdfdf"]
 let s:dark_bg               = [235, "#303030"]
 let s:dark_bg_other         = [236, '#303030']
 let s:dark_red              = [161, "#e2366d"] " f22c40 bright red
-let s:dark_red_bright       = [160, "#d70000"]
+let s:dark_red_light        = [160, "#d70000"]
 let s:dark_pink             = [206, "#f66fd6"]
 let s:dark_cyan             = [37, "#00aea3"] " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
 let s:dark_blue             = [32, "#407ee7"]  " 407ee7 a bit lighter blue / 4271ae default
-let s:dark_blue_other       = [39, '#00afff']
 let s:dark_blue_light       = [38, "#00b3c8"]
 let s:dark_blue_lighter     = [45, '#00d7ff']
 let s:dark_orange           = [208, "#ff9000"]  " ff9000 - orange (dark)
-let s:dark_orange_other     = [208, '#ff9000']
 let s:dark_green            = [70, "#4bbf23"]  " 4bbf23 | 53d527
 let s:dark_green_light      = [37, "#00aea3"] " 00c7b4 (new color) / 00c7c5 / 3e999f / 00ad9c / 159393
 let s:dark_green_lighter    = [112, "#80ff00"] " 118 - 154
 let s:dark_yellow           = [178, "#c3b622"]
-let s:dark_yellow_other     = [178, '#ffd700']
-let s:dark_gold             = [178, "#c3a922"]
 let s:dark_violet           = [63, "#5353fe"]
 let s:dark_violet_light     = [135, "#5353fe"]
 let s:dark_violet_lighter   = [63, "#5353fe"]
 let s:dark_magenta          = [163, "#d90da9"]
 let s:dark_grey             = [244, '#808080']
+let s:dark_grey_dark        = [242, "#5a5a5a"]
+let s:dark_grey_darker      = [240, "#5a5a5a"]
 let s:dark_grey_hint        = [240, "#5a5a5a"]
 let s:dark_grey_comment     = [243, "#808080"] " 68615e
 let s:dark_grey0            = [243, "#848484"]
 let s:dark_grey1            = [245, "#919191"]
 let s:dark_grey2            = [246, "#9e9e9e"]
 let s:dark_grey3            = [247, "#aaaaaa"]
-let s:dark_grey4            = [249, "#b7b7b7"]
-let s:dark_grey5            = [250, "#c4c4c4"]
 let s:dark_black            = [233, "#1f1f1f"]
 let s:dark_unknown          = [129, "#bc27f2"] " magenta
 let s:dark_airline_fg       = [248, "#b2b2b2"]
@@ -79,7 +76,7 @@ call <SID>HI("PMenuThumb", s:dark_grey0, s:dark_grey3, "none" )  " popup menu: T
 "
 " Status Line
 "
-call <SID>HI("StatusLine", s:dark_orange_other, s:dark_bg_other, "none")  " status line of current window
+call <SID>HI("StatusLine", s:dark_orange, s:dark_bg_other, "none")  " status line of current window
 call <SID>HI("StatusLineNC", s:dark_bg_other, s:dark_grey, "")  " status lines of not-current windows
 "call <SID>HI("StatusLine", s:dark_orange, s:dark_airline_bg, "none" )  " status line of current window
 "call <SID>HI("StatusLineNC", s:dark_airline_bg, s:dark_grey_comment, "" )  " status lines of not-current windows
@@ -99,7 +96,7 @@ call <SID>HI("VertSplit", s:dark_black,  s:dark_orange, "")  " the column separa
 call <SID>HI("Visual", s:dark_black, s:dark_orange, "")  " visual mode selection
 call <SID>HI("VisualNOS", s:dark_red, s:dark_red, "")  " visual mode selection
 call <SID>HI("MatchParen", s:dark_black, s:dark_orange, "")  " The character under the cursor or just before it
-call <SID>HI("Directory", s:dark_blue_other, s:dark_bg_other, "")  " directory names (and other special names in listings
+call <SID>HI("Directory", s:dark_blue_light, s:dark_bg_other, "")  " directory names (and other special names in listings
 call <SID>HI("Folded", s:dark_orange, s:dark_black, "")  " line used for closed folds
 call <SID>HI("FoldColumn", s:dark_orange, s:dark_bg, "")  " see 'foldcolumn'
 call <SID>HI("WarningMsg", s:dark_orange, [], "" ) " warning messages
@@ -131,7 +128,7 @@ call <SID>HI("PreProc", s:dark_orange, [], "" )  " generic Preprocessor
 call <SID>HI("Type", s:dark_unknown, [], "none" )  " int, long, char, etc.
 call <SID>HI("Underlined", s:dark_unknown, [], "underline" )  " text that stands out, HTML links
 call <SID>HI("Title", s:dark_orange, [], "" )
-call <SID>HI("Error", s:dark_black, s:dark_red_bright, "none" )  " any erroneous construct
+call <SID>HI("Error", s:dark_black, s:dark_red_light, "none" )  " any erroneous construct
 call <SID>HI("Todo", s:dark_black, s:dark_grey_comment, "")  " keywords TODO FIXME and XXX
 "call <SID>HI("Character", s:dark_plum, [], "" )  " a character constant: 'c', '\n'
 "call <SID>HI("Label", s:dark_pink, [], "" )  "  case, default, etc.
@@ -455,45 +452,62 @@ call <SID>HI("markdownHeadingDelimiter", s:dark_red, [], "" )
 "
 " Rust
 "
+call <SID>HI("rustNoise", s:dark_orange, s:dark_bg, "" )
+call <SID>HI("rustFoldBraces", s:dark_orange, s:dark_bg, "" )
+call <SID>HI("rustIdentifier", s:dark_fg, s:dark_bg, "" )
+call <SID>HI("rustGenericRegion", s:dark_fg, s:dark_bg, "" )
+call <SID>HI("rustRange", s:dark_fg, s:dark_bg, "" )
+
+call <SID>HI("rustUnused", s:dark_grey_hint, s:dark_bg, "" )
+
 call <SID>HI("Special", s:dark_violet, [], "italic")  " Rust docs commentl
 call <SID>HI("rustStructure", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustKeyword", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustTypedef", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustPubScope", s:dark_red, s:dark_bg, "underline" )
-call <SID>HI("rustGenericRegion", s:dark_red, s:dark_bg, "underline" )
 call <SID>HI("rustModPathSep", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustArrowCharacter", s:dark_red, s:dark_bg, "" )
-call <SID>HI("rustSelf", s:dark_red, s:dark_bg, "" )
+call <SID>HI("rustSelfScope", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustOperator", s:dark_red, s:dark_bg, "" )
 call <SID>HI("rustQuestionMark", s:dark_red, s:dark_bg, "" )
 
+call <SID>HI("rustSelf", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustType", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustBuiltinType", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustTrait", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustEnum", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustEnumVariant", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustLabel", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustLifetime", s:dark_violet_light, s:dark_bg, "italic" )
 call <SID>HI("rustDynKeyword", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustDefault", s:dark_violet_light, s:dark_bg, "italic" )
+call <SID>HI("rustUserType", s:dark_violet_light, s:dark_bg, "italic" )
 
 call <SID>HI("rustDerive", s:dark_green_lighter, s:dark_bg, "italic" )
 call <SID>HI("rustDeriveTrait", s:dark_green_lighter, s:dark_bg, "italic" )
 call <SID>HI("rustFuncName", s:dark_green_lighter, s:dark_bg, "" )
 call <SID>HI("rustFuncCall", s:dark_green_lighter, s:dark_bg, "" )
 
-call <SID>HI("rustFoldBraces", s:dark_unknown, s:dark_black, "" )
+call <SID>HI("rustBoolean", s:dark_blue, s:dark_bg, "" )
+call <SID>HI("rustNumber", s:dark_blue, s:dark_bg, "" )
+call <SID>HI("rustFloat", s:dark_blue, s:dark_bg, "" )
 
+call <SID>HI("rustAttributeParenthesizedParens", s:dark_blue_light, s:dark_red, "" )
+call <SID>HI("rustAttributeParenthesizedCurly", s:dark_blue_light, s:dark_red, "" )
+call <SID>HI("rustAttributeParenthesizedBrackets", s:dark_blue_light, s:dark_red, "" )
 call <SID>HI("rustAttribute", s:dark_blue_light, s:dark_bg, "" )
 call <SID>HI("rustSigil", s:dark_blue_light, s:dark_bg, "" )
 call <SID>HI("rustStorage", s:dark_blue_light, s:dark_bg, "" )
 
-call <SID>HI("rustBoolean", s:dark_blue, s:dark_bg, "" )
-call <SID>HI("rustDecNumber", s:dark_blue, s:dark_bg, "" )
-
-call <SID>HI("rustIdentifier", s:dark_orange, s:dark_bg, "" )
+call <SID>HI("rustModule", s:dark_orange, s:dark_bg, "" )
 
 call <SID>HI("rustString", s:dark_yellow, s:dark_bg, "" )
 call <SID>HI("rustStringDelimiter", s:dark_yellow, s:dark_bg, "" )
 call <SID>HI("rustCharacter", s:dark_yellow, s:dark_bg, "" )
+call <SID>HI("rustConstant", s:dark_yellow, s:dark_bg, "" )
+
+call <SID>HI("rustExternCrate", s:dark_unknown, s:dark_red, "" )
+call <SID>HI("rustObsoleteExternMod", s:dark_unknown, s:dark_red, "" )
 
 
 "
