@@ -82,9 +82,9 @@ map <Tab> <C-W><C-W>
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
-noremap <Leader><Leader> :call RustDeriveBlock()<CR>
-noremap <Leader>r :call ReactClass()<CR>
-noremap <Leader>c :call CommentBlock()<CR>
+noremap <Leader>D :call RustDeriveBlock()<CR>
+noremap <Leader>R :call ReactClass()<CR>
+noremap <Leader>C :call CommentBlock()<CR>
 noremap <Leader>t :call RustTestSuite()<CR>
 noremap <Leader>l :call RustPrintMarco()<CR>
 noremap <Leader>b :ls<CR>:b<Space>
@@ -335,6 +335,13 @@ inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" Remap keys for applying code actions at the cursor position
+nmap <Leader>a  <Plug>(coc-codeaction-cursor)
+nmap <Leader><Leader> :CocCommand document.toggleInlayHint<CR>
+
+" Highlight the symbol and its references when holding the cursor
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
 """"""""""""""""
 " Github Copilot
 "
@@ -358,8 +365,11 @@ let g:copilot_filetypes = {
   \ 'react': v:true
   \ }
 
-" Remap keys for applying code actions at the cursor position
-nmap <Leader>a  <Plug>(coc-codeaction-cursor)
+" Remaps default Tab completion
+imap <silent><script><expr> <S-Enter> copilot#Accept("\<CR>")
+imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 
 """"""""""""""""""""""""""""""
 " Init

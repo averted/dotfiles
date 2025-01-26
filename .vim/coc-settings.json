@@ -4,6 +4,16 @@
     "$HOME/.cargo/**",
     "$HOME/.rustup/**"
   ],
-  "rust-analyzer.server.path": "$HOME/.cargo/bin/rust-analyzer",
-  // "rust-analyzer.trace.server": "verbose"
+  "dialog.rounded": false,
+  "inlayHint.enable": true,
+  "inlayHint.enableParameter": true,
+  "inlayHint.position": "eol",
+  "signature.enable": true,
+  "suggest.defaultSortMethod": "none",
+  "suggest.virtualText": false,
+  "suggest.localityBonus": true,
+  "suggest.languageSourcePriority": 999,
+  "suggest.removeCurrentWord": true,
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "rust-analyzer.server.path": "$HOME/.cargo/bin/rust-analyzer"
 }
