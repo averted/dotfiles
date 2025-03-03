@@ -305,6 +305,7 @@ map <Leader>m :MinimapToggle<CR>
 """"""""""""""""""""""""""""""
 " Auto pairs
 "
+let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 let g:AutoPairsMapCR = 1
 let g:AutoPairsCenterLine = 0
 let g:AutoPairsFlyMode = 0
@@ -313,6 +314,7 @@ let g:AutoPairsMultilineClose = 0
 let g:AutoPairsShortcutFastWrap = '<C-n>'
 " let g:AutoPairsShortcutJump = '<C-w>'
 au Filetype javascript let g:AutoPairsMapCR = 0
+au FileType rust let b:AutoPairs = AutoPairsDefine({'<' : '>'})
 
 """"""""""""""""""""""""""""""
 " Ale

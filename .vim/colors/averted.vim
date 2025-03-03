@@ -99,7 +99,7 @@ call <SID>HI("IncSearch", s:dark_orange, s:dark_bg, "")  " also used for the tex
 call <SID>HI("VertSplit", s:dark_black,  s:dark_orange, "")  " the column separating vertically split windows
 call <SID>HI("Visual", s:dark_black, s:dark_orange, "")  " visual mode selection
 call <SID>HI("VisualNOS", s:dark_red, s:dark_red, "")  " visual mode selection
-call <SID>HI("MatchParen", s:dark_black, s:dark_orange, "")  " The character under the cursor or just before it
+call <SID>HI("MatchParen", s:dark_red, s:dark_bg, "")  " The character under the cursor or just before it
 call <SID>HI("Directory", s:dark_blue_light, s:dark_bg_light, "")  " directory names (and other special names in listings
 call <SID>HI("Folded", s:dark_orange, s:dark_black, "")  " line used for closed folds
 call <SID>HI("FoldColumn", s:dark_orange, s:dark_bg, "")  " see 'foldcolumn'
@@ -522,6 +522,8 @@ call <SID>HI("CocInlayHintParameter", s:dark_grey_hint, s:dark_bg, "italic" )
 
 call <SID>HI("CocHintSign", s:dark_orange, s:dark_bg, "italic" )
 call <SID>HI("CocPumMenu", s:dark_red, s:dark_black, "italic" )
+
+call <SID>HI("CocUnusedHighlight", s:dark_red, s:dark_black, "" )
 
 " call <SID>HI("CocSearch", s:dark_blue, s:dark_black, "" )
 " call <SID>HI("CocListSearch", s:dark_blue, s:dark_black, "" )

@@ -10,10 +10,13 @@
   "inlayHint.position": "eol",
   "signature.enable": true,
   "suggest.defaultSortMethod": "none",
+  "suggest.insertMode": "insert",
   "suggest.virtualText": false,
   "suggest.localityBonus": true,
   "suggest.languageSourcePriority": 999,
   "suggest.removeCurrentWord": true,
+  "diagnostic.showUnused": false,
+  "diagnostic.virtualText": false,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "rust-analyzer.server.path": "$HOME/.cargo/bin/rust-analyzer"
 }

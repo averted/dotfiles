@@ -2,6 +2,7 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 local act = wezterm.action
+local copy_mode = nil
 local c = wezterm.config_builder()
 
 -- maximize window on startup
@@ -59,8 +60,7 @@ c.keys = {
   { key = 'f', mods = 'CMD', action = act.SplitVertical { domain = 'CurrentPaneDomain' }, },
   { key = 'd', mods = 'CMD', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }, },
   { key = 'x', mods = 'CMD', action = act.CloseCurrentPane { confirm = false } },
-  { key = 'Enter', mods = 'CMD', action = act.ActivateCopyMode },
-  { key = 'Enter', mods = 'LEADER', action = act.ActivateCopyMode },
+  { key = 'Enter', mods = 'CTRL', action = act.ActivateCopyMode },
 
   { key = 'R', mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
   { key = '+', mods = 'CTRL', action = act.IncreaseFontSize },
@@ -77,6 +77,35 @@ c.keys = {
     }
   },
   { key = 'r', mods = 'LEADER', action = act.ActivateKeyTable { name = 'resize_pane', one_shot = false, }, }
+}
+
+-- re-map copy mode keys to match vim
+if wezterm.gui then
+  copy_mode = wezterm.gui.default_key_tables().copy_mode
+
+  table.insert(
+    copy_mode,
+    { key = 'h', mods = 'NONE', action = act.CopyMode 'MoveUp' }
+  )
+
+  table.insert(
+    copy_mode,
+    { key = 'l', mods = 'NONE', action = act.CopyMode 'MoveDown' }
+  )
+
+  table.insert(
+    copy_mode,
+    { key = 'j', mods = 'NONE', action = act.CopyMode 'MoveLeft' }
+  )
+
+  table.insert(
+    copy_mode,
+    { key = 'k', mods = 'NONE', action = act.CopyMode 'MoveRight' }
+  )
+end
+
+c.key_tables = {
+  copy_mode = copy_mode
 }
 
 return c
