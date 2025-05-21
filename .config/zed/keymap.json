@@ -9,8 +9,10 @@
     // Disabled keybindings
     {
         "bindings": {
+            "cmd-.": null,
             "cmd-,": null,
-            "cmd-o": null
+            "cmd-o": null,
+            "cmd-;": null
         }
     },
     {
@@ -46,22 +48,29 @@
         "context": "Editor",
         "bindings": {
             "cmd-'": null,
-            "cmd-.": null,
             "cmd-/": null
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            "tab": null
         }
     },
     {
         "context": "vim_mode == normal",
         "bindings": {
             "ctrl-f": null,
-            "ctrl-a": null
+            "ctrl-a": null,
+            "tab": "project_panel::ToggleFocus"
         }
     },
 
     // Global bindings
     {
         "bindings": {
-            "cmd-,": "workspace::ToggleLeftDock"
+            "cmd-,": "workspace::ToggleLeftDock",
+            "cmd-.": "workspace::ToggleRightDock"
         }
     },
 
@@ -69,8 +78,6 @@
     {
         "context": "Workspace",
         "bindings": {
-            "ctrl-.": "agent::ToggleFocus",
-            "ctrl-,": "project_panel::ToggleFocus",
             "cmd-1": ["pane::ActivateItem", 0],
             "cmd-2": ["pane::ActivateItem", 1],
             "cmd-3": ["pane::ActivateItem", 2],
@@ -83,7 +90,8 @@
             "ctrl a": "editor::ToggleCodeActions",
             "ctrl-f": "pane::DeploySearch",
             "cmd-j": "outline::Toggle",
-            "cmd-shift-Space": "workspace::ToggleBottomDock"
+            "cmd-shift-Space": "workspace::ToggleBottomDock",
+            "ctrl-g o": "git::Diff"
         }
     },
     {
@@ -92,7 +100,6 @@
             "cmd-i": "editor::Hover",
             "cmd-8": ["editor::SelectNext", { "replace_newest": false }],
             "cmd-d": "editor::ToggleSelectedDiffHunks",
-            "cmd-.": "workspace::ToggleRightDock",
             "cmd-/": "assistant::InlineAssist"
         }
     },
@@ -101,15 +108,28 @@
         "bindings": {
             "h": "menu::SelectPrevious",
             "l": "menu::SelectNext",
+            "tab": "project_panel::ToggleFocus",
             "shift-h": "menu::SelectFirst",
-            "shift-l": "menu::SelectLast"
+            "shift-l": "menu::SelectLast",
+            "ctrl-n": "git_panel::ToggleFocus"
         }
     },
-
+    {
+        "context": "GitPanel",
+        "bindings": {
+            "h": "menu::SelectPrevious",
+            "l": "menu::SelectNext",
+            "tab": "git_panel::ToggleFocus",
+            "shift-h": "menu::SelectFirst",
+            "shift-l": "menu::SelectLast",
+            "ctrl-n": "project_panel::ToggleFocus"
+        }
+    },
     // Vim specific bindings
     {
         "context": "vim_mode == normal",
         "bindings": {
+            "0": "vim::FirstNonWhitespace",
             "r": "pane::ActivateNextItem",
             "h": "vim::Up",
             "l": "vim::Down",

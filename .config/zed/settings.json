@@ -8,7 +8,6 @@
 // command palette
 {
     "vim_mode": true,
-    "confirm_quit": true,
     "cursor_blink": false,
     "hide_mouse": "never",
     // Show method signatures in the editor, when inside parentheses.
@@ -25,6 +24,8 @@
     "buffer_font_size": 14,
     "ensure_final_newline_on_save": false,
     "extend_comment_on_newline": false,
+    "on_last_window_closed": "quit_app",
+    "when_closing_with_no_tabs": "close_window",
     "theme": {
         "mode": "system",
         "light": "One Light",
@@ -38,7 +39,7 @@
         "model_parameters": [],
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-3-7-sonnet-thinking-latest"
+            "model": "claude-3-7-sonnet-latest"
         },
         "version": "2"
     },
