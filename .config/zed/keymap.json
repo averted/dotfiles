@@ -54,7 +54,12 @@
     {
         "context": "ProjectPanel",
         "bindings": {
-            "tab": null
+            "tab": null,
+            "backspace": null,
+            "delete": null,
+            "cmd-backspace": null,
+            "cmd-delete": null,
+            "cmd-alt-backspace": null
         }
     },
     {
@@ -70,7 +75,8 @@
     {
         "bindings": {
             "cmd-,": "workspace::ToggleLeftDock",
-            "cmd-.": "workspace::ToggleRightDock"
+            "cmd-.": "workspace::ToggleRightDock",
+            "cmd-`": "workspace::ToggleBottomDock"
         }
     },
 
@@ -90,8 +96,7 @@
             "ctrl a": "editor::ToggleCodeActions",
             "ctrl-f": "pane::DeploySearch",
             "cmd-j": "outline::Toggle",
-            "cmd-shift-Space": "workspace::ToggleBottomDock",
-            "ctrl-g o": "git::Diff"
+            "g G": "git::Diff"
         }
     },
     {
@@ -111,7 +116,9 @@
             "tab": "project_panel::ToggleFocus",
             "shift-h": "menu::SelectFirst",
             "shift-l": "menu::SelectLast",
-            "ctrl-n": "git_panel::ToggleFocus"
+            "ctrl-n": "git_panel::ToggleFocus",
+            "cmd-delete": ["project_panel::Delete", { "skip_prompt": false }],
+            "cmd-backspace": ["project_panel::Trash", { "skip_prompt": false }]
         }
     },
     {
