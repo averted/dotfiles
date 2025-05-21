@@ -6,6 +6,7 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
+    /////////////////////////////
     // Disabled keybindings
     {
         "bindings": {
@@ -41,14 +42,16 @@
             "cmd-7": null,
             "cmd-8": null,
             "cmd-9": null,
-            "cmd-j": null
+            "cmd-j": null,
+            "cmd-t": null
         }
     },
     {
         "context": "Editor",
         "bindings": {
             "cmd-'": null,
-            "cmd-/": null
+            "cmd-/": null,
+            "ctrl-n": null
         }
     },
     {
@@ -66,11 +69,11 @@
         "context": "vim_mode == normal",
         "bindings": {
             "ctrl-f": null,
-            "ctrl-a": null,
-            "tab": "project_panel::ToggleFocus"
+            "ctrl-a": null
         }
     },
 
+    /////////////////////////////
     // Global bindings
     {
         "bindings": {
@@ -79,8 +82,6 @@
             "cmd-`": "workspace::ToggleBottomDock"
         }
     },
-
-    // Workspace
     {
         "context": "Workspace",
         "bindings": {
@@ -96,7 +97,8 @@
             "ctrl a": "editor::ToggleCodeActions",
             "ctrl-f": "pane::DeploySearch",
             "cmd-j": "outline::Toggle",
-            "g G": "git::Diff"
+            "cmd-shift-alt-g": "git::Diff",
+            "cmd-shift-alt-f": "git_panel::ToggleFocus"
         }
     },
     {
@@ -114,6 +116,7 @@
             "h": "menu::SelectPrevious",
             "l": "menu::SelectNext",
             "tab": "project_panel::ToggleFocus",
+            "Space": "file_finder::Toggle",
             "shift-h": "menu::SelectFirst",
             "shift-l": "menu::SelectLast",
             "ctrl-n": "git_panel::ToggleFocus",
@@ -127,11 +130,20 @@
             "h": "menu::SelectPrevious",
             "l": "menu::SelectNext",
             "tab": "git_panel::ToggleFocus",
+            "Space": "file_finder::Toggle",
             "shift-h": "menu::SelectFirst",
             "shift-l": "menu::SelectLast",
             "ctrl-n": "project_panel::ToggleFocus"
         }
     },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "cmd-t": "workspace::NewTerminal"
+        }
+    },
+
+    /////////////////////////////
     // Vim specific bindings
     {
         "context": "vim_mode == normal",
@@ -142,9 +154,16 @@
             "l": "vim::Down",
             "j": "vim::Left",
             "k": "vim::Right",
+            "cmd-t": "project_symbols::Toggle",
+            "tab": ["workspace::SendKeystrokes", "cmd-, cmd-,"],
             ", a": "editor::ToggleCodeActions",
+            ", g": "git_panel::ToggleFocus",
             "Space": "file_finder::Toggle",
-            "Backspace": "pane::CloseActiveItem"
+            "Backspace": "pane::CloseActiveItem",
+            "g G": [
+                "workspace::SendKeystrokes",
+                "cmd-shift-alt-f cmd-shift-alt-g"
+            ]
         }
     },
     {
