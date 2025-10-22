@@ -7,7 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+    "features": {
+        "edit_prediction_provider": "zed"
+    },
+    "edit_predictions": {
+        "mode": "subtle",
+        "copilot": {
+            "proxy": null,
+            "proxy_no_verify": null
+        },
+        "enabled_in_text_threads": false
+    },
+    "show_edit_predictions": true,
     "vim_mode": true,
+    // "helix_mode": true,
     "cursor_blink": false,
     "hide_mouse": "never",
     // Show method signatures in the editor, when inside parentheses.
@@ -16,7 +29,7 @@
     // If `auto_signature_help` is enabled, this setting will be treated as enabled also.
     "show_signature_help_after_edits": true,
     // The default number of lines to expand excerpts in the multibuffer by.
-    "expand_excerpt_lines": 6,
+    "expand_excerpt_lines": 8,
     "tab_size": 4,
     "buffer_font_family": "Hack",
     "buffer_font_fallbacks": ["Zed Plex Mono"],
@@ -32,16 +45,16 @@
         "dark": "One Dark"
     },
     "agent": {
+        "default_profile": "write",
         "inline_assistant_model": {
             "provider": "zed.dev",
-            "model": "claude-3-7-sonnet-latest"
+            "model": "claude-sonnet-4-latest"
         },
         "model_parameters": [],
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-3-7-sonnet-thinking-latest"
-        },
-        "version": "2"
+            "model": "claude-sonnet-4"
+        }
     },
     "indent_guides": {
         // Whether to show indent guides in the editor.
@@ -52,14 +65,14 @@
         "quick_actions": true,
         "selections_menu": false
     },
-    "scrollbar": {
-        "show": "always"
-    },
     "inlay_hints": {
         "enabled": true,
         "show_type_hints": true,
-        "show_parameter_hints": true,
-        "show_background": false
+        "show_parameter_hints": false,
+        "show_background": false,
+        "toggle_on_modifiers_press": {
+            "alt": true
+        }
     },
     "project_panel": {
         "button": true,
@@ -75,7 +88,7 @@
         "show_tab_bar_buttons": false
     },
     "tabs": {
-        "git_status": true, // ???
+        "git_status": true,
         "file_icons": true,
         "show_diagnostics": "all"
     },
@@ -86,6 +99,13 @@
         // when you switch to another file unless you explicitly pin them.
         // This is useful for quickly viewing files without cluttering your workspace.
         "enabled": true
+    },
+    "scrollbar": {
+        "show": "always"
+    },
+    "minimap": {
+        "show": "never",
+        "thumb_border": "none"
     },
     "file_finder": {
         "modal_max_width": "large"
@@ -103,14 +123,31 @@
         }
     },
     "languages": {
+        "JSONC": {
+            "tab_size": 2
+        },
+        "JSON": {
+            "tab_size": 2
+        },
+        "Markdown": {
+            "tab_size": 2
+        },
         "JavaScript": {
             "tab_size": 2
         },
         "TSX": {
-            "tab_size": 2
+            "tab_size": 2,
+            "inlay_hints": {
+                "enabled": false,
+                "show_type_hints": false
+            }
         },
         "TypeScript": {
-            "tab_size": 2
+            "tab_size": 2,
+            "inlay_hints": {
+                "enabled": false,
+                "show_type_hints": false
+            }
         },
         "Rust": {
             "tab_size": 4

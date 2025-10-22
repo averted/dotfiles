@@ -347,7 +347,7 @@ nmap <Leader><Leader> :CocCommand document.toggleInlayHint<CR>
 """"""""""""""""
 " Github Copilot
 "
-let g:copilot_enabled = 1
+let g:copilot_enabled = 0
 let g:copilot_filetypes = {
   \ '*': v:false,
   \ 'javascript': v:true,

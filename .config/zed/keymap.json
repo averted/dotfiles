@@ -6,8 +6,7 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-    /////////////////////////////
-    // Disabled keybindings
+    // -- Disabled
     {
         "bindings": {
             "cmd-.": null,
@@ -19,8 +18,6 @@
     {
         "context": "Pane",
         "bindings": {
-            "ctrl-1": null,
-            "ctrl-2": null,
             "ctrl-3": null,
             "ctrl-4": null,
             "ctrl-5": null,
@@ -43,7 +40,8 @@
             "cmd-8": null,
             "cmd-9": null,
             "cmd-j": null,
-            "cmd-t": null
+            "cmd-t": null,
+            "cmd-r": null
         }
     },
     {
@@ -73,15 +71,16 @@
         }
     },
 
-    /////////////////////////////
-    // Global bindings
+    // -- Global
     {
         "bindings": {
-            "cmd-,": "workspace::ToggleLeftDock",
-            "cmd-.": "workspace::ToggleRightDock",
+            "ctrl-,": "workspace::ToggleLeftDock",
+            "ctrl-.": "workspace::ToggleRightDock",
             "cmd-`": "workspace::ToggleBottomDock"
         }
     },
+
+    // -- Workspace
     {
         "context": "Workspace",
         "bindings": {
@@ -95,47 +94,90 @@
             "cmd-8": ["pane::ActivateItem", 7],
             "cmd-9": ["pane::ActivateItem", 8],
             "ctrl a": "editor::ToggleCodeActions",
-            "ctrl-f": "pane::DeploySearch",
             "cmd-j": "outline::Toggle",
             "cmd-shift-alt-g": "git::Diff",
             "cmd-shift-alt-f": "git_panel::ToggleFocus"
         }
     },
+
+    // -- Pane
+    {
+        "context": "Pane",
+        "bindings": {
+            "ctrl-1": "project_panel::ToggleFocus",
+            "ctrl-2": "git_panel::ToggleFocus"
+        }
+    },
+    {
+        "context": "Pane && EmptyPane",
+        "bindings": {
+            "Space": "project_symbols::Toggle",
+            "ctrl-Space": "file_finder::Toggle"
+        }
+    },
+
+    // -- Editor
     {
         "context": "Editor",
         "bindings": {
             "cmd-i": "editor::Hover",
             "cmd-8": ["editor::SelectNext", { "replace_newest": false }],
             "cmd-d": "editor::ToggleSelectedDiffHunks",
-            "cmd-/": "assistant::InlineAssist"
+            "cmd-/": "assistant::InlineAssist",
+            "cmd-r": "editor::FindAllReferences",
+            "ctrl-f": "pane::DeploySearch"
         }
     },
     {
+        "context": "Editor && edit_prediction",
+        "bindings": {
+            "shift-tab": "editor::AcceptEditPrediction"
+        }
+    },
+    {
+        "context": "Editor && edit_prediction_conflict",
+        "use_key_equivalents": true,
+        "bindings": {
+            "shift-tab": "editor::AcceptEditPrediction"
+        }
+    },
+
+    // -- ProjectPanel
+    {
         "context": "ProjectPanel",
         "bindings": {
-            "h": "menu::SelectPrevious",
-            "l": "menu::SelectNext",
             "tab": "project_panel::ToggleFocus",
-            "Space": "file_finder::Toggle",
-            "shift-h": "menu::SelectFirst",
-            "shift-l": "menu::SelectLast",
-            "ctrl-n": "git_panel::ToggleFocus",
+            "ctrl-2": "git_panel::ToggleFocus",
             "cmd-delete": ["project_panel::Delete", { "skip_prompt": false }],
             "cmd-backspace": ["project_panel::Trash", { "skip_prompt": false }]
         }
     },
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "h": "menu::SelectPrevious",
+            "l": "menu::SelectNext",
+            "Space": "project_symbols::Toggle",
+            "shift-h": "menu::SelectFirst",
+            "shift-l": "menu::SelectLast"
+        }
+    },
+
+    // -- GitPanel
     {
         "context": "GitPanel",
         "bindings": {
             "h": "menu::SelectPrevious",
             "l": "menu::SelectNext",
             "tab": "git_panel::ToggleFocus",
-            "Space": "file_finder::Toggle",
+            "Space": "project_symbols::Toggle",
             "shift-h": "menu::SelectFirst",
             "shift-l": "menu::SelectLast",
-            "ctrl-n": "project_panel::ToggleFocus"
+            "ctrl-1": "project_panel::ToggleFocus"
         }
     },
+
+    // -- Terminal
     {
         "context": "Terminal",
         "bindings": {
@@ -143,8 +185,7 @@
         }
     },
 
-    /////////////////////////////
-    // Vim specific bindings
+    // -- Vim Normal
     {
         "context": "vim_mode == normal",
         "bindings": {
@@ -154,11 +195,13 @@
             "l": "vim::Down",
             "j": "vim::Left",
             "k": "vim::Right",
-            "cmd-t": "project_symbols::Toggle",
-            "tab": ["workspace::SendKeystrokes", "cmd-, cmd-,"],
+            "cmd-u": "vim::PreviousLesserIndent",
+            "tab": ["workspace::SendKeystrokes", "ctrl-, ctrl-,"],
             ", a": "editor::ToggleCodeActions",
             ", g": "git_panel::ToggleFocus",
-            "Space": "file_finder::Toggle",
+            "z A": "editor::UnfoldAll",
+            "Space": "project_symbols::Toggle",
+            "ctrl-Space": "file_finder::Toggle",
             "Backspace": "pane::CloseActiveItem",
             "g G": [
                 "workspace::SendKeystrokes",
@@ -166,6 +209,8 @@
             ]
         }
     },
+
+    // -- Vim Visual
     {
         "context": "vim_mode == visual",
         "bindings": {
@@ -174,5 +219,57 @@
             "j": "vim::Left",
             "k": "vim::Right"
         }
+    },
+
+    // -- Helix Normal
+    {
+        "context": "vim_mode == helix_normal",
+        "bindings": {
+            "h": "vim::Up",
+            "l": "vim::Down",
+            "j": "vim::Left",
+            "k": "vim::Right"
+        }
+    },
+
+    // -- Helix Visual
+    {
+        "context": "vim_mode == helix_visual",
+        "bindings": {
+            "h": "vim::Up",
+            "l": "vim::Down",
+            "j": "vim::Left",
+            "k": "vim::Right"
+        }
+    },
+    {
+        "context": "(VimControl && !menu)",
+        "bindings": {
+            "g b": "editor::GoToPreviousDiagnostic"
+        }
+    },
+    {
+        "context": "(VimControl && !menu)",
+        "bindings": {
+            "g n": "editor::GoToDiagnostic"
+        }
+    },
+    {
+        "context": "(ProjectPanel && not_editing)",
+        "bindings": {
+            "o": "project_panel::OpenPermanent"
+        }
+    },
+    {
+      "context": "(Editor && edit_prediction)",
+      "bindings": {
+        "shift-enter": "editor::AcceptEditPrediction"
+      }
+    },
+    {
+      "context": "(Editor && edit_prediction_conflict)",
+      "bindings": {
+        "shift-enter": "editor::AcceptEditPrediction"
+      }
     }
 ]

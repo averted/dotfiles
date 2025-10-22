@@ -6,6 +6,9 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:$HOME/scripts/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Postgress
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
 # MySQL
 # export PATH="$PATH:/usr/local/mysql/bin"
 
@@ -58,9 +61,6 @@ alias gp="git pull"
 alias gti="git"
 alias gits="git s"
 alias gtis="git s"
-
-# Postgress
-alias lpsql="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
 
 # Docker
 alias d="docker"
@@ -205,3 +205,16 @@ complete -r
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Java SDK (for RN Android dev)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+# Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
