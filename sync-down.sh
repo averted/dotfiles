@@ -27,6 +27,7 @@ cp $DOTFILES/.bashrc $HOME
 cp $DOTFILES/.gitconfig $HOME
 
 # .config
+cp -R $DOTFILES/.config/zed $HOME/.config
+cp -R $DOTFILES/.config/ghostty $HOME/.config
 cp -R $DOTFILES/.config/wezterm $HOME/.config
 cp -R $DOTFILES/.config/coc $HOME/.config
-cp -R $DOTFILES/.config/zed $HOME/.config
