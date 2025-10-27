@@ -1,10 +1,34 @@
 # suppress Catalina default zsh warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# PATH
+#---------------
+# Path
+#---------------
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="$PATH:$HOME/scripts/bin"
+
+# Python (needed for powerline)
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+
+# Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
+. "$HOME/.cargo/env"
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Java SDK (for RN Android dev)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+# Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Postgress
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
@@ -12,10 +36,25 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 # MySQL
 # export PATH="$PATH:/usr/local/mysql/bin"
 
-# VARS
+#---------------
+# Settings
+#---------------
 LS_DEFAULT_ARGS="-lahG --color"
 
-# General alias
+# git completion exports
+export GIT_PS1_SHOWCOLORHINTS=1
+
+# git Disable autocompletion
+complete -r
+
+# set .bash_history line limit
+export HISTFILESIZE=
+export HISTSIZE=25000
+
+# Default editor
+export EDITOR=vim
+
+# General aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -70,7 +109,7 @@ function dc() {
   command docker exec -it $container /bin/bash
 }
 
-# NPM
+# npm
 alias npm-list="npm list -g --depth=0"
 alias npm-dated="sudo npm outdated -g --depth=0"
 
@@ -106,6 +145,10 @@ function ls() {
   fi
 }
 
+# LS Colors
+export CLICOLOR=1
+export LSCOLORS=exFxCxDxbxegedabagacab
+
 ##
 # CD alias
 # Move into files directory if known extension
@@ -129,27 +172,6 @@ function cd() {
   fi
 }
 
-# AWS EC2
-ec2() {
-  if [[ $1 == "-d" ]]; then
-    command aws ec2 describe-instances
-  elif [[ $1 == "-start" || $1 == "-s" ]]; then
-    command aws ec2 start-instances --instance-ids=$2
-  elif [[ $1 == "-stop" ]]; then
-    command aws ec2 stop-instances --instance-ids=$2
-  elif [[ $1 == "-elastic" ]]; then
-    command aws ec2 describe-addresses
-  else
-    command aws ec2 $1
-  fi
-}
-
-# Exercism
-exe() {
-  command cd $HOME/git/exercism/javascript
-  command cd $(ls -1dt ./*/ | head -n 1)
-}
-
 # Encryption
 encrypt() {
   command openssl enc -aes-256-cbc -salt -in $1 -out $2
@@ -159,62 +181,39 @@ decrypt() {
   command openssl enc -d -aes-256-cbc -in $1 -out $2
 }
 
-# LS Colors
-export CLICOLOR=1
-export LSCOLORS=exFxCxDxbxegedabagacab
+#---------------
+# Prompt (old)
+#---------------
+# BLACK="\[\e[0;30m\]"
+# RED="\[\e[0;31m\]"
+# GREEN="\[\e[0;32m\]"
+# YELLOW="\[\e[0;33m\]"
+# BLUE="\[\e[0;34m\]"
+# MAGENTA="\[\e[0;35m\]"
+# CYAN="\[\e[0;36m\]"
+# WHITE="\[\e[0;37m\]"
+# COLOREND="\[\e[00m\]"
+#
+# parse_git_branch() {
+#   echo `__git_ps1 "%s"`
+# }
+#
+# parse_remote_state() {
+#   remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
+#     echo $remote_state
+# }
+#
+# prompt() {
+#   PS1="${GREEN}[$(parse_git_branch)$(parse_remote_state)]${COLOREND} \h:${BLUE}\W$ ${COLOREND}"
+# }
+#
+# PROMPT_COMMAND=prompt
 
-# set .bash_history line limit
-export HISTFILESIZE=
-export HISTSIZE=25000
-
-# Deafult editor
-export EDITOR=vim
-
-# Responsive Prompt
-parse_git_branch() {
-  echo `__git_ps1 "%s"`
-}
-
-parse_remote_state() {
-  remote_state=$(git status -sb 2> /dev/null | grep -oh "\[.*\]")
-    echo $remote_state
-}
-
-prompt() {
-  PS1="${GREEN}[$(parse_git_branch)$(parse_remote_state)]${COLOREND} \h:${BLUE}\W$ ${COLOREND}"
-}
-
-PROMPT_COMMAND=prompt
-
-## Set some colours
-BLACK="\[\e[0;30m\]"
-RED="\[\e[0;31m\]"
-GREEN="\[\e[0;32m\]"
-YELLOW="\[\e[0;33m\]"
-BLUE="\[\e[0;34m\]"
-MAGENTA="\[\e[0;35m\]"
-CYAN="\[\e[0;36m\]"
-WHITE="\[\e[0;37m\]"
-COLOREND="\[\e[00m\]"
-
-# gitcompletion exports
-export GIT_PS1_SHOWCOLORHINTS=1
-
-# Disable autocompletion
-complete -r
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-. "$HOME/.cargo/env"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Java SDK (for RN Android dev)
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-
-# Android SDK
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+#---------------
+# Prompt
+#---------------
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /Users/av/Library/Python/3.9/lib/python/site-packages/powerline/bindings/bash/powerline.sh
 
