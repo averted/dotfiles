@@ -30,3 +30,4 @@ cp $DOTFILES/.gitconfig $HOME
 cp -R $DOTFILES/.config/zed $HOME/.config
 cp -R $DOTFILES/.config/ghostty $HOME/.config
 cp -R $DOTFILES/.config/wezterm $HOME/.config
+cp -R $DOTFILES/.config/powerline $HOME/.config

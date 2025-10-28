@@ -14,3 +14,4 @@ cp $HOME/.gitconfig $DOTFILES
 cp -R $HOME/.config/zed $DOTFILES/.config
 cp -R $HOME/.config/ghostty $DOTFILES/.config
 cp -R $HOME/.config/wezterm $DOTFILES/.config
+cp -R $HOME/.config/powerline $DOTFILES/.config
