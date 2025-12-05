@@ -67,11 +67,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 """"""""""""""""""""""""""""""
 " Overrides
 "
+" Remap movement keys to move sane defaults
 map h <Up>
 map l <Down>
 map j <Left>
 map k <Right>
 map 0 ^
+
+" disable F1 menu (unused?)
 :nmap <F1> <nop>
 :imap <F1> <nop>
 noremap <F1> <nop>
@@ -79,6 +82,17 @@ inoremap <F1> <nop>
 map <F1> :set paste<CR>
 map <F2> :set nopaste<CR>
 map <Tab> <C-W><C-W>
+
+" Remap a key sequence in insert mode to move into normal
+inoremap jj <esc>
+inoremap jJ <esc>
+inoremap Jj <esc>
+inoremap JJ <esc>
+inoremap jk <esc>
+inoremap jK <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
+
 
 map <S-Tab> <C-W>W
 map <S-E> :vsp<CR>
