@@ -18,9 +18,6 @@ cp -R $DOTFILES/.vim/dictionaries/* $VIM_DIR/dictionaries
 mkdir -p $VIM_DIR/plugin
 cp -R $DOTFILES/.vim/plugin/* $VIM_DIR/plugin
 
-mkdir -p $VIM_DIR/bundle
-cp -R $DOTFILES/.vim/bundle/* $VIM_DIR/bundle
-
 # dotfiles
 cp $DOTFILES/.bash_profile $HOME
 cp $DOTFILES/.bashrc $HOME
