@@ -9,10 +9,6 @@ cd $BUNDLE_DIR
 rm -rf $BUNDLE_DIR/auto-pairs
 git clone https://github.com/jiangmiao/auto-pairs
 
-# coc.nvim
-rm -rf $BUNDLE_DIR/coc.nvim
-git clone -b release https://github.com/neoclide/coc.nvim
-
 # ctrlp
 rm -rf $BUNDLE_DIR/vim-ctrlp
 rm -rf $BUNDLE_DIR/ctrlp.vim
@@ -47,17 +43,11 @@ rm -rf $BUNDLE_DIR/minimap.vim
 git clone https://github.com/wfxr/minimap.vim
 cargo install --locked code-minimap
 
-# github-copilot
-rm -rf $BUNDLE_DIR/copilot.vim
-git clone https://github.com/github/copilot.vim
-# Open vim and run [:Copilot setup] to get token
-
 # rust.vim
-rm -rf $BUNDLE_DIR/rust.vim
-git clone https://github.com/averted/rust.vim.git
-cd $BUNDLE_DIR/rust.vim
-git checkout active
-git pull
-cd -
-rustup component add rust-src
-# Open vim and run [:CocInstall coc-rust-analyzer]
+# rm -rf $BUNDLE_DIR/rust.vim
+# git clone https://github.com/averted/rust.vim.git
+# cd $BUNDLE_DIR/rust.vim
+# git checkout active
+# git pull
+# cd -
+# rustup component add rust-src
