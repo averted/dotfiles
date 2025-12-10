@@ -31,7 +31,7 @@
   // The default number of lines to expand excerpts in the multibuffer by.
   "expand_excerpt_lines": 8,
   "tab_size": 4,
-  "buffer_font_family": "Hack",
+  "buffer_font_family": "JetBrains Mono NL",
   "buffer_line_height": "comfortable",
   "buffer_font_fallbacks": ["Times New Roman"],
   "ui_font_size": 14,
@@ -44,6 +44,13 @@
     "mode": "system",
     "light": "One Light",
     "dark": "One Dark"
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    }
   },
   "agent": {
     "default_profile": "write",

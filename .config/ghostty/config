@@ -62,6 +62,7 @@ window-inherit-working-directory = true
 maximize = true
 confirm-close-surface = false
 
+font-family="JetBrains Mono NL"
 font-size = 14
 cursor-style-blink = false
 copy-on-select = clipboard
