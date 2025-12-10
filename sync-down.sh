@@ -19,12 +19,9 @@ mkdir -p $VIM_DIR/plugin
 cp -R $DOTFILES/.vim/plugin/* $VIM_DIR/plugin
 
 # dotfiles
-cp $DOTFILES/.bash_profile $HOME
-cp $DOTFILES/.bashrc $HOME
+cp $DOTFILES/.zshrc $HOME
 cp $DOTFILES/.gitconfig $HOME
 
 # .config
 cp -R $DOTFILES/.config/zed $HOME/.config
 cp -R $DOTFILES/.config/ghostty $HOME/.config
-cp -R $DOTFILES/.config/wezterm $HOME/.config
-cp -R $DOTFILES/.config/powerline $HOME/.config

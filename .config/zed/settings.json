@@ -7,150 +7,151 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-    "features": {
-        "edit_prediction_provider": "zed"
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
     },
-    "edit_predictions": {
-        "mode": "subtle",
-        "copilot": {
-            "proxy": null,
-            "proxy_no_verify": null
-        },
-        "enabled_in_text_threads": false
+    "enabled_in_text_threads": false
+  },
+  "show_edit_predictions": true,
+  "vim_mode": true,
+  // "helix_mode": true,
+  "cursor_blink": false,
+  "hide_mouse": "never",
+  // Show method signatures in the editor, when inside parentheses.
+  "auto_signature_help": false,
+  // Whether to show the signature help after completion or a bracket pair inserted.
+  // If `auto_signature_help` is enabled, this setting will be treated as enabled also.
+  "show_signature_help_after_edits": true,
+  // The default number of lines to expand excerpts in the multibuffer by.
+  "expand_excerpt_lines": 8,
+  "tab_size": 4,
+  "buffer_font_family": "Hack",
+  "buffer_line_height": "comfortable",
+  "buffer_font_fallbacks": ["Times New Roman"],
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "ensure_final_newline_on_save": false,
+  "extend_comment_on_newline": false,
+  "on_last_window_closed": "quit_app",
+  "when_closing_with_no_tabs": "close_window",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "agent": {
+    "default_profile": "write",
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-latest"
     },
-    "show_edit_predictions": true,
-    "vim_mode": true,
-    // "helix_mode": true,
-    "cursor_blink": false,
-    "hide_mouse": "never",
-    // Show method signatures in the editor, when inside parentheses.
-    "auto_signature_help": false,
-    // Whether to show the signature help after completion or a bracket pair inserted.
-    // If `auto_signature_help` is enabled, this setting will be treated as enabled also.
-    "show_signature_help_after_edits": true,
-    // The default number of lines to expand excerpts in the multibuffer by.
-    "expand_excerpt_lines": 8,
-    "tab_size": 4,
-    "buffer_font_family": "Hack",
-    "buffer_font_fallbacks": ["Zed Plex Mono"],
-    "ui_font_size": 14,
-    "buffer_font_size": 14,
-    "ensure_final_newline_on_save": false,
-    "extend_comment_on_newline": false,
-    "on_last_window_closed": "quit_app",
-    "when_closing_with_no_tabs": "close_window",
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "One Dark"
-    },
-    "agent": {
-        "default_profile": "write",
-        "inline_assistant_model": {
-            "provider": "zed.dev",
-            "model": "claude-sonnet-4-latest"
-        },
-        "model_parameters": [],
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-sonnet-4-5"
-        }
-    },
-    "indent_guides": {
-        // Whether to show indent guides in the editor.
-        "enabled": true
-    },
-    "toolbar": {
-        "breadcrumbs": true,
-        "quick_actions": true,
-        "selections_menu": false
-    },
-    "inlay_hints": {
-        "enabled": true,
-        "show_type_hints": true,
-        "show_parameter_hints": false,
-        "show_background": false,
-        "toggle_on_modifiers_press": {
-            "alt": true
-        }
-    },
-    "project_panel": {
-        "button": true,
-        "scrollbar": {
-            "show": "never"
-        }
-    },
-    "outline_panel": {
-        "button": true
-    },
-    "tab_bar": {
-        "show_nav_history_buttons": false,
-        "show_tab_bar_buttons": false
-    },
-    "tabs": {
-        "git_status": true,
-        "file_icons": true,
-        "show_diagnostics": "all"
-    },
-    // TODO
-    "preview_tabs": {
-        // Whether preview tabs should be enabled.
-        // Preview tabs allow you to open files in preview mode, where they close automatically
-        // when you switch to another file unless you explicitly pin them.
-        // This is useful for quickly viewing files without cluttering your workspace.
-        "enabled": true
-    },
-    "scrollbar": {
-        "show": "always"
-    },
-    "minimap": {
-        "show": "never",
-        "thumb_border": "none"
-    },
-    "file_finder": {
-        "modal_max_width": "large"
-    },
-    "telemetry": {
-        "diagnostics": false,
-        "metrics": false
-    },
-    "terminal": {
-        "default_height": 640,
-        "line_height": "standard",
-        "copy_on_select": true,
-        "scrollbar": {
-            "show": "never"
-        }
-    },
-    "languages": {
-        "JSONC": {
-            "tab_size": 2
-        },
-        "JSON": {
-            "tab_size": 2
-        },
-        "Markdown": {
-            "tab_size": 2
-        },
-        "JavaScript": {
-            "tab_size": 2
-        },
-        "TSX": {
-            "tab_size": 2,
-            "inlay_hints": {
-                "enabled": false,
-                "show_type_hints": false
-            }
-        },
-        "TypeScript": {
-            "tab_size": 2,
-            "inlay_hints": {
-                "enabled": false,
-                "show_type_hints": false
-            }
-        },
-        "Rust": {
-            "tab_size": 4
-        }
+    "model_parameters": [],
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-5"
     }
+  },
+  "indent_guides": {
+    // Whether to show indent guides in the editor.
+    "enabled": true
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "selections_menu": false
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": false,
+    "show_background": false,
+    "toggle_on_modifiers_press": {
+      "alt": true
+    }
+  },
+  "project_panel": {
+    "button": true,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "outline_panel": {
+    "button": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+    "show_diagnostics": "all"
+  },
+  // TODO
+  "preview_tabs": {
+    // Whether preview tabs should be enabled.
+    // Preview tabs allow you to open files in preview mode, where they close automatically
+    // when you switch to another file unless you explicitly pin them.
+    // This is useful for quickly viewing files without cluttering your workspace.
+    "enabled": true
+  },
+  "scrollbar": {
+    "show": "always"
+  },
+  "minimap": {
+    "show": "never",
+    "thumb_border": "none"
+  },
+  "file_finder": {
+    "modal_max_width": "large"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "default_height": 640,
+    "line_height": "standard",
+    "copy_on_select": true,
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+  "languages": {
+    "JSONC": {
+      "tab_size": 2
+    },
+    "JSON": {
+      "tab_size": 2
+    },
+    "Markdown": {
+      "tab_size": 2
+    },
+    "JavaScript": {
+      "tab_size": 2
+    },
+    "TSX": {
+      "tab_size": 2,
+      "inlay_hints": {
+        "enabled": false,
+        "show_type_hints": false
+      }
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      "inlay_hints": {
+        "enabled": false,
+        "show_type_hints": false
+      }
+    },
+    "Rust": {
+      "tab_size": 4
+    }
+  }
 }

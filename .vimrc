@@ -346,14 +346,14 @@ au FileType rust let b:AutoPairs = AutoPairsDefine({'<' : '>'})
 """"""""""""""""
 " Rust - CoC
 "
-inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
-inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Remap keys for applying code actions at the cursor position
-nmap <Leader>a  <Plug>(coc-codeaction-cursor)
-nmap <Leader><Leader> :CocCommand document.toggleInlayHint<CR>
+" inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<TAB>"
+" inoremap <silent><expr> <cr> "\<c-g>u\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"
+" " Remap keys for applying code actions at the cursor position
+" nmap <Leader>a  <Plug>(coc-codeaction-cursor)
+" nmap <Leader><Leader> :CocCommand document.toggleInlayHint<CR>
 
 " Highlight the symbol and its references when holding the cursor
 " autocmd CursorHold * silent call CocActionAsync('highlight')
