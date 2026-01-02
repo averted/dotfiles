@@ -62,8 +62,8 @@ window-inherit-working-directory = true
 maximize = true
 confirm-close-surface = false
 
-font-family="JetBrains Mono NL"
 font-size = 14
+font-feature = -calt, -liga, -dlig
 cursor-style-blink = false
 copy-on-select = clipboard
 background-opacity = 0.95
@@ -72,3 +72,4 @@ background-blur-radius = 20
 macos-non-native-fullscreen = visible-menu
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
+keybind = shift+enter=text:\x1b\r

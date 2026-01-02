@@ -9,6 +9,9 @@
 .config/zed/embeddings
 .config/zed/prompts
 
+# zsh custom
+zsh_custom/plugins/
+
 # OSX
 .DS_Store
 Thumbs.db

@@ -2,11 +2,23 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM=$HOME/git/dotfiles/zsh_custom
 
+# Cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+. "$HOME/.cargo/env"
+
+# Local
+export PATH="$HOME/.local/bin:$PATH"
+
 # Theme
 ZSH_THEME="averted"
 
 # Plugins
-plugins=(git-prompt)
+plugins=(git-prompt zsh-syntax-highlighting zsh-autosuggestions)
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="git *"
+
+# bindkey ""^'" autosuggest-accept
+bindkey ';5;13~' autosuggest-execute
 
 # Options
 HISTFILE=~/.zsh_history
