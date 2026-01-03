@@ -12,8 +12,8 @@
       "cmd-.": null,
       "cmd-,": null,
       "cmd-o": null,
-      "cmd-;": null
-    }
+      "cmd-;": null,
+    },
   },
   {
     "context": "Pane",
@@ -24,8 +24,8 @@
       "ctrl-6": null,
       "ctrl-7": null,
       "ctrl-8": null,
-      "ctrl-9": null
-    }
+      "ctrl-9": null,
+    },
   },
   {
     "context": "Workspace",
@@ -41,16 +41,16 @@
       "cmd-9": null,
       "cmd-j": null,
       "cmd-t": null,
-      "cmd-r": null
-    }
+      "cmd-r": null,
+    },
   },
   {
     "context": "Editor",
     "bindings": {
       "cmd-'": null,
       "cmd-/": null,
-      "ctrl-n": null
-    }
+      "ctrl-n": null,
+    },
   },
   {
     "context": "ProjectPanel",
@@ -60,23 +60,23 @@
       "delete": null,
       "cmd-backspace": null,
       "cmd-delete": null,
-      "cmd-alt-backspace": null
-    }
+      "cmd-alt-backspace": null,
+    },
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
       "ctrl-f": null,
-      "ctrl-a": null
-    }
+      "ctrl-a": null,
+    },
   },
 
   // -- Global
   {
     "bindings": {
       "ctrl-,": "workspace::ToggleLeftDock",
-      "ctrl-.": "workspace::ToggleRightDock"
-    }
+      "ctrl-.": "workspace::ToggleRightDock",
+    },
   },
 
   // -- Workspace
@@ -95,8 +95,8 @@
       "ctrl a": "editor::ToggleCodeActions",
       "cmd-j": "outline::Toggle",
       "cmd-shift-alt-g": "git::Diff",
-      "cmd-shift-alt-f": "git_panel::ToggleFocus"
-    }
+      "cmd-shift-alt-f": "git_panel::ToggleFocus",
+    },
   },
 
   // -- Pane
@@ -104,15 +104,15 @@
     "context": "Pane",
     "bindings": {
       "ctrl-1": "project_panel::ToggleFocus",
-      "ctrl-2": "git_panel::ToggleFocus"
-    }
+      "ctrl-2": "git_panel::ToggleFocus",
+    },
   },
   {
     "context": "Pane && EmptyPane",
     "bindings": {
       "Space": "project_symbols::Toggle",
-      "ctrl-Space": "file_finder::Toggle"
-    }
+      "ctrl-Space": "file_finder::Toggle",
+    },
   },
 
   // -- Editor
@@ -124,21 +124,21 @@
       "cmd-d": "editor::ToggleSelectedDiffHunks",
       "cmd-/": "assistant::InlineAssist",
       "cmd-r": "editor::FindAllReferences",
-      "ctrl-f": "pane::DeploySearch"
-    }
+      "ctrl-f": "pane::DeploySearch",
+    },
   },
   {
     "context": "Editor && edit_prediction",
     "bindings": {
-      "shift-tab": "editor::AcceptEditPrediction"
-    }
+      "shift-tab": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "Editor && edit_prediction_conflict",
     "use_key_equivalents": true,
     "bindings": {
-      "shift-tab": "editor::AcceptEditPrediction"
-    }
+      "shift-tab": "editor::AcceptEditPrediction",
+    },
   },
 
   // -- ProjectPanel
@@ -148,8 +148,8 @@
       "tab": "project_panel::ToggleFocus",
       "ctrl-2": "git_panel::ToggleFocus",
       "cmd-delete": ["project_panel::Delete", { "skip_prompt": false }],
-      "cmd-backspace": ["project_panel::Trash", { "skip_prompt": false }]
-    }
+      "cmd-backspace": ["project_panel::Trash", { "skip_prompt": false }],
+    },
   },
   {
     "context": "ProjectPanel && not_editing",
@@ -158,8 +158,8 @@
       "l": "menu::SelectNext",
       "Space": "project_symbols::Toggle",
       "shift-h": "menu::SelectFirst",
-      "shift-l": "menu::SelectLast"
-    }
+      "shift-l": "menu::SelectLast",
+    },
   },
 
   // -- GitPanel
@@ -168,20 +168,21 @@
     "bindings": {
       "h": "menu::SelectPrevious",
       "l": "menu::SelectNext",
+      "o": "menu::Confirm",
       "tab": "git_panel::ToggleFocus",
       "Space": "project_symbols::Toggle",
       "shift-h": "menu::SelectFirst",
       "shift-l": "menu::SelectLast",
-      "ctrl-1": "project_panel::ToggleFocus"
-    }
+      "ctrl-1": "project_panel::ToggleFocus",
+    },
   },
 
   // -- Terminal
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-t": "workspace::NewTerminal"
-    }
+      "cmd-t": "workspace::NewTerminal",
+    },
   },
 
   // -- Vim Insert
@@ -191,8 +192,8 @@
       "j j": "vim::NormalBefore",
       "j J": "vim::NormalBefore",
       "J j": "vim::NormalBefore",
-      "J J": "vim::NormalBefore"
-    }
+      "J J": "vim::NormalBefore",
+    },
   },
 
   // -- Vim Normal
@@ -213,8 +214,8 @@
       "Space": "project_symbols::Toggle",
       "ctrl-Space": "file_finder::Toggle",
       "Backspace": "pane::CloseActiveItem",
-      "g G": ["workspace::SendKeystrokes", "cmd-shift-alt-f cmd-shift-alt-g"]
-    }
+      "g G": ["workspace::SendKeystrokes", "cmd-shift-alt-f cmd-shift-alt-g"],
+    },
   },
 
   // -- Vim Visual
@@ -224,8 +225,8 @@
       "h": "vim::Up",
       "l": "vim::Down",
       "j": "vim::Left",
-      "k": "vim::Right"
-    }
+      "k": "vim::Right",
+    },
   },
 
   // -- Helix Normal
@@ -235,8 +236,8 @@
       "h": "vim::Up",
       "l": "vim::Down",
       "j": "vim::Left",
-      "k": "vim::Right"
-    }
+      "k": "vim::Right",
+    },
   },
 
   // -- Helix Visual
@@ -246,37 +247,37 @@
       "h": "vim::Up",
       "l": "vim::Down",
       "j": "vim::Left",
-      "k": "vim::Right"
-    }
+      "k": "vim::Right",
+    },
   },
   {
     "context": "(VimControl && !menu)",
     "bindings": {
-      "g b": "editor::GoToPreviousDiagnostic"
-    }
+      "g b": "editor::GoToPreviousDiagnostic",
+    },
   },
   {
     "context": "(VimControl && !menu)",
     "bindings": {
-      "g n": "editor::GoToDiagnostic"
-    }
+      "g n": "editor::GoToDiagnostic",
+    },
   },
   {
     "context": "(ProjectPanel && not_editing)",
     "bindings": {
-      "o": "project_panel::OpenPermanent"
-    }
+      "o": "project_panel::OpenPermanent",
+    },
   },
   {
     "context": "(Editor && edit_prediction)",
     "bindings": {
-      "shift-enter": "editor::AcceptEditPrediction"
-    }
+      "shift-enter": "editor::AcceptEditPrediction",
+    },
   },
   {
     "context": "(Editor && edit_prediction_conflict)",
     "bindings": {
-      "shift-enter": "editor::AcceptEditPrediction"
-    }
-  }
+      "shift-enter": "editor::AcceptEditPrediction",
+    },
+  },
 ]

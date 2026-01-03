@@ -7,16 +7,26 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "git": {
+    "git_gutter": "tracked_files",
+    "path_style": "file_path_first",
+    "hunk_style": "staged_hollow",
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "selection_highlight": true,
+  "show_wrap_guides": true,
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
       "proxy": null,
-      "proxy_no_verify": null
+      "proxy_no_verify": null,
     },
-    "enabled_in_text_threads": false
+    "enabled_in_text_threads": false,
   },
   "show_edit_predictions": true,
   "vim_mode": true,
@@ -35,43 +45,57 @@
   "buffer_line_height": "comfortable",
   "buffer_font_fallbacks": ["Times New Roman"],
   "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "buffer_font_size": 14.0,
   "ensure_final_newline_on_save": false,
   "extend_comment_on_newline": false,
   "on_last_window_closed": "quit_app",
   "when_closing_with_no_tabs": "close_window",
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
-  },
+  "theme": "One Dark",
   "experimental.theme_overrides": {
+    // Override distracting VC word change highlights (opacity 00)
+    "version_control.word_deleted": "#0E0E0E00",
+    "version_control.word_added": "#2EA04800",
+
+    // Override Search Highlights
+    // "search.match_background": "#74ade835",
+    "search.active_match_background": "#74ade875",
+
+    // Override default background to be a little darker
+    "toolbar.background": "#222c33ff",
+    "tab.active_background": "#222c33ff",
+    "editor.background": "#222c33ff",
+    "editor.gutter.background": "#222c33ff",
+
+    // Italicise comments
     "syntax": {
       "comment": {
-        "font_style": "italic"
-      }
-    }
+        "font_style": "italic",
+      },
+      "comment.doc": {
+        "font_style": "italic",
+      },
+    },
   },
   "agent": {
     "default_profile": "write",
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-latest"
+      "model": "claude-sonnet-4-latest",
     },
     "model_parameters": [],
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
-    }
+      "model": "claude-sonnet-4-5",
+    },
   },
   "indent_guides": {
     // Whether to show indent guides in the editor.
-    "enabled": true
+    "enabled": true,
   },
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": true,
-    "selections_menu": false
+    "selections_menu": false,
   },
   "inlay_hints": {
     "enabled": true,
@@ -79,26 +103,26 @@
     "show_parameter_hints": false,
     "show_background": false,
     "toggle_on_modifiers_press": {
-      "alt": true
-    }
+      "alt": true,
+    },
   },
   "project_panel": {
     "button": true,
     "scrollbar": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
   "outline_panel": {
-    "button": true
+    "button": true,
   },
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "git_status": true,
     "file_icons": true,
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   // TODO
   "preview_tabs": {
@@ -106,59 +130,59 @@
     // Preview tabs allow you to open files in preview mode, where they close automatically
     // when you switch to another file unless you explicitly pin them.
     // This is useful for quickly viewing files without cluttering your workspace.
-    "enabled": true
+    "enabled": true,
   },
   "scrollbar": {
-    "show": "always"
+    "show": "always",
   },
   "minimap": {
     "show": "never",
-    "thumb_border": "none"
+    "thumb_border": "none",
   },
   "file_finder": {
-    "modal_max_width": "large"
+    "modal_max_width": "large",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "terminal": {
     "default_height": 640,
     "line_height": "standard",
     "copy_on_select": true,
     "scrollbar": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
   "languages": {
     "JSONC": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JSON": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Markdown": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JavaScript": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TSX": {
       "tab_size": 2,
       "inlay_hints": {
         "enabled": false,
-        "show_type_hints": false
-      }
+        "show_type_hints": false,
+      },
     },
     "TypeScript": {
       "tab_size": 2,
       "inlay_hints": {
         "enabled": false,
-        "show_type_hints": false
-      }
+        "show_type_hints": false,
+      },
     },
     "Rust": {
-      "tab_size": 4
-    }
-  }
+      "tab_size": 4,
+    },
+  },
 }
