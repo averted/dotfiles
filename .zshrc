@@ -9,6 +9,14 @@ export PATH="$PATH:$HOME/.cargo/bin"
 # Local
 export PATH="$HOME/.local/bin:$PATH"
 
+# Postgress
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+# Node / vnm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # Theme
 ZSH_THEME="averted"
 
@@ -35,6 +43,11 @@ setopt nocasematch
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 
+
+# Grep (OBSOLETE)
+export GREP_COLOR="91"
+alias grep='grep --color=always --exclude-dir={node_modules,.jest-cache,.build,target}'
+
 # Aliases
 LS_DEFAULT_ARGS="-lahG"
 alias ls='ls $LS_DEFAULT_ARGS'
@@ -48,14 +61,12 @@ alias scripts="cd $HOME/scripts"
 alias notes="soup-rs"
 alias d="docker"
 alias rust="cd $HOME/git/rust"
+alias gti="git"
+alias gits="git s"
+alias gtis="git s"
 
 alias jasmine="jasmine-node --autotest --color"
 alias md="msee"
 alias sleep="pmset sleepnow"
 alias away="pmset sleepnow"
 alias off="pmset sleepnow"
-
-# Obsolete?
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

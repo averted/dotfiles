@@ -73,3 +73,5 @@ macos-non-native-fullscreen = visible-menu
 macos-titlebar-style = tabs
 macos-window-buttons = hidden
 keybind = shift+enter=text:\x1b\r
+
+shell-integration-features = ssh-env,ssh-terminfo

@@ -7,6 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "diff_view_style": "unified",
+  "lsp": {
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "search": {
+    "case_sensitive": true,
+  },
   "git": {
     "git_gutter": "tracked_files",
     "path_style": "file_path_first",
@@ -17,10 +47,8 @@
   },
   "selection_highlight": true,
   "show_wrap_guides": true,
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle",
     "copilot": {
       "proxy": null,
@@ -155,6 +183,9 @@
     },
   },
   "languages": {
+    "CSS": {
+      "tab_size": 2,
+    },
     "JSONC": {
       "tab_size": 2,
     },
