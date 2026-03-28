@@ -141,6 +141,7 @@
     },
   },
   "outline_panel": {
+    "dock": "right",
     "button": true,
   },
   "tab_bar": {

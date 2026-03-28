@@ -8,6 +8,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # Local
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/git/scripts/bin"
 
 # Postgress
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"

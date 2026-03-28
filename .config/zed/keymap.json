@@ -136,10 +136,23 @@
     },
   },
   {
-    "context": "Editor && edit_prediction_conflict",
+    "context": "Editor && (edit_prediction && (showing_completions || in_leading_whitespace))",
     "use_key_equivalents": true,
     "bindings": {
       "shift-tab": "editor::AcceptEditPrediction",
+    },
+  },
+
+  // -- OutlinePanel
+  {
+    "context": "OutlinePanel && not_editing",
+    "bindings": {
+      "enter": "outline_panel::OpenSelectedEntry",
+      "o": "outline_panel::OpenSelectedEntry",
+      "h": "vim::MenuSelectPrevious",
+      "l": "vim::MenuSelectNext",
+      "j": "outline_panel::CollapseSelectedEntry",
+      "k": "outline_panel::ExpandSelectedEntry",
     },
   },
 
@@ -202,6 +215,7 @@
       "k": "vim::Right",
       "cmd-u": "vim::PreviousLesserIndent",
       "tab": "project_panel::ToggleFocus",
+      ", ,": "outline_panel::ToggleFocus", // Toggle OutlinePanel
       ", a": "editor::ToggleCodeActions",
       ", g": "git_panel::ToggleFocus",
       "z A": "editor::UnfoldAll",
@@ -277,7 +291,7 @@
     },
   },
   {
-    "context": "(Editor && edit_prediction_conflict)",
+    "context": "(Editor && (edit_prediction && (showing_completions || in_leading_whitespace)))",
     "bindings": {
       "shift-enter": "editor::AcceptEditPrediction",
     },
@@ -288,9 +302,9 @@
       "ctrl-cmd-w": [
         "pane::CloseOtherItems",
         {
-          "close_pinned": false
-        }
-      ]
-    }
-  }
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
 ]
